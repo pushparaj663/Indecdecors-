@@ -1,0 +1,57 @@
+import React from 'react';
+import './About.css';
+import aboutimg from '../src/image/about-img.jpg'
+import Footer from './Footer';
+import Header from './Header';
+
+function About(props) {
+    return (
+        <>
+            <div className='container-fluid p-0'>
+                <div className='sticky-top'>
+                    {window.location.pathname === '/' ? '' :
+                        <Header />}
+                </div>
+                <section id="about">
+                    <div className="container aos-init aos-animate" data-aos="fade-up">
+                        <div className='row'>
+                            <div className="col">
+                                <h2>Who we are</h2>
+                                <p>Welcome to indec, where creativity meets functionality,
+                                    and every space tells a unique story. We are not just interior designers;
+                                    we are storytellers, transforming environments into captivating narratives
+                                    that reflect the essence of those who inhabit them.</p>
+
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-6 about-img">
+                                <img src={aboutimg} alt="" />
+                            </div>
+
+                            <div className="col-lg-6 content">
+                                <ul>
+                                    <li><i className="bi bi-check-circle"></i>
+                                        We approach each project with a holistic perspective,
+                                        considering not only the visual elements but also the functionality and overall experience of the space.</li>
+                                    <li><i className="bi bi-check-circle"></i> Your dreams and preferences are at the center of our design process.</li>
+                                    <li><i className="bi bi-check-circle"></i> We work closely with our clients to understand their vision and bring it to fruition.</li>
+                                    <li><i className="bi bi-check-circle"></i> It's the small details that make a design truly exceptional.</li>
+                                    <li><i className="bi bi-check-circle"></i> In the ever-evolving world of design, we embrace innovation.</li>
+                                    <li><i className="bi bi-check-circle"></i> Our team stays abreast of the latest trends and incorporates fresh ideas to create spaces that are both timeless and contemporary.</li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+                {window.location.pathname === '/' ? '' :
+                    <Footer />}
+            </div>
+        </>
+    );
+}
+
+export default About;
