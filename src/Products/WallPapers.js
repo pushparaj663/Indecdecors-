@@ -3,10 +3,10 @@ import '../Products/FlooringMats.css'
 import Footer from '../Footer';
 import Header from '../Header';
 import '../Products/Products.css'
-import wallpaper from '../image/2.jpg'
+import '../Home.css'
+import '../Products/WallPaper.css'
 
-
-function InteriorWallPaper(props) {
+function WallPapers(props) {
 
     return (
         <>
@@ -14,10 +14,37 @@ function InteriorWallPaper(props) {
                 <div className='sticky-top'>
                     <Header />
                 </div>
-                <section id="flooringmats" className="flooringmats sections-bg">
 
-                    <div className='itemBanner'>
-                        <img src={wallpaper} alt='' />
+                <section id="flooringmats" className="flooringmats sections-bg">
+                    <div id="carouselExampleDark" className="carousel carousel-fade slide carouselExampleDark-div" data-bs-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active" >
+                                <img src={require('../image/wp-home-1.jpg')} className="d-block w-100" alt='' />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/wp-home-2.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/wp-home-3.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/wp-off-1.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/wp-off-2.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/wp-off-3.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                        </div>
+                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
+                        </button>
+                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
+                        </button>
                     </div>
 
                     <div className="container aos-init aos-animate" data-aos="fade-up">
@@ -83,4 +110,4 @@ function InteriorWallPaper(props) {
     );
 }
 
-export default InteriorWallPaper;
+export default WallPapers;

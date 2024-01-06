@@ -1,6 +1,8 @@
 import React from 'react';
 import '../About.css'
-import aboutimg from '../../src/image/about-img.jpg'
+import zebra_blinds from '../../src/image/bl-zebra.jpg'
+import blackout_blinds from '../../src/image/bl-blackout.jpg'
+import vertical_blinds from '../../src/image/bl-vertical.jpg'
 import Footer from '../Footer';
 import Header from '../Header';
 
@@ -27,7 +29,7 @@ function Blinds(props) {
 
                         <div className="row">
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={blackout_blinds} alt="" />
                             </div>
 
                             <div className="col-lg-6 content">
@@ -57,13 +59,13 @@ function Blinds(props) {
                             </div>
 
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={vertical_blinds} alt="" />
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={zebra_blinds} alt="" />
                             </div>
 
                             <div className="col-lg-6 content">

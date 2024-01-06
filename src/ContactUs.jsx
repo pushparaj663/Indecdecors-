@@ -11,6 +11,7 @@ function ContactUs(props) {
                     {window.location.pathname === '/' ? '' :
                         <Header />}
                 </div>
+
                 <section id="contact">
                     <div className="container aos-init aos-animate" data-aos="fade-up">
                         <div className="section-header">
@@ -56,6 +57,7 @@ function ContactUs(props) {
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.6957363599936!2d77.97975367477234!3d10.366195089758687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00ab46dbcbdf3d%3A0xb6ec6e247740ce56!2sIndec%20Interior%20Decorer!5e0!3m2!1sen!2sin!4v1699100026949!5m2!1sen!2sin" width="100%" height="380" style={{ border: "0" }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </section>
+
                 {window.location.pathname === '/' ? '' :
                     <Footer />}
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../About.css'
-import aboutimg from '../../src/image/about-img.jpg'
+import mn_pleated_door from '../../src/image/mn-pleated-door.jpg'
+import mn_main_door from '../../src/image/mn-main-door.jpg'
 import Footer from '../Footer';
 import Header from '../Header';
 import '../Products.css'
@@ -25,7 +26,7 @@ function MosquitoNetDoors(props) {
 
                         <div className="row">
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={mn_main_door} alt="" />
                             </div>
 
                             <div className="col-lg-6 content">
@@ -55,7 +56,7 @@ function MosquitoNetDoors(props) {
                             </div>
 
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={mn_pleated_door} alt="" />
                             </div>
                         </div>
 
