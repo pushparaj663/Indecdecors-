@@ -1,6 +1,7 @@
 import React from 'react';
 import '../About.css'
-import aboutimg from '../../src/image/about-img.jpg'
+import mn_velcro_window from '../../src/image/mn-velcro-window.jpg'
+import aboutimg from '../../src/image/mn-velcro-window.jpg'
 import Header from '../Header';
 import Footer from '../Footer';
 import '../Products/Products.css'
@@ -27,7 +28,7 @@ function MosquitoNetWindows(props) {
 
                         <div className="row">
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={mn_velcro_window} alt="" />
                             </div>
 
                             <div className="col-lg-6 content">

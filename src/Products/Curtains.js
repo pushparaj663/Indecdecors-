@@ -1,9 +1,12 @@
 import React from 'react';
 import '../About.css'
-import aboutimg from '../../src/image/about-img.jpg'
+import curtains_drape from '../../src/image/curtains-drapes.jpg'
+import curtains_sheer from '../../src/image/curtains-sheer.jpg'
+import curtains_blockout from '../../src/image/curtains-blockout.jpg'
+import curtains_rods from '../../src/image/curtains-rods.jpg'
+import curtains_brackets from '../../src/image/curtains-brackets.jpg'
 import Footer from '../Footer';
 import Header from '../Header';
-import products from '../image/portfolio-1.jpg'
 import './Curtains.css'
 
 function Curtains(props) {
@@ -38,7 +41,7 @@ function Curtains(props) {
 
                         <div className="row">
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={curtains_drape} alt="" />
                             </div>
 
                             <div className="col-lg-6 content">
@@ -65,13 +68,13 @@ function Curtains(props) {
                             </div>
 
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={curtains_sheer} alt="" />
                             </div>
                         </div>
 
                         <div className="row">
                             <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                                <img src={curtains_blockout} alt="" />
                             </div>
 
                             <div className="col-lg-6 content">
@@ -91,7 +94,7 @@ function Curtains(props) {
                             <div className="card mb-3">
                                 <div className="row g-0">
                                     <div className="col-md-4">
-                                        <img src={products} className="img-fluid rounded-start" alt="..." />
+                                        <img src={curtains_rods} className="img-fluid rounded-start" alt="..." />
                                     </div>
                                     <div className="col-md-7">
                                         <div className="card-body ul">
@@ -116,7 +119,7 @@ function Curtains(props) {
                             <div className="card mb-3">
                                 <div className="row g-0">
                                     <div className="col-md-4">
-                                        <img src={products} className="img-fluid rounded-start" alt="..." />
+                                        <img src={curtains_brackets} className="img-fluid rounded-start" alt="..." />
                                     </div>
                                     <div className="col-md-7">
                                         <div className="card-body">

@@ -2,7 +2,7 @@ import React from 'react';
 import '../Products/FlooringMats.css'
 import Footer from '../Footer';
 import Header from '../Header';
-import flooringmats from '../image/1.jpg'
+import '../Home.css'
 
 function FlooringMats(props) {
 
@@ -15,8 +15,29 @@ function FlooringMats(props) {
 
                 <section id="flooringmats" className="flooringmats sections-bg">
 
-                    <div className='itemBanner'>
-                        <img src={flooringmats} alt='' />
+                    <div id="carouselExampleDark" className="carousel carousel-fade slide carouselExampleDark-div" data-bs-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active" >
+                                <img src={require('../image/fm-off-1.jpg')} className="d-block w-100" alt='' />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/fm-off-2.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/fm-home-1.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                            <div className="carousel-item" >
+                                <img src={require('../image/fm-home-2.jpg')} alt='' className="d-block w-100" />
+                            </div>
+                        </div>
+                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Previous</span>
+                        </button>
+                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="visually-hidden">Next</span>
+                        </button>
                     </div>
 
                     <div className="container aos-init aos-animate" data-aos="fade-up">

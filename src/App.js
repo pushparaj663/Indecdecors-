@@ -1,26 +1,22 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Footer from './Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Service from './Service';
 import ContactUs from './ContactUs';
 import Products from './Products';
-import Header from './Header';
 import '../src/App.css'
 import MosquitoNetDoors from './Products/MosquitoNetDoors';
 import MosquitoNetWindows from './Products/MosquitoNetWindows';
 import Blinds from './Products/Blinds';
 import Curtains from './Products/Curtains';
 import FlooringMats from './Products/FlooringMats';
-import InteriorWallPaper from './Products/InteriorWallPaper';
+import WallPapers from './Products/WallPapers';
 import Layout from './Layout';
 
 
 function App() {
   return (
-
-
     <Router>
       <Routes>
         <Route path='/' element={<Layout />} />
@@ -34,10 +30,9 @@ function App() {
         <Route path='/product/curtain' element={<Curtains />} />
         <Route path='/product/blinds' element={<Blinds />} />
         <Route path='/product/flooringmats' element={<FlooringMats />} />
-        <Route path='/product/wallpaper' element={<InteriorWallPaper />} />
+        <Route path='/product/wallpaper' element={<WallPapers />} />
       </Routes>
     </Router>
-
   );
 }
 
