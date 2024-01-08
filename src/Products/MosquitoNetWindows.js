@@ -1,10 +1,9 @@
 import React from 'react';
-import '../About.css'
 import mn_velcro_window from '../../src/image/mn-velcro-window.jpg'
 import aboutimg from '../../src/image/mn-velcro-window.jpg'
 import Header from '../Header';
 import Footer from '../Footer';
-import '../Products/Products.css'
+import '../Products/MosquitoNetWindows.css'
 
 function MosquitoNetWindows(props) {
     return (
@@ -13,7 +12,7 @@ function MosquitoNetWindows(props) {
                 <div className='sticky-top'>
                     <Header />
                 </div>
-                <section id="about">
+                <section id="mosquitoNetWindows">
                     <div className="container aos-init aos-animate" data-aos="fade-up">
                         <div className='row'>
                             <div className="col">
@@ -27,8 +26,8 @@ function MosquitoNetWindows(props) {
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-6 about-img">
-                                <img src={mn_velcro_window} alt="" />
+                            <div className="col-lg-6 mosquitoNetWindows-img">
+                                <img src={mn_velcro_window} alt="" style={{ height: '70%', width: '80%' }} />
                             </div>
 
                             <div className="col-lg-6 content">
@@ -56,14 +55,14 @@ function MosquitoNetWindows(props) {
                                 </ul>
                             </div>
 
-                            <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                            <div className="col-lg-6 mosquitoNetWindows-img">
+                                <img src={aboutimg} alt="" style={{ height: '70%', width: '80%' }} />
                             </div>
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-6 about-img">
-                                <img src={aboutimg} alt="" />
+                            <div className="col-lg-6 mosquitoNetWindows-img">
+                                <img src={aboutimg} alt="" style={{ height: '70%', width: '80%' }} />
                             </div>
 
                             <div className="col-lg-6 content">

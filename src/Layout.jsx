@@ -31,7 +31,7 @@ const Layout = () => {
             behavior: "smooth",
             top: 1000
         });
-        setActiveSection("whatwedo");
+        setActiveSection("what-we-do");
         if (isMobileNavOpen) {
             setMobileNavOpen(!isMobileNavOpen);
         }

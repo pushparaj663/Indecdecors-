@@ -27,7 +27,7 @@ function Header(props) {
                 <div className="container d-flex justify-content-between">
 
                     <div id="logo">
-                        <h1><a href="#">indec</a></h1>
+                        <h1><a href="/">indec</a></h1>
                     </div>
 
                     <nav id="navbar" className={`navbar ${isMobileNavOpen ? 'navbar-mobile' : ''}`}>
