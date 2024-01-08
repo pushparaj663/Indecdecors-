@@ -1,10 +1,9 @@
 import React from 'react';
-import '../About.css'
 import mn_pleated_door from '../../src/image/mn-pleated-door.jpg'
 import mn_main_door from '../../src/image/mn-main-door.jpg'
 import Footer from '../Footer';
 import Header from '../Header';
-import '../Products.css'
+import '../Products/MosquitoNetDoors.css'
 
 function MosquitoNetDoors(props) {
     return (
@@ -13,7 +12,7 @@ function MosquitoNetDoors(props) {
                 <div className='sticky-top'>
                     <Header />
                 </div>
-                <section id="about">
+                <section id="mosquitoNetDoors">
                     <div className="container aos-init aos-animate" data-aos="fade-up">
                         <div className='row'>
                             <div className="col">
@@ -25,8 +24,8 @@ function MosquitoNetDoors(props) {
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-6 about-img">
-                                <img src={mn_main_door} alt="" />
+                            <div className="col-lg-6 mosquitoNetDoors-img">
+                                <img src={mn_main_door} alt="" style={{ height: '70%', width: '80%' }} />
                             </div>
 
                             <div className="col-lg-6 content">
@@ -55,8 +54,8 @@ function MosquitoNetDoors(props) {
 
                             </div>
 
-                            <div className="col-lg-6 about-img">
-                                <img src={mn_pleated_door} alt="" />
+                            <div className="col-lg-6 mosquitoNetDoors-img">
+                                <img src={mn_pleated_door} alt="" style={{ height: '70%', width: '80%' }} />
                             </div>
                         </div>
 

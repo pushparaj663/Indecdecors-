@@ -19,8 +19,9 @@ function App() {
   return (
     <Router>
       <Routes>
+
         <Route path='/' element={<Layout />} />
-        <Route path='/what-we-do' element={<Home />} />
+        <Route path='/whatwedo' element={<Home />} />
         <Route path='/who-we-are' element={<About />} />
         <Route path='/service' element={<Service />} />
         <Route path='/products' element={<Products />} />
