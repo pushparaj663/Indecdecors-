@@ -12,6 +12,10 @@ const Layout = () => {
     const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
     const aboutRef = useRef(null);
     const serviceRef = useRef(null);
+    const contactRef = useRef(null);
+    const productRef = useRef(null);
+
+
     const [activeSection, setActiveSection] = useState("/");
 
 
@@ -26,12 +30,12 @@ const Layout = () => {
 
     }, [isMobileNavOpen]);
 
-    const scrollToHome = () => {
-        aboutRef.current.scrollIntoView({
+    const scrollToProducts = () => {
+        productRef.current.scrollIntoView({
             behavior: "smooth",
             top: 1000
         });
-        setActiveSection("what-we-do");
+        setActiveSection("ourProducts");
         if (isMobileNavOpen) {
             setMobileNavOpen(!isMobileNavOpen);
         }
@@ -62,7 +66,7 @@ const Layout = () => {
     };
 
     const scrollToContact = () => {
-        serviceRef.current.scrollIntoView({
+        contactRef.current.scrollIntoView({
             behavior: "smooth",
             top: 2000
         });
@@ -88,13 +92,13 @@ const Layout = () => {
 
                         <nav id="navbar" className={`navbar ${isMobileNavOpen ? 'navbar-mobile' : ''}`}>
                             <ul>
-                                <li><a className={`nav-link nav_home ${activeSection === "whatwedo" ? 'active' : ''}`} onClick={scrollToHome} >What we do</a></li>
+                                <li><a className={`nav-link nav_home ${activeSection === "/" ? 'active' : ''}`} href="/" >What we do</a></li>
 
                                 <li><a className={`nav-link nav_home ${activeSection === "who-we-are" ? 'active' : ''}`} onClick={scrollToAbout} >Who we are</a></li>
 
                                 <li><a className={`nav-link nav_home ${activeSection === "service" ? 'active' : ''}`} onClick={scrollToService}>Services</a></li>
                                 <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
-                                    <a className={`nav-link nav_home ${window.location.pathname.includes("/product") ? 'active' : ''}`} onClick={handleProductsDropdownToggle}>
+                                    <a className={`nav-link nav_home ${window.location.pathname.includes("/product") ? 'active' : ''}`} onClick={scrollToProducts}>
                                         <span>Products</span> <i className="bi bi-chevron-down"></i></a>
                                     <ul>
                                         <li><a className={`nav-link nav_home ${window.location.pathname === "/product/netwindow" ? 'active' : ''}`} href="/product/netwindow">Mosquito Net Windows</a></li>
@@ -125,8 +129,12 @@ const Layout = () => {
             <div ref={serviceRef}>
                 <Service />
             </div>
+            <div ref={productRef}>
             <Products />
+            </div>
+            <div ref={contactRef}>
             <ContactUs />
+            </div>
             <div className="foot">
                 <Footer />
             </div>

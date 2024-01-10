@@ -36,7 +36,7 @@ function Header(props) {
                             <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">Who we are</a></li>
                             <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">Services</a></li>
                             <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
-                                <a className={`nav-link nav_home ${window.location.pathname.includes("/product") ? 'active' : ''}`} onClick={handleProductsDropdownToggle}>
+                                <a className={`nav-link nav_home ${window.location.pathname.includes("/product") ? 'active' : ''}`} onClick={handleProductsDropdownToggle} href="/">
                                     <span>Products</span> <i className="bi bi-chevron-down"></i></a>
                                 <ul>
                                     <li><a className={`nav-link nav_home ${window.location.pathname === "/product/netwindow" ? 'active' : ''}`} href="/product/netwindow">Mosquito Net Windows</a></li>
