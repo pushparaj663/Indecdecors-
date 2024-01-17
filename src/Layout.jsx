@@ -30,6 +30,36 @@ const Layout = () => {
 
     }, [isMobileNavOpen]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const aboutOffset = aboutRef.current.offsetTop;
+            const serviceOffset = serviceRef.current.offsetTop;
+            const productOffset = productRef.current.offsetTop;
+            const contactOffset = contactRef.current.offsetTop;
+            const scrollPosition = window.scrollY;
+            const exactSectionPosition = 100;
+
+
+            if (scrollPosition < aboutOffset - exactSectionPosition) {
+                setActiveSection("/");
+            } else if (scrollPosition < serviceOffset - exactSectionPosition) {
+                setActiveSection("who-we-are");
+            } else if (scrollPosition < productOffset - exactSectionPosition) {
+                setActiveSection("service");
+            } else if (scrollPosition < contactOffset - exactSectionPosition) {
+                setActiveSection("ourProducts");
+            } else {
+                setActiveSection("contact");
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     const scrollToProducts = () => {
         productRef.current.scrollIntoView({
             behavior: "smooth",
@@ -51,7 +81,6 @@ const Layout = () => {
         if (isMobileNavOpen) {
             setMobileNavOpen(!isMobileNavOpen);
         }
-
     };
 
     const scrollToService = () => {
@@ -130,10 +159,10 @@ const Layout = () => {
                 <Service />
             </div>
             <div ref={productRef}>
-            <Products />
+                <Products />
             </div>
             <div ref={contactRef}>
-            <ContactUs />
+                <ContactUs />
             </div>
             <div className="foot">
                 <Footer />
