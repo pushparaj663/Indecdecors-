@@ -13,13 +13,13 @@ import Curtains from './Products/Curtains';
 import FlooringMats from './Products/FlooringMats';
 import WallPapers from './Products/WallPapers';
 import Layout from './Layout';
+import React from 'react';
 
 
 function App() {
   return (
     <Router>
       <Routes>
-
         <Route path='/' element={<Layout />} />
         <Route path='whatwedo' element={<Home />} />
         <Route path='who-we-are' element={<About />} />
