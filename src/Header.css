@@ -168,11 +168,18 @@
 
 @media (max-width: 991px) {
     .mobile-nav-toggle {
-        display: block;
+        display: block !important;
     }
-
+    
     .navbar ul {
-        display: none;
+        display: none !important;
+    }
+    .navbar-mobile a{
+        color: white !important;
+    }
+    .navbar-mobile ul {
+        background: none !important;
+        display: block !important;
     }
 }
 

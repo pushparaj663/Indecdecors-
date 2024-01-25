@@ -14,6 +14,7 @@ import FlooringMats from './Products/FlooringMats';
 import WallPapers from './Products/WallPapers';
 import Layout from './Layout';
 import React from 'react';
+import Test from './test';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/product/blinds' element={<Blinds />} />
         <Route path='/product/flooringmats' element={<FlooringMats />} />
         <Route path='/product/wallpaper' element={<WallPapers />} />
+        <Route path='/test' element={<Test/>}/>
       </Routes>
     </Router>
   );
