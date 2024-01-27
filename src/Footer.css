@@ -12,7 +12,7 @@
     right: 15px;
     bottom: 15px;
     z-index: 996;
-    background: #50d8af;
+    background: #000247;
     width: 40px;
     height: 40px;
     transition: all 0.4s;
@@ -25,7 +25,7 @@
 }
 
 .back-to-top:hover {
-    background: #71dfbe;
+    background: #166ab5;
     color: #fff;
 }
 
@@ -51,7 +51,7 @@
 
 
 #footerbar a h1 {
-    color: #0c2e8a;
+    color: #000247;
     text-decoration: none;
 }
 

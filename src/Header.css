@@ -15,7 +15,7 @@
 }
 
 #header #logo h1 a {
-    color: #0c2e8a;
+    color: #000247;
     text-decoration: none;
 }
 
@@ -75,12 +75,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 0 10px 30px;
-    font-family: "Raleway", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #000247;
     white-space: nowrap;
-    transition: 0.3s;
+    transition: 0.5s;
     text-decoration: none;
 }
 
@@ -95,7 +94,7 @@
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-    color: #50d8af;
+    color: #166ab5;
     cursor: pointer;
 }
 
@@ -130,7 +129,7 @@
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-    color: #50d8af;
+    color: #166ab5;
 }
 
 .navbar .dropdown:hover>ul {
@@ -170,13 +169,15 @@
     .mobile-nav-toggle {
         display: block !important;
     }
-    
+
     .navbar ul {
         display: none !important;
     }
-    .navbar-mobile a{
+
+    .navbar-mobile a {
         color: white !important;
     }
+
     .navbar-mobile ul {
         background: none !important;
         display: block !important;
@@ -203,7 +204,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(8, 30, 91, 0.9);
+    background: #000247;
     transition: 0.3s;
     z-index: 999;
 }

@@ -4,7 +4,7 @@ import '../src/Footer.css';
 const Footer = () => {
     return (
         <>
-            <section id="footerbar" classNames="d-flex align-items-center">
+            <section id="footerbar" className="d-flex align-items-center">
                 <div className="container d-flex justify-content-center justify-content-md-between" style={{ paddingTop: "30px" }}>
                     <div className="contact-info d-flex align-items-center">
                         <a href="#"><h1>indec</h1></a>
