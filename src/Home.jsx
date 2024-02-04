@@ -1,6 +1,7 @@
 import React from 'react';
 import '../src/Home.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import curtain from "../src/image/curtains-drapes.jpg";
 
 function Home(props) {
 
@@ -18,28 +19,28 @@ function Home(props) {
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active" >
-                            <img src={require('../src/image/1.jpg')} className="d-block w-100" alt='' />
+                            <img src={require('../src/image/banner_curtain.jpg')} className="d-block w-100" alt='' />
                             <div className="carousel-caption d-none d-md-block">
                                 <h5>First slide label</h5>
                                 <p>Some representative placeholder content for the first slide.</p>
                             </div>
                         </div>
                         <div className="carousel-item" >
-                            <img src={require('../src/image/2.jpg')} alt='' className="d-block w-100" />
+                            <img src={require('../src/image/banner_blackout_with_sheer.jpg')} alt='' className="d-block w-100" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h5>Second slide label</h5>
                                 <p>Some representative placeholder content for the second slide.</p>
                             </div>
                         </div>
                         <div className="carousel-item" >
-                            <img src={require('../src/image/3.jpg')} alt='' className="d-block w-100" />
+                            <img src={require('../src/image/banner_wallpaper.jpg')} alt='' className="d-block w-100" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h5>Third slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
                             </div>
                         </div>
                         <div className="carousel-item" >
-                            <img src={require('../src/image/1.jpg')} alt='' className="d-block w-100" />
+                            <img src={require('../src/image/banner_wallpaper_home.jpg')} alt='' className="d-block w-100" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h5>Fourth slide label</h5>
                                 <p>Some representative placeholder content for the third slide.</p>
