@@ -12,8 +12,8 @@ function ContactUs(props) {
                         <Header />}
                 </div>
 
-                <section id="contact">
-                    <div className="container aos-init aos-animate" data-aos="fade-up">
+                <section id="contact" className="aos-init aos-animate">
+                    <div className="container" data-aos="fade-up">
                         <div className="section-header">
                             <h2>Contact Us</h2>
                             <p>At indec, we understand that your living or working space is a reflection of your unique personality and style.
@@ -22,7 +22,7 @@ function ContactUs(props) {
                                 indec is your trusted partner.</p>
                         </div>
 
-                        <div className="row contact-info">
+                        <div className="row contact-info" data-aos="fade-up">
 
                             <div className="col-md-4">
                                 <div className="contact-address">
@@ -45,7 +45,7 @@ function ContactUs(props) {
                                 <div className="contact-email">
                                     <i className="bi bi-envelope" ></i>
                                     <h3>Email</h3>
-                                    <p><a href="mailto: admin@indectech.in"> admin@indectech.in</a></p>
+                                    <p><a href="mailto: admin@indectech.in">admin@indectech.in</a></p>
                                 </div>
                             </div>
 

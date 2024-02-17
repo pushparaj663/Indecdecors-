@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 function About(props) {
+
     return (
         <>
             <div className='container-fluid p-0'>
@@ -12,8 +13,9 @@ function About(props) {
                     {window.location.pathname === '/' ? '' :
                         <Header />}
                 </div>
-                <section id="about">
-                    <div className="container aos-init aos-animate" data-aos="fade-up">
+
+                <section id="about" className="aos-init aos-animate">
+                    <div className="container" data-aos="fade-up">
                         <div className='row'>
                             <div className="col">
                                 <h2>Who we are</h2>
@@ -24,7 +26,7 @@ function About(props) {
 
                             </div>
                         </div>
-                        <div className="row">
+                        <div className="row" data-aos="fade-up">
                             <div className="col-lg-6 about-img">
                                 <img src={aboutimg} alt="" />
                             </div>

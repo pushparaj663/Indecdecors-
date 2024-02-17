@@ -1,30 +1,25 @@
 .carousel-inner img {
     height: 60vh;
+    opacity: 0.8;
 }
 
-/* change transition duration to control the speed of fade effect */
-.carousel-fade .carousel-item {
-    opacity: 0;
-    transition-duration: .6s;
-    transition-property: opacity;
+.carousel-item h1 {
+    text-align: unset;
 }
 
-.carousel-fade .carousel-item.active,
-.carousel-fade .carousel-item-next.carousel-item-left,
-.carousel-fade .carousel-item-prev.carousel-item-right {
-    opacity: 1;
+.carousel-inner h1 {
+    color: #0d0e44;
+    font-size: 43px;
+    font-weight: 700;
 }
 
-.carousel-fade .active.carousel-item-left,
-.carousel-fade .active.carousel-item-right {
-    opacity: 0;
-}
-
-.carousel-fade .carousel-item-next,
-.carousel-fade .carousel-item-prev,
-.carousel-fade .carousel-item.active,
-.carousel-fade .active.carousel-item-left,
-.carousel-fade .active.carousel-item-prev {
-    transform: translateX(0);
-    transform: translate3d(0, 0, 0);
+.carousel-inner .overlay {
+    inset: 0;
+    position: absolute;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(158, 152, 156, 0.3);
+    /* center overlay text */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
