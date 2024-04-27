@@ -26,12 +26,12 @@ function About(props) {
 
                             </div>
                         </div>
-                        <div className="row" data-aos="fade-up">
-                            <div className="col-lg-6 about-img">
+                        <div className="row" data-aos-delay="400">
+                            <div className="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
                                 <img src={aboutimg} alt="" />
                             </div>
 
-                            <div className="col-lg-6 content">
+                            <div className="col-lg-6 content" data-aos="fade-left" data-aos-delay="400">
                                 <ul>
                                     <li><i className="bi bi-check-circle"></i>
                                         We approach each project with a holistic perspective,

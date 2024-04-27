@@ -1,82 +1,10 @@
-#mosquitoNetWindows {
-    padding: 60px 0 30px 0;
-}
-
-#mosquitoNetWindows .mosquitoNetWindows-img {
-    overflow: hidden;
-    padding: 20px;
-    text-align: center;
-}
-
-#mosquitoNetWindows .mosquitoNetWindows-img img {
-    margin-left: 0px;
-    max-width: 100%;
-}
-
 @media (max-width: 768px) {
-    #mosquitoNetWindows .mosquitoNetWindows-img {
+    .mosquitonet .mosquitonet-img {
         height: auto;
     }
 
-    #mosquitoNetWindows .mosquitoNetWindows-img img {
+    .mosquitonet .mosquitonet-img img {
         margin-left: 0;
         padding-bottom: 30px;
     }
-}
-
-#mosquitoNetWindows .content h2 {
-    color: #0c2e8a;
-    font-weight: 700;
-    font-size: 36px;
-    font-family: "Raleway", sans-serif;
-}
-
-#mosquitoNetWindows .content h3 {
-    color: #555;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 26px;
-    font-style: italic;
-}
-
-#mosquitoNetWindows .content p {
-    line-height: 26px;
-}
-
-#mosquitoNetWindows .content p:last-child {
-    margin-bottom: 0;
-}
-
-#mosquitoNetWindows .content i {
-    font-size: 20px;
-    padding-right: 4px;
-    color: #50d8af;
-}
-
-#mosquitoNetWindows .content ul {
-    list-style: none;
-    padding: 0;
-}
-
-#mosquitoNetWindows .content ul li {
-    padding-bottom: 10px;
-}
-
-.col h2 {
-    font-size: 32px;
-    color: #000247;
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.col h2::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #000247;
-    bottom: 0;
-    left: 0;
 }

@@ -27,15 +27,15 @@ function ContactUs(props) {
                             <div className="col-md-4">
                                 <div className="contact-address">
                                     <i className="bi bi-geo-alt"></i>
-                                    <h3>Location</h3>
-                                    <address>AK Complex, Aarthi Theatre Rd, Dindigul, Tamil Nadu 624001</address>
+                                    <h3>Our Address</h3>
+                                    <address>AK Complex, Aarthi Theatre Road, Dindigul, Tamil Nadu 624001</address>
                                 </div>
                             </div>
 
                             <div className="col-md-4">
                                 <div className="contact-phone">
                                     <i className="bi bi-phone"></i>
-                                    <h3>Call</h3>
+                                    <h3>Call Us</h3>
                                     <p><a href="tel:+919600339397">+91 96003 39397 / </a><a href="tel:+919952880078">+91 99528 80078</a>
                                     </p>
                                 </div>
@@ -44,7 +44,7 @@ function ContactUs(props) {
                             <div className="col-md-4">
                                 <div className="contact-email">
                                     <i className="bi bi-envelope" ></i>
-                                    <h3>Email</h3>
+                                    <h3>Email Us</h3>
                                     <p><a href="mailto: admin@indectech.in">admin@indectech.in</a></p>
                                 </div>
                             </div>
