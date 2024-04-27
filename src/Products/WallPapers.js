@@ -1,12 +1,20 @@
-import React from 'react';
-import '../Products/FlooringMats.css'
+import { React, useEffect } from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
+import AOS from 'aos';
+import "../../node_modules/aos/dist/aos.css"
 import '../Products/Products.css'
 import '../Home.css'
-import '../Products/WallPaper.css'
+import features from '../../src/image/fm-home.jpg'
+import fmoff from '../../src/image/fm-off.jpg'
+
 
 function WallPapers(props) {
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
 
     return (
         <>
@@ -15,96 +23,110 @@ function WallPapers(props) {
                     <Header />
                 </div>
 
-                <section id="flooringmats" className="flooringmats sections-bg">
-                    <div id="carouselExampleDark" className="carousel carousel-fade slide carouselExampleDark-div" data-bs-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item active" >
-                                <img src={require('../image/wp-home-1.jpg')} className="d-block w-100" alt='' />
-                            </div>
-                            <div className="carousel-item" >
-                                <img src={require('../image/wp-home-2.jpg')} alt='' className="d-block w-100" />
-                            </div>
-                            <div className="carousel-item" >
-                                <img src={require('../image/wp-home-3.jpg')} alt='' className="d-block w-100" />
-                            </div>
-                            <div className="carousel-item" >
-                                <img src={require('../image/wp-off-1.jpg')} alt='' className="d-block w-100" />
-                            </div>
-                            <div className="carousel-item" >
-                                <img src={require('../image/wp-off-2.jpg')} alt='' className="d-block w-100" />
-                            </div>
-                            <div className="carousel-item" >
-                                <img src={require('../image/wp-off-3.jpg')} alt='' className="d-block w-100" />
-                            </div>
-                        </div>
-                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Previous</span>
-                        </button>
-                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Next</span>
-                        </button>
-                    </div>
-
-                    <div className="container aos-init aos-animate" data-aos="fade-up">
-
-                        <div className="section-header">
-                            <h2>Wallpapers</h2>
-
-                            <p>
-                                <h4>Wallpapers for Office Walls</h4>
-                                Create an inspiring and professional ambiance in your workspace. Our office wallpapers range from sophisticated designs for executive offices to vibrant patterns for creative spaces, fostering a positive and productive atmosphere.
+                <section id="wallpapers" className="product-items section-bg">
+                    <div className="container aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <div className="section-title">
+                            <h2>Wall Papers for Walls</h2>
+                            <p>Elevate the ambiance of your home or office with our exquisite selection of wallpaper decorations.
+                                From captivating patterns to sophisticated textures, our wallpapers are designed to add a touch of elegance and personality to any room.
                             </p>
+                        </div>
 
-                            <p>
-                                <h4>Wallpapers for Home Walls</h4>
-                                Make a statement in your living spaces with our home wallpapers. From accent walls in the living room to serene patterns in the bedroom, our wallpapers add character and charm to every corner of your home.</p>
+                        <div className="row">
+                            <ul class="nav nav-tabs row d-flex" role="tablist">
+                                <li class="nav-item col" role="presentation">
+                                    <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                        <i class="bi bi-house"></i>
+                                        <h4 class="d-none d-lg-block">Home</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item col" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
+                                        <i class="bi bi-house"></i>
+                                        <h4 class="d-none d-lg-block">Office</h4>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active show" id="tab-1" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                            <p class="fst-italic">
+                                                Create a haven of comfort and style with our home wallpaper decorations.
+                                                Whether you're looking to add a pop of color to your living room or create a serene retreat in your bedroom, our wallpapers offer endless possibilities for transforming your space.
+                                            </p>
+                                            <ul>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Living Room:</span> Make a bold statement with vibrant patterns or opt for subtle textures to create a cozy atmosphere.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Bedroom:</span> Set a tranquil mood with calming hues and delicate designs that promote relaxation and restful sleep.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Dining Area:</span> Add an element of sophistication to your dining space with elegant wallpapers that enhance the dining experience.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                            <img src={features} alt="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab-2" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <p class="fst-italic">
+                                                Inspire creativity and productivity in your workspace with our office wallpaper decorations.
+                                                From sleek and modern designs to timeless classics, our wallpapers can help set the tone for a
+                                                professional and inviting environment.
+                                            </p>
+                                            <ul>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Executive Offices:</span> Impress clients and colleagues alike with luxurious wallpapers that exude sophistication and refinement.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Meeting Rooms:</span> Foster collaboration and innovation with dynamic patterns and bold colors that stimulate creativity and engagement.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Reception Areas:</span> Create a welcoming first impression with stylish wallpapers that reflect your company's brand and values.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={fmoff} alt="" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <section id="Products" className="Products">
                             <div className="row gy-4">
-                                <div className="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                                    <div className="box">
-                                        <h4 className="title">Nature-Inspired</h4>
+                                <div className="col-lg-6">
+                                    <div className="box aos-animate" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
+                                        <h4 className="title">Quality Materials</h4>
                                         <p className="description">
-                                            Bring the outdoors in with our nature-inspired wallpapers.
-                                            From lush botanicals to calming landscapes, these designs
-                                            create a soothing and refreshing atmosphere.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                                    <div className="box">
-                                        <h4 className="title">Customized Solutions</h4>
-                                        <p className="description">Infuse warmth and personality into your living spaces with our Home Harmony collection. From timeless patterns to vibrant prints, our wallpapers are designed to complement various interior styles, adding a touch of coziness and style.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-                                    <div className="box">
-                                        <h4 className="title">Enhanced Ventilation</h4>
-                                        <p className="description">Tailor your walls to reflect your unique style with our customizable wallpaper options. Select from an array of colors, patterns, and textures to create a personalized look that seamlessly integrates with your decor.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-                                    <div className="box">
-                                        <h4 className="title">Durability and Longevity</h4>
-                                        <p className="description">
-                                            We prioritize durability to ensure that your mosquito net windows stand the test of time. Built with quality craftsmanship and sturdy materials, our windows provide long-lasting insect protection for your home.
+                                            Our wallpapers are crafted from high-quality materials that are durable, fade-resistant, and easy to maintain, ensuring long-lasting beauty and performance.
                                         </p>
                                     </div>
                                 </div>
-
+                                <div className="col-lg-6">
+                                    <div className="box" data-aos="zoom-in" data-aos-duration="5000">
+                                        <h4 className="title">Variety of Designs</h4>
+                                        <p className="description">Whether you prefer modern minimalism, classic elegance, or eclectic patterns, our diverse selection of wallpapers offers something for every taste and style.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
+                                        <h4 className="title">Customization Options</h4>
+                                        <p className="description">Personalize your space with custom-designed wallpapers that reflect your unique personality and vision, turning your walls into works of art.</p>
+                                    </div>
+                                </div>
+                                <div className="col-lg-6">
+                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
+                                        <h4 className="title">Professional Installation</h4>
+                                        <p className="description">
+                                            Our experienced team will handle the installation process with precision and care, ensuring a flawless finish that enhances the overall aesthetic of your space.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </section>
-
                     </div>
-                </section>
+                </section >
 
                 <Footer />
-            </div>
+            </div >
 
         </>
     );

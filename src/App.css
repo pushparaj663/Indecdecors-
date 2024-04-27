@@ -2,7 +2,7 @@
   # Sections
   --------------------------------------------------------------*/
 section {
-    padding: 40px 0;
+    padding: 0px 0;
     overflow: hidden;
 }
 
@@ -14,8 +14,8 @@ section {
 
 .section-header h2 {
     font-size: 32px;
-    color: #0c2e8a;
-    text-transform: uppercase;
+    color: #000247;
+    text-transform: none;
     font-weight: 700;
     position: relative;
     padding-bottom: 20px;
@@ -27,7 +27,7 @@ section {
     display: block;
     width: 50px;
     height: 3px;
-    background: #50d8af;
+    background: #000247;
     bottom: 0;
     left: 0;
 }

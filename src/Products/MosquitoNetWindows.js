@@ -1,12 +1,11 @@
 import { React, useEffect } from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-import '../Products/MosquitoNetWindows.css'
 import AOS from 'aos';
 import "../../node_modules/aos/dist/aos.css"
-import pvelcro from '../../src/image/p-velcro.jpg'
-import palmwindow from '../../src/image/p-alm-window.jpg'
-import palmpltwindow from '../../src/image/p-alm-plt-window.jpg'
+import pvelcro from '../../src/image/mn-velcro-window.jpg'
+import palmwindow from '../../src/image/mn-alm-window.jpg'
+import palmwindow1 from '../../src/image/mn-alm-window.jpg'
 
 function MosquitoNetWindows(props) {
     useEffect(() => {
@@ -34,68 +33,77 @@ function MosquitoNetWindows(props) {
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-4 mb-5 mb-lg-0">
-                                <ul className="nav nav-tabs flex-column" role="tablist">
-                                    <li className="nav-item" role="presentation">
-                                        <a className="nav-link show active" data-bs-toggle="tab" data-bs-target="#tab-1" aria-selected="true" role="tab">
-                                            <h4>Velcro Mosquito Net</h4>
-                                            {/* <p>Quis excepturi porro totam sint earum quo nulla perspiciatis eius.</p> */}
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mt-2" role="presentation">
-                                        <a className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                            <h4>Aluminium Mosquito Net Windows</h4>
-                                            {/* <p>Voluptas vel esse repudiandae quo excepturi.</p> */}
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mt-2" role="presentation">
-                                        <a className="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" aria-selected="false" role="tab" tabindex="-1">
-                                            <h4>Aluminium Pleated Mosquito Net Windows</h4>
-                                            {/* <p>Velit veniam ipsa sit nihil blanditiis mollitia natus.</p> */}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="col-lg-8">
-                                <div className="tab-content">
-                                    <div className="tab-pane active show" id="tab-1" role="tabpanel">
-                                        <h3>Velcro Mosquito Net</h3>
-                                        {/* <p className="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> */}
-                                        <img src={pvelcro} alt="" className="img-fluid" data-aos="zoom-in" data-aos-duration="2000" />
-                                        <p data-aos="zoom-in" data-aos-duration="2000"><ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>Our Velcro Mosquito Net comes with an easy-to-apply Velcro strip, making installation a breeze.
-                                            </li>
-                                            <li><i className="bi bi-check-circle-fill"></i>No tools, no fuss – just a simple and secure attachment to your window frame.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>The fine mesh construction of our net allows for optimal airflow, letting you enjoy the refreshing breeze while keeping mosquitoes and insects at bay.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>The net is simple to clean, and the Velcro attachment allows for easy removal whenever needed. </li>
-                                        </ul></p>
+
+                            <ul class="nav nav-tabs row d-flex" role="tablist">
+                                <li class="nav-item col" role="presentation">
+                                    <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                        <i class="bi bi-house"></i>
+                                        <h4 class="d-none d-lg-block">Velcro Mosquito Net</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item col" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
+                                        <i class="bi bi-house"></i>
+                                        <h4 class="d-none d-lg-block">Aluminium Mosquito Net Windows</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item col" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab" tabindex="-1">
+                                        <i class="bi bi-house"></i>
+                                        <h4 class="d-none d-lg-block">Aluminium Pleated Mosquito Net Windows</h4>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active show" id="tab-1" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <ul>
+                                                <li><i className="bi bi-check-circle-fill"></i>Our Velcro Mosquito Net comes with an easy-to-apply Velcro strip, making installation a breeze.
+                                                </li>
+                                                <li><i className="bi bi-check-circle-fill"></i>No tools, no fuss – just a simple and secure attachment to your window frame.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i>The fine mesh construction of our net allows for optimal airflow, letting you enjoy the refreshing breeze while keeping mosquitoes and insects at bay.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i>The net is simple to clean, and the Velcro attachment allows for easy removal whenever needed. </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={pvelcro} alt="Velcro Mosquito Net" class="img-fluid" />
+                                        </div>
                                     </div>
-                                    <div className="tab-pane" id="tab-2" role="tabpanel">
-                                        <h3>Aluminium Mosquito Net Windows</h3>
-                                        {/* <p className="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> */}
-                                        <img src={palmwindow} alt="" className="img-fluid" data-aos="zoom-in" data-aos-duration="3000" />
-                                        <p data-aos="zoom-in" data-aos-duration="3000"><ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>Our mosquito net windows are crafted from premium-grade aluminum, ensuring durability and resistance to corrosion.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Experience the ease of operation with our thoughtfully designed windows.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Our aluminum mosquito net windows are designed for minimal maintenance.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>The high-quality materials are resistant to wear and tear, making them an ideal, hassle-free solution for insect protection</li>
-                                        </ul></p>
+                                </div>
+                                <div class="tab-pane" id="tab-2" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <ul>
+                                                <li><i className="bi bi-check-circle-fill"></i>Our mosquito net windows are crafted from premium-grade aluminum, ensuring durability and resistance to corrosion.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i>Experience the ease of operation with our thoughtfully designed windows.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i>Our aluminum mosquito net windows are designed for minimal maintenance.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i>The high-quality materials are resistant to wear and tear, making them an ideal, hassle-free solution for insect protection</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={palmwindow} alt="" class="img-fluid" />
+                                        </div>
                                     </div>
-                                    <div className="tab-pane" id="tab-3" role="tabpanel">
-                                        <h3>Aluminium Pleated Mosquito Net Windows</h3>
-                                        {/* <p className="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> */}
-                                        <img src={palmpltwindow} alt="" className="img-fluid" data-aos="zoom-in" data-aos-duration="3000" />
-                                        <p data-aos="zoom-in" data-aos-duration="3000"><ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>The smooth sliding or hinge mechanisms ensure effortless opening and closing, allowing for quick and convenient access.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Maintain a hygienic kitchen and enjoy meals in a pest-free dining space with the protection of our aluminum mosquito net windows.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Upgrade your windows to a new level of elegance and protection with our Aluminum Mosquito Net Windows.</li>
-                                        </ul></p>
+                                </div>
+                                <div class="tab-pane" id="tab-3" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <ul>
+                                                <li><i className="bi bi-check-circle-fill"></i>The smooth sliding or hinge mechanisms ensure effortless opening and closing, allowing for quick and convenient access.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i>Maintain a hygienic kitchen and enjoy meals in a pest-free dining space with the protection of our aluminum mosquito net windows.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i>Upgrade your windows to a new level of elegance and protection with our Aluminum Mosquito Net Windows.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={palmwindow1} alt="" class="img-fluid" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <section id="Products" className="Products">
+                        <section id="Products" className="Products" style={{ paddingTop: "40px" }}>
                             <div className="row gy-4">
                                 <div className="col-lg-6">
                                     <div className="box" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
