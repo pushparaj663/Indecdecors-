@@ -33,26 +33,26 @@ function FlooringMats(props) {
                         </div>
 
                         <div className="row">
-                            <ul class="nav nav-tabs row d-flex" role="tablist">
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Home</h4>
+                            <ul className="nav nav-tabs row d-flex" role="tablist">
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Home</h4>
                                     </a>
                                 </li>
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Office</h4>
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Office</h4>
                                     </a>
                                 </li>
                             </ul>
 
-                            <div class="tab-content">
-                                <div class="tab-pane active show" id="tab-1" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-animate" data-aos="fade-up" data-aos-delay="100">
-                                            <p class="fst-italic">
+                            <div className="tab-content">
+                                <div className="tab-pane active show" id="tab-1" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                            <p className="fst-italic">
                                                 Transform your living spaces into cozy retreats with our home flooring mat decorations.
                                                 Whether you're looking to add warmth to your bedroom or create a welcoming entryway, our mats provide the perfect blend of comfort and style.
                                             </p>
@@ -62,15 +62,15 @@ function FlooringMats(props) {
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Entryway:</span> Make a stylish first impression with durable and functional mats that welcome guests into your home while protecting your floors from dirt and debris.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center aos-animate" data-aos="fade-up" data-aos-delay="200">
-                                            <img src={features} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                            <img src={features} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-2" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <p class="fst-italic">
+                                <div className="tab-pane" id="tab-2" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <p className="fst-italic">
                                                 Set the stage for productivity and professionalism in your workplace with our office flooring mat decorations.
                                                 From ergonomic support to sleek aesthetics, our mats are designed to enhance the functionality and style of any office space.
                                             </p>
@@ -80,8 +80,8 @@ function FlooringMats(props) {
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Reception Areas:</span>Impress clients and visitors with elegant mats that make a bold statement while protecting your floors from wear and tear.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={fmoff} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={fmoff} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>

@@ -21,7 +21,7 @@ function Curtains(props) {
                 <div className='sticky-top'>
                     <Header />
                 </div>
-                <section id="curtains" class="product-items">
+                <section id="curtains" className="product-items">
                     <div className="container" data-aos="fade-up" data-aos-delay="200">
                         <div className="section-title">
                             <h2>Curtains</h2>
@@ -36,57 +36,57 @@ function Curtains(props) {
                             </div>
                         </div>
 
-                        <ul class="nav nav-tabs row d-flex" role="tablist">
-                            <li class="nav-item col" role="presentation">
-                                <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                    <i class="bi bi-house"></i>
-                                    <h4 class="d-none d-lg-block">Luxurious Drape</h4>
+                        <ul className="nav nav-tabs row d-flex" role="tablist">
+                            <li className="nav-item col" role="presentation">
+                                <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                    <i className="bi bi-house"></i>
+                                    <h4 className="d-none d-lg-block">Luxurious Drape</h4>
                                 </a>
                             </li>
-                            <li class="nav-item col" role="presentation">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                    <i class="bi bi-house"></i>
-                                    <h4 class="d-none d-lg-block">Versatile Sheers</h4>
+                            <li className="nav-item col" role="presentation">
+                                <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
+                                    <i className="bi bi-house"></i>
+                                    <h4 className="d-none d-lg-block">Versatile Sheers</h4>
                                 </a>
                             </li>
-                            <li class="nav-item col" role="presentation">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab" tabindex="-1">
-                                    <i class="bi bi-house"></i>
-                                    <h4 class="d-none d-lg-block">Blackout Curtains</h4>
+                            <li className="nav-item col" role="presentation">
+                                <a className="nav-link" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab" tabindex="-1">
+                                    <i className="bi bi-house"></i>
+                                    <h4 className="d-none d-lg-block">Blackout Curtains</h4>
                                 </a>
                             </li>
-                            <li class="nav-item col" role="presentation">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab-4" aria-selected="false" role="tab" tabindex="-1">
-                                    <i class="bi bi-house"></i>
-                                    <h4 class="d-none d-lg-block">Curtain Rods</h4>
+                            <li className="nav-item col" role="presentation">
+                                <a className="nav-link" data-bs-toggle="tab" href="#tab-4" aria-selected="false" role="tab" tabindex="-1">
+                                    <i className="bi bi-house"></i>
+                                    <h4 className="d-none d-lg-block">Curtain Rods</h4>
                                 </a>
                             </li>
-                            <li class="nav-item col" role="presentation">
-                                <a class="nav-link" data-bs-toggle="tab" href="#tab-5" aria-selected="false" role="tab" tabindex="-1">
-                                    <i class="bi bi-house"></i>
-                                    <h4 class="d-none d-lg-block">Curtain Brackets</h4>
+                            <li className="nav-item col" role="presentation">
+                                <a className="nav-link" data-bs-toggle="tab" href="#tab-5" aria-selected="false" role="tab" tabindex="-1">
+                                    <i className="bi bi-house"></i>
+                                    <h4 className="d-none d-lg-block">Curtain Brackets</h4>
                                 </a>
                             </li>
                         </ul>
 
-                        <div class="tab-content">
-                            <div class="tab-pane active show" id="tab-1" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                        <div className="tab-content">
+                            <div className="tab-pane active show" id="tab-1" role="tabpanel">
+                                <div className="row">
+                                    <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                         <ul>
                                             <li><i className="bi bi-check-circle-fill"></i>Immerse yourself in luxury with our opulent drape collection.</li>
                                             <li><i className="bi bi-check-circle-fill"></i>From flowing fabrics to intricate patterns, our drapes are designed to add a touch of opulence to your living spaces.</li>
                                             <li><i className="bi bi-check-circle-fill"></i>Choose from a variety of colors, patterns, and textures to create a bespoke look that complements your interior design.</li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_drape} alt="" class="img-fluid" />
+                                    <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                        <img src={curtains_drape} alt="" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab-2" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div className="tab-pane" id="tab-2" role="tabpanel">
+                                <div className="row">
+                                    <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
 
                                         <ul>
                                             <li><i className="bi bi-check-circle-fill"></i>Create an ethereal and light-filled ambiance with our versatile sheer curtains.</li>
@@ -96,14 +96,14 @@ function Curtains(props) {
                                             <li><i className="bi bi-check-circle-fill"></i>Our sheer curtains provide a level of privacy while still allowing ample sunlight to enter your space, maintaining a bright and welcoming environment.</li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_sheer} alt="" class="img-fluid" />
+                                    <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                        <img src={curtains_sheer} alt="" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab-3" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div className="tab-pane" id="tab-3" role="tabpanel">
+                                <div className="row">
+                                    <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                         <ul>
                                             <li><i className="bi bi-check-circle-fill"></i>Experience the perfect blend of style and functionality with our blackout curtains.</li>
                                             <li><i className="bi bi-check-circle-fill"></i>These curtains not only block out unwanted light but also provide enhanced privacy and insulation for a comfortable and serene environment.</li>
@@ -112,14 +112,14 @@ function Curtains(props) {
                                             <li><i className="bi bi-check-circle-fill"></i>Enjoy a quieter and more peaceful environment with our blockout curtains.</li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_blockout} alt="" class="img-fluid" />
+                                    <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                        <img src={curtains_blockout} alt="" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="tab-4" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div className="tab-pane" id="tab-4" role="tabpanel">
+                                <div className="row">
+                                    <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
 
                                         <ul>
                                             <li><i className="bi bi-check-circle-fill"></i>Our curtain rods are crafted with a meticulous
@@ -132,15 +132,15 @@ function Curtains(props) {
                                             <li><i className="bi bi-check-circle-fill"></i>From sturdy metals to elegant wood finishes, our curtain rods are built to withstand the test of time.</li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_rods} alt="" class="img-fluid" />
+                                    <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                        <img src={curtains_rods} alt="" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="tab-pane" id="tab-5" role="tabpanel">
-                                <div class="row">
-                                    <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div className="tab-pane" id="tab-5" role="tabpanel">
+                                <div className="row">
+                                    <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
 
                                         <ul>
                                             <li><i className="bi bi-check-circle-fill"></i>At indec, where we redefine the art of window dressing with our exquisite collection of curtain brackets.</li>
@@ -149,8 +149,8 @@ function Curtains(props) {
                                             <li><i className="bi bi-check-circle-fill"></i>Crafted with an eye for design, each bracket adds a touch of elegance and style to your curtains.</li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_brackets} alt="" class="img-fluid" />
+                                    <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                        <img src={curtains_brackets} alt="" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>

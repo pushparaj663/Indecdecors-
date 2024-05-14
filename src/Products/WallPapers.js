@@ -33,26 +33,26 @@ function WallPapers(props) {
                         </div>
 
                         <div className="row">
-                            <ul class="nav nav-tabs row d-flex" role="tablist">
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Home</h4>
+                            <ul className="nav nav-tabs row d-flex" role="tablist">
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Home</h4>
                                     </a>
                                 </li>
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Office</h4>
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Office</h4>
                                     </a>
                                 </li>
                             </ul>
 
-                            <div class="tab-content">
-                                <div class="tab-pane active show" id="tab-1" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-animate" data-aos="fade-up" data-aos-delay="100">
-                                            <p class="fst-italic">
+                            <div className="tab-content">
+                                <div className="tab-pane active show" id="tab-1" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-animate" data-aos="fade-up" data-aos-delay="100">
+                                            <p className="fst-italic">
                                                 Create a haven of comfort and style with our home wallpaper decorations.
                                                 Whether you're looking to add a pop of color to your living room or create a serene retreat in your bedroom, our wallpapers offer endless possibilities for transforming your space.
                                             </p>
@@ -62,15 +62,15 @@ function WallPapers(props) {
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Dining Area:</span> Add an element of sophistication to your dining space with elegant wallpapers that enhance the dining experience.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center aos-animate" data-aos="fade-up" data-aos-delay="200">
-                                            <img src={features} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center aos-animate" data-aos="fade-up" data-aos-delay="200">
+                                            <img src={features} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-2" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <p class="fst-italic">
+                                <div className="tab-pane" id="tab-2" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <p className="fst-italic">
                                                 Inspire creativity and productivity in your workspace with our office wallpaper decorations.
                                                 From sleek and modern designs to timeless classics, our wallpapers can help set the tone for a
                                                 professional and inviting environment.
@@ -81,8 +81,8 @@ function WallPapers(props) {
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Reception Areas:</span> Create a welcoming first impression with stylish wallpapers that reflect your company's brand and values.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={fmoff} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={fmoff} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>

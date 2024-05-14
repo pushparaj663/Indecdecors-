@@ -3,7 +3,6 @@ import Header from '../Header';
 import Footer from '../Footer';
 import AOS from 'aos';
 import "../../node_modules/aos/dist/aos.css"
-import pvelcro from '../../src/image/mn-velcro-window.jpg'
 import palmwindow from '../../src/image/mn-alm-window.jpg'
 import palmwindow1 from '../../src/image/mn-alm-window.jpg'
 
@@ -23,81 +22,75 @@ function MosquitoNetWindows(props) {
                     <div className="container">
                         <div className="section-title" data-aos="fade-up" data-aos-delay="200">
                             <h2>Mosquito Net Windows</h2>
-                            <p>Mosquito nets are essential for keeping insects like mosquitoes, flies, and other pests out of your living spaces while allowing fresh air and natural light to flow in.
-                                Create a bug-free haven in your home with our range of high-quality mosquito net windows.
+                            <p>Mosquito net windows are essential for keeping insects like mosquitoes, flies, and other pests out of your windows while allowing fresh air and natural light to flow in.
+                                Create a bug-free haven in your home with our range of high-quality aluminum mosquito net windows.
                             </p>
                             <p>
                                 At indec, we understand the importance of a comfortable and insect-free living space,
-                                and our mosquito net windows are designed to offer just that.
+                                and our aluminum mosquito net windows are designed to offer just that.
                             </p>
                         </div>
 
                         <div className="row">
 
-                            <ul class="nav nav-tabs row d-flex" role="tablist">
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Velcro Mosquito Net</h4>
+                            <ul className="nav nav-tabs row d-flex" role="tablist">
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Aluminium Mosquito Net Windows</h4>
                                     </a>
                                 </li>
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Aluminium Mosquito Net Windows</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab" tabindex="-1">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Aluminium Pleated Mosquito Net Windows</h4>
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Aluminium Magnetic Mosquito Net Windows</h4>
                                     </a>
                                 </li>
                             </ul>
 
-                            <div class="tab-content">
-                                <div class="tab-pane active show" id="tab-1" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div className="tab-content">
+                                <div className="tab-pane active show" id="tab-1" role="tabpanel">
+                                    <div className='row'>
+                                        <div className='col-lg'>
+                                            <p style={{ height: '100px' }}>
+                                                Screw mosquito net windows might refer to a more permanent installation method. Instead of relying on magnets, these screens are secured to the window frame using screws or other fasteners.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                             <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i>Our Velcro Mosquito Net comes with an easy-to-apply Velcro strip, making installation a breeze.
-                                                </li>
-                                                <li><i className="bi bi-check-circle-fill"></i>No tools, no fuss – just a simple and secure attachment to your window frame.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>The fine mesh construction of our net allows for optimal airflow, letting you enjoy the refreshing breeze while keeping mosquitoes and insects at bay.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>The net is simple to clean, and the Velcro attachment allows for easy removal whenever needed. </li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Strong Aluminum Construction: </span>Our frames are crafted from high-quality aluminum, ensuring exceptional strength and resistance to corrosion. They are built to withstand the test of time, providing you with reliable insect protection for years to come.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Secure Screw Installation: </span>For those seeking added security and stability, our mosquito net windows feature screw installation. This method ensures a secure fit to your window frame, preventing any gaps that insects could exploit.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Enhanced Security: </span>Screw installation provides added security, giving you peace of mind knowing that your windows are securely protected.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={pvelcro} alt="Velcro Mosquito Net" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={palmwindow} alt="Aluminium Mosquito Net Windows" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-2" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i>Our mosquito net windows are crafted from premium-grade aluminum, ensuring durability and resistance to corrosion.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Experience the ease of operation with our thoughtfully designed windows.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Our aluminum mosquito net windows are designed for minimal maintenance.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>The high-quality materials are resistant to wear and tear, making them an ideal, hassle-free solution for insect protection</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={palmwindow} alt="" class="img-fluid" />
+                                <div className="tab-pane" id="tab-2" role="tabpanel">
+
+                                    <div className='row'>
+                                        <div className='col-lg'>
+                                            <p style={{ height: '100px' }}>
+                                                A magnetic mosquito net likely refers to a type of window screen that uses magnetic strips to seal the edges firmly against the window frame. These screens are convenient because they can easily be removed for cleaning or storage and then reattached magnetically when needed.
+                                            </p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tab-pane" id="tab-3" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                             <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i>The smooth sliding or hinge mechanisms ensure effortless opening and closing, allowing for quick and convenient access.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Maintain a hygienic kitchen and enjoy meals in a pest-free dining space with the protection of our aluminum mosquito net windows.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Upgrade your windows to a new level of elegance and protection with our Aluminum Mosquito Net Windows.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Durable Aluminum Frame: </span>Our windows are crafted with high-quality aluminum frames, ensuring longevity and sturdiness. The frames are resistant to rust and corrosion, making them ideal for long-term use.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Magnetic Closure: </span>Say goodbye to heavy installations! Our innovative magnetic closure system allows for easy installation and removal of the mosquito net screens. Simply attach the magnetic strips to your window frame, and the screen will securely snap into place.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Customizable Options: </span>We understand that every window is unique. That's why we offer customizable options to ensure a perfect fit for your windows. Whether you have standard-sized windows or custom shapes, we can tailor our magnetic mosquito net screens to meet your specific requirements.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={palmwindow1} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={palmwindow1} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +124,7 @@ function MosquitoNetWindows(props) {
                                     <div className="box" data-aos="zoom-in" data-aos-duration="3000">
                                         <h4 className="title">Durability and Longevity</h4>
                                         <p className="description">
-                                            We prioritize durability to ensure that your mosquito net windows stand the test of time. Built with quality craftsmanship and sturdy materials, our windows provide long-lasting insect protection for your home.
+                                            With robust aluminum frames and secure screw or with magnet installation, our mosquito net windows are built to last, offering reliable insect protection for years to come.
                                         </p>
                                     </div>
                                 </div>

@@ -1,10 +1,20 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import './About.css';
 import aboutimg from '../src/image/about-img.jpg'
 import Footer from './Footer';
 import Header from './Header';
+import "../node_modules/aos/dist/aos.css"
+import AOS from 'aos'
 
 function About(props) {
+    useEffect(() => {
+        AOS.init(
+            {
+
+            }
+        );
+    }, [])
+
 
     return (
         <>
@@ -15,23 +25,23 @@ function About(props) {
                 </div>
 
                 <section id="about" className="aos-init aos-animate">
-                    <div className="container" data-aos="fade-up">
+                    <div className="container" data-aos="fade-up" data-aos-delay="300">
                         <div className='row'>
                             <div className="col">
                                 <h2>Who we are</h2>
                                 <p>Welcome to indec, where creativity meets functionality,
-                                    and every space tells a unique story. We are not just interior designers;
+                                    and every space tells a unique story. We are not just interior decorators;
                                     we are storytellers, transforming environments into captivating narratives
                                     that reflect the essence of those who inhabit them.</p>
 
                             </div>
                         </div>
-                        <div className="row" data-aos-delay="400">
-                            <div className="col-lg-6 about-img" data-aos="fade-right" data-aos-delay="400">
+                        <div className="row" data-aos-delay="300">
+                            <div className="col-lg-6 about-img" data-aos="fade-right">
                                 <img src={aboutimg} alt="" />
                             </div>
 
-                            <div className="col-lg-6 content" data-aos="fade-left" data-aos-delay="400">
+                            <div className="col-lg-6 content" data-aos="fade-left">
                                 <ul>
                                     <li><i className="bi bi-check-circle"></i>
                                         We approach each project with a holistic perspective,

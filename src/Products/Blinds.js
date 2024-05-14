@@ -32,31 +32,31 @@ function Blinds(props) {
                         </div>
 
                         <div className="row">
-                            <ul class="nav nav-tabs row d-flex" role="tablist">
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Roller Blinds</h4>
+                            <ul className="nav nav-tabs row d-flex" role="tablist">
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Roller Blinds</h4>
                                     </a>
                                 </li>
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Vertical Blinds</h4>
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Vertical Blinds</h4>
                                     </a>
                                 </li>
-                                <li class="nav-item col" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab" tabindex="-1">
-                                        <i class="bi bi-house"></i>
-                                        <h4 class="d-none d-lg-block">Zebra Blinds</h4>
+                                <li className="nav-item col" role="presentation">
+                                    <a className="nav-link" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab" tabindex="-1">
+                                        <i className="bi bi-house"></i>
+                                        <h4 className="d-none d-lg-block">Zebra Blinds</h4>
                                     </a>
                                 </li>
                             </ul>
 
-                            <div class="tab-content">
-                                <div class="tab-pane active show" id="tab-1" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <div className="tab-content">
+                                <div className="tab-pane active show" id="tab-1" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                             <ul>
                                                 <li><i className="bi bi-check-circle-fill"></i>Our blockout roller blinds are designed to block out light effectively, providing you with the perfect environment for relaxation, sleep, or entertainment.</li>
                                                 <li><i className="bi bi-check-circle-fill"></i>Create a private sanctuary with our blockout roller blinds.</li>
@@ -65,14 +65,14 @@ function Blinds(props) {
                                                 <li><i className="bi bi-check-circle-fill"></i>The thick, blockout materials of our roller blinds help absorb sound, reducing external noise and creating a tranquil atmosphere.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={features} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={features} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-2" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                <div className="tab-pane" id="tab-2" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
 
                                             <ul>
                                                 <li><i className="bi bi-check-circle-fill"></i>Explore the versatility of vertical blinds, a timeless choice that provides excellent light control and privacy.</li>
@@ -80,14 +80,14 @@ function Blinds(props) {
                                                 <li><i className="bi bi-check-circle-fill"></i>Our vertical blinds are designed for convenience.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={features} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={features} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab-3" role="tabpanel">
-                                    <div class="row">
-                                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                <div className="tab-pane" id="tab-3" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                             <ul>
                                                 <li><i className="bi bi-check-circle-fill"></i>Zebra blinds feature a dual-layered fabric design that combines alternating sheer and solid bands.</li>
                                                 <li><i className="bi bi-check-circle-fill"></i>This innovative construction allows you to seamlessly transition between privacy and light control with a simple adjustment.</li>
@@ -96,8 +96,8 @@ function Blinds(props) {
                                                 <li><i className="bi bi-check-circle-fill"></i>Elevate your interior design with our extensive range of colors and patterns. From neutral tones to bold designs, our zebra blinds are available in options that cater to various aesthetic preferences.</li>
                                             </ul>
                                         </div>
-                                        <div class="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={features} alt="" class="img-fluid" />
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={features} alt="" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
