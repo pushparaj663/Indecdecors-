@@ -3,9 +3,8 @@ import Header from '../Header';
 import Footer from '../Footer';
 import AOS from 'aos';
 import "../../node_modules/aos/dist/aos.css"
-import mn_main_door from '../../src/image/mn-main-door1.jpg'
-import mn_main_door_pleated from '../../src/image/IMG_0831.jpg'
-import { height } from '@fortawesome/free-regular-svg-icons/faAddressBook';
+import doorhinged from '../../src/image/door-hinged.jpg'
+import doorsliding from '../../src/image/door-sliding.jpg'
 
 function MosquitoNetDoors(props) {
     useEffect(() => {
@@ -71,7 +70,7 @@ function MosquitoNetDoors(props) {
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={mn_main_door_pleated} alt="" className="img-fluid" />
+                                            <img src={doorsliding} alt="Sliding/Pleated Mosquito Net Doors" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +97,7 @@ function MosquitoNetDoors(props) {
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={mn_main_door} alt="" className="img-fluid" />
+                                            <img src={doorhinged} alt="Hinged Mosquito Net Doors" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>

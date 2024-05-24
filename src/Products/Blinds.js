@@ -1,13 +1,12 @@
 import { React, useEffect } from 'react';
 import '../About.css'
-import blzebra from '../../src/image/bl-zebra.jpg'
-import blblackout from '../../src/image/pi-blinds.jpg'
-import blvertical from '../../src/image/bl-vertical.jpg'
+import blindsblackout from '../../src/image/blinds-blackout.jpg'
+import blindszebra from '../../src/image/blinds-zebra.jpg'
+import blindsvertical from '../../src/image/blinds-vertical.jpg'
 import Footer from '../Footer';
 import Header from '../Header';
 import AOS from 'aos';
 import "../../node_modules/aos/dist/aos.css"
-import features from '../../src/image/features-2.png'
 
 function Blinds(props) {
     useEffect(() => {
@@ -23,11 +22,14 @@ function Blinds(props) {
                     <div className="container">
                         <div className="section-title" data-aos="fade-up" data-aos-delay="200">
                             <h2>Blinds</h2>
-                            <p>Blinds are window coverings that can be adjusted to control the amount of light,
-                                privacy, and visibility in a room.  At  indec, we are provided three types of blinds such that RollerBlinds, Vertical Blinds and Zebra Blinds.
-                                Overall blinds provide a combination of functionality, style, and practicality, allowing you to control
-                                your environment while enhancing the aesthetics of your space and practicality, making them a popular
-                                choice for window coverings in many homes and offices.
+                            <p>At indec, we specialize in providing high-quality blinds that enhance
+                                the beauty and functionality of your living spaces. Whether you're looking for privacy,
+                                light control, or an aesthetic upgrade, our extensive collection of blinds has something
+                                to suit every taste and need. We are provided different kinds of blinds with many features.
+                            </p>
+                            <p>
+                                At indec, we understand that every home and office is unique. That’s why we offer a variety of customization options such
+                                that Custom Measurements, Fabric and Color Selection and Motorization
                             </p>
                         </div>
 
@@ -36,7 +38,7 @@ function Blinds(props) {
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
                                         <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Roller Blinds</h4>
+                                        <h4 className="d-none d-lg-block">Roller/Blackout Blinds</h4>
                                     </a>
                                 </li>
                                 <li className="nav-item col" role="presentation">
@@ -56,55 +58,105 @@ function Blinds(props) {
                             <div className="tab-content">
                                 <div className="tab-pane active show" id="tab-1" role="tabpanel">
                                     <div className="row">
+                                        <div className="col-lg">
+                                            <p style={{ height: '150px' }}>
+                                                <p>Both roller and blackout blinds offer unique benefits,
+                                                    making them suitable for different needs and environments.</p>
+
+                                                <p>Roller blinds are perfect for spaces where adjustable light
+                                                    control and aesthetic variety are important.</p>
+
+                                                <p>Blackout blinds are essential for rooms that require complete darkness,
+                                                    enhanced privacy, and additional energy efficiency. Choosing the right
+                                                    type depends on your specific needs and the function of the room where
+                                                    the blinds will be installed.</p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="row">
                                         <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <h5 style={{ color: "#1977cc" }}>Roller Blinds</h5>
                                             <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i>Our blockout roller blinds are designed to block out light effectively, providing you with the perfect environment for relaxation, sleep, or entertainment.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Create a private sanctuary with our blockout roller blinds.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Whether in bedrooms, media rooms, or offices, these blinds offer a high level of privacy, making them an ideal choice for spaces where seclusion is essential.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>These blinds help regulate indoor temperatures, keeping your space cooler in the summer and warmer in the winter, contributing to energy efficiency.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>The thick, blockout materials of our roller blinds help absorb sound, reducing external noise and creating a tranquil atmosphere.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Simplicity and Elegance: </span>Roller blinds provide a sleek, minimalist look that complements any room decor.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Light Control: </span>Can be adjusted to allow varying amounts of light to filter through.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Applications: </span>Suitable for living rooms, kitchens, home offices, and other areas where adjustable light control is desired without complete darkness.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Durability: </span>Made from durable fabrics that resist fading and wear, ensuring long-lasting use.</li>
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={features} alt="" className="img-fluid" />
+                                            <img src={blindsblackout} alt="Blackout Roller Blinds" className="img-fluid" />
                                         </div>
                                     </div>
+
+                                    <div className="row">
+                                        <h5 style={{ color: "#1977cc" }}>Blackout Blinds</h5>
+                                        <ul>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Complete Light Blocking: </span>The blackout fabric completely blocks out light, making them perfect for sleeping and ensuring privacy.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Energy Efficiency: </span>Blackout blinds help to insulate windows, keeping rooms cooler in the summer and warmer in the winter, reducing energy costs.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Noise Reduction: </span>The thick fabric can also help to reduce outside noise, creating a quieter, more peaceful environment.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Complete Privacy: </span>Provides total privacy when closed, making them ideal for bathrooms and street-facing windows.</li>
+                                        </ul>
+                                    </div>
+
+
                                 </div>
                                 <div className="tab-pane" id="tab-2" role="tabpanel">
                                     <div className="row">
-                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-
-                                            <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i>Explore the versatility of vertical blinds, a timeless choice that provides excellent light control and privacy.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Our collection offers a variety of colors and textures to complement any interior style.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Our vertical blinds are designed for convenience.</li>
-                                            </ul>
-                                        </div>
-                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={features} alt="" className="img-fluid" />
+                                        <div className="col-lg">
+                                            <p style={{ marginBottom: '30px' }}>
+                                                Vertical blinds are a stylish and practical window treatment option,
+                                                especially suited for large windows and sliding doors.
+                                                At indec, we offer a diverse range of vertical blinds designed
+                                                to enhance your living spaces with both functionality and aesthetic appeal.
+                                            </p>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="tab-pane" id="tab-3" role="tabpanel">
                                     <div className="row">
                                         <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                             <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i>Zebra blinds feature a dual-layered fabric design that combines alternating sheer and solid bands.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>This innovative construction allows you to seamlessly transition between privacy and light control with a simple adjustment.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Zebra blinds enable you to create the perfect ambiance by adjusting the sheer and solid bands, providing you with a range of lighting options throughout the day.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Zebra blinds offer a harmonious balance of privacy and style. When closed, the solid bands ensure complete privacy, while the sheer bands allow soft, diffused light to filter into your space.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i>Elevate your interior design with our extensive range of colors and patterns. From neutral tones to bold designs, our zebra blinds are available in options that cater to various aesthetic preferences.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Living Rooms: </span> Ideal for large picture windows, allowing you to adjust natural light and maintain privacy.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Sliding Doors: </span> Perfect for patio or balcony doors, providing easy access while offering excellent light control.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Bedrooms: </span>Ensure privacy and block out light for a restful sleep environment.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Offices: </span>Create a professional look while controlling glare and light for a comfortable working environment.</li>
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={features} alt="" className="img-fluid" />
+                                            <img src={blindsvertical} alt="Vertical Roller Blinds" className="img-fluid" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className="tab-pane" id="tab-3" role="tabpanel">
+                                    <div className="row">
+                                        <div className="col-lg">
+                                            <p style={{ marginBottom: '30px' }}>
+                                                Zebra blinds, also known as dual shades or layered shades,
+                                                are a modern window treatment option that combines the
+                                                functionality of traditional blinds with the softness of fabric shades.
+                                                These innovative blinds feature alternating sheer and solid fabric stripes,
+                                                allowing you to control light and privacy with ease.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                                            <ul>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Stylish Ambiance: </span>Enhance your living room with elegant zebra blinds that allow you to adjust the light for a cozy and inviting atmosphere.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Privacy and Comfort: </span>Ensure a good night’s sleep with the ability to block out light completely, while still enjoying natural light during the day.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Productivity and Focus: </span>Control glare on your computer screen and create a comfortable working environment with adjustable light filtering.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Modern Design: </span>Zebra blinds offer a sleek and contemporary look that complements any decor style, from modern to traditional.</li>
+                                                <li><i className="bi bi-check-circle-fill"></i><span>Simple Operation: </span>Operate easily with a continuous cord loop, chain, or motorized options for added convenience.</li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
+                                            <img src={blindszebra} alt="Zebra Blinds" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <section id="Products" className="Products">
+                        <section id="Products" className="Products" style={{ paddingTop: '40px' }}>
                             <div className="row gy-4">
                                 <div className="col-lg-6">
                                     <div className="box" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000">

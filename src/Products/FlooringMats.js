@@ -3,10 +3,8 @@ import Footer from '../Footer';
 import Header from '../Header';
 import AOS from 'aos';
 import "../../node_modules/aos/dist/aos.css"
-import mn_main_door1 from '../../src/image/p-alm-plt-window.jpg'
-import aboutimg from '../../src/image/about-img.jpg'
-import features from '../../src/image/fm-home.jpg'
-import fmoff from '../../src/image/fm-off.jpg'
+import flooringresidential from '../../src/image/flooring-residential.jpg'
+import flooringcommercial from '../../src/image/flooring-commercial.jpg'
 
 
 function FlooringMats(props) {
@@ -26,7 +24,7 @@ function FlooringMats(props) {
                 <section id="flooringmat" className="product-items section-bg">
                     <div className="container aos-animate" data-aos="fade-up" data-aos-delay="100">
                         <div className="section-title">
-                            <h2>Flooring Mat</h2>
+                            <h2>Vinyl Flooring</h2>
                             <p>Elevate your home and office environments with our exquisite flooring mat decorations.
                                 Designed to marry functionality with aesthetics, our flooring mats offer comfort, style, and durability for every space.
                             </p>
@@ -37,25 +35,30 @@ function FlooringMats(props) {
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
                                         <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Home</h4>
+                                        <h4 className="d-none d-lg-block">Residential Vinyl Flooring</h4>
                                     </a>
                                 </li>
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
                                         <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Office</h4>
+                                        <h4 className="d-none d-lg-block">Commercial Vinyl Flooring</h4>
                                     </a>
                                 </li>
                             </ul>
 
                             <div className="tab-content">
                                 <div className="tab-pane active show" id="tab-1" role="tabpanel">
-                                    <div className="row">
-                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-animate" data-aos="fade-up" data-aos-delay="100">
-                                            <p className="fst-italic">
+                                    <div className='row'>
+                                        <div className='col-lg'>
+                                            <p style={{ height: '70px' }}>
                                                 Transform your living spaces into cozy retreats with our home flooring mat decorations.
                                                 Whether you're looking to add warmth to your bedroom or create a welcoming entryway, our mats provide the perfect blend of comfort and style.
                                             </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 aos-animate" data-aos="fade-up" data-aos-delay="100">
                                             <ul>
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Living Room:</span>Enhance the comfort of your living room with plush and inviting flooring mats that complement your decor and add a touch of luxury.</li>
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Bedroom:</span> Create a serene oasis with soft and cozy mats that greet you with warmth and comfort every morning.</li>
@@ -63,17 +66,22 @@ function FlooringMats(props) {
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center aos-animate" data-aos="fade-up" data-aos-delay="200">
-                                            <img src={features} alt="" className="img-fluid" />
+                                            <img src={flooringresidential} alt="Residential vinyl Flooring" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="tab-pane" id="tab-2" role="tabpanel">
-                                    <div className="row">
-                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <p className="fst-italic">
+                                    <div className='row'>
+                                        <div className='col-lg'>
+                                            <p style={{ height: '70px' }}>
                                                 Set the stage for productivity and professionalism in your workplace with our office flooring mat decorations.
                                                 From ergonomic support to sleek aesthetics, our mats are designed to enhance the functionality and style of any office space.
                                             </p>
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                             <ul>
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Workstations:</span>Provide ergonomic support for your employees with anti-fatigue mats that reduce discomfort and fatigue during long hours of work.</li>
                                                 <li><i className="bi bi-check-circle-fill"></i><span>Meeting Rooms:</span>Add a touch of sophistication to your meeting rooms with sleek and stylish mats that complement your office decor and create a professional atmosphere.</li>
@@ -81,14 +89,14 @@ function FlooringMats(props) {
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={fmoff} alt="" className="img-fluid" />
+                                            <img src={flooringcommercial} alt="Commercial Vinyl Flooring" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <section id="Products" className="Products">
+                        <section id="Products" className="Products" style={{ paddingTop: '40px' }}>
                             <div className="row gy-4">
                                 <div className="col-lg-6">
                                     <div className="box aos-animate" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000">

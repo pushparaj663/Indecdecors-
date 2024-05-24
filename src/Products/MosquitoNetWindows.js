@@ -3,8 +3,8 @@ import Header from '../Header';
 import Footer from '../Footer';
 import AOS from 'aos';
 import "../../node_modules/aos/dist/aos.css"
-import palmwindow from '../../src/image/mn-alm-window.jpg'
-import palmwindow1 from '../../src/image/mn-alm-window.jpg'
+import windowscrew from '../../src/image/window-screw.jpg'
+import windowmagnetic from '../../src/image/window-screw.jpg'
 
 function MosquitoNetWindows(props) {
     useEffect(() => {
@@ -67,7 +67,7 @@ function MosquitoNetWindows(props) {
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={palmwindow} alt="Aluminium Mosquito Net Windows" className="img-fluid" />
+                                            <img src={windowscrew} alt="Aluminium Mosquito Net Windows" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +90,7 @@ function MosquitoNetWindows(props) {
                                             </ul>
                                         </div>
                                         <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={palmwindow1} alt="" className="img-fluid" />
+                                            <img src={windowmagnetic} alt="Aluminium Magnetic Mosquito Net Windows" className="img-fluid" />
                                         </div>
                                     </div>
                                 </div>

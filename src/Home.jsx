@@ -16,26 +16,26 @@ function Home(props) {
                 <div id="carousel" className="carousel carousel-fade slide carousel-div" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active" >
-                            <img src={require('../src/image/banner-1.jpg')} className="d-block w-100" alt='' />
+                            <img src={require('../src/image/banner-1.jpg')} className="d-block w-100" alt='Your Vision, Our Expertise' />
                             <div className="carousel-caption d-none d-md-block overlay">
                                 <h1>Your Vision, Our Expertise</h1>
                                 {/* <p>Some representative placeholder content for the first slide.</p> */}
                             </div>
                         </div>
                         <div className="carousel-item" >
-                            <img src={require('../src/image/banner-2.jpg')} alt='' className="d-block w-100" />
+                            <img src={require('../src/image/banner-2.jpg')} alt='Crafting Beautiful Interiors, One Room at a Time' className="d-block w-100" />
                             <div className="carousel-caption d-none d-md-block overlay">
                                 <h1>Crafting Beautiful Interiors, One Room at a Time</h1>
                             </div>
                         </div>
                         <div className="carousel-item" >
-                            <img src={require('../src/image/banner-3.jpg')} alt='' className="d-block w-100" />
+                            <img src={require('../src/image/banner-3.jpg')} alt='Elevating Spaces, Elevating Lives' className="d-block w-100" />
                             <div className="carousel-caption d-none d-md-block overlay">
                                 <h1>Elevating Spaces, Elevating Lives</h1>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src={require('../src/image/banner-4.jpg')} alt='' className="d-block w-100" />
+                            <img src={require('../src/image/banner-4.jpg')} alt='Designing Your Story, One Detail at a Time' className="d-block w-100" />
                             <div className="carousel-caption d-none d-md-block overlay">
                                 <h1>Designing Your Story, One Detail at a Time</h1>
                             </div>

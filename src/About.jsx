@@ -1,6 +1,6 @@
 import { React, useEffect } from 'react';
 import './About.css';
-import aboutimg from '../src/image/about-img.jpg'
+import aboutimg from '../src/image/whoweare.jpg'
 import Footer from './Footer';
 import Header from './Header';
 import "../node_modules/aos/dist/aos.css"
@@ -10,7 +10,8 @@ function About(props) {
     useEffect(() => {
         AOS.init(
             {
-
+                duration: 700,
+                easing: "ease-out-cubic",
             }
         );
     }, [])
@@ -24,8 +25,8 @@ function About(props) {
                         <Header />}
                 </div>
 
-                <section id="about" className="aos-init aos-animate">
-                    <div className="container" data-aos="fade-up" data-aos-delay="300">
+                <section id="about" className="aos-animate" data-aos-easing="ease-in-sine">
+                    <div className="container" data-aos="fade-up">
                         <div className='row'>
                             <div className="col">
                                 <h2>Who we are</h2>
@@ -36,9 +37,9 @@ function About(props) {
 
                             </div>
                         </div>
-                        <div className="row" data-aos-delay="300">
+                        <div className="row" data-aos-easing="ease-in-sine">
                             <div className="col-lg-6 about-img" data-aos="fade-right">
-                                <img src={aboutimg} alt="" />
+                                <img src={aboutimg} alt="Who we are" />
                             </div>
 
                             <div className="col-lg-6 content" data-aos="fade-left">

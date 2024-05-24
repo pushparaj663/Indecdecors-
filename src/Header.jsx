@@ -24,6 +24,24 @@ function Header(props) {
         }
     };
 
+    const downloadTxtFile = () => {
+        // text content
+        const texts = ["line 1", "line 2", "line 3"]
+
+        // file object
+        const file = new Blob(texts, { type: 'text/plain' });
+
+        // anchor link
+        const element = document.createElement("a");
+        element.href = URL.createObjectURL(file);
+        element.download = "http://localhost:3000/Brochure/indec_brouchure.pdf";
+
+        // simulate link click
+        document.body.appendChild(element); // Required for this to work in FireFox
+        element.click();
+    }
+
+
     return (
         <>
             <header id="header" className="d-flex align-items-center">
@@ -32,7 +50,6 @@ function Header(props) {
                     <div id="logo">
                         <h1><a href="/">indec</a></h1>
                     </div>
-
                     <nav id="navbar" className={`navbar ${isMobileNavOpen ? 'navbar-mobile' : ''}`}>
                         <ul>
                             <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">What we do</a></li>
@@ -49,26 +66,27 @@ function Header(props) {
                                 </a>
                                 {isProductsDropdownOpen && isMobileNavOpen ?
                                     <ul>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/netwindow" ? 'active' : ''}`} href="/product/netwindow">Mosquito Net Windows</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/netdoors" ? 'active' : ''}`} href="/product/netdoors">Mosquito Net Doors</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtain" ? 'active' : ''}`} href="/product/curtain">Curtains</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetwindows" ? 'active' : ''}`} href="/product/mosquitonetwindows">Mosquito Net Windows</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetdoors" ? 'active' : ''}`} href="/product/mosquitonetdoors">Mosquito Net Doors</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtains" ? 'active' : ''}`} href="/product/curtains">Curtains</a></li>
                                         <li><a className={`nav-link nav_home ${window.location.pathname === "/product/blinds" ? 'active' : ''}`} href="/product/blinds">Blinds</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/flooringmats" ? 'active' : ''}`} href="/product/flooringmats">Flooring Mat</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpaper" ? 'active' : ''}`} href="/product/wallpaper">WallPapers for Walls</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/vinylflooring" ? 'active' : ''}`} href="/product/vinylflooring">Vinyl Flooring</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpapers" ? 'active' : ''}`} href="/product/wallpapers">WallPapers for Walls</a></li>
                                     </ul>
                                     : ''}
                                 {!isProductsDropdownOpen && !isMobileNavOpen ?
                                     <ul>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/netwindow" ? 'active' : ''}`} href="/product/netwindow">Mosquito Net Windows</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/netdoors" ? 'active' : ''}`} href="/product/netdoors">Mosquito Net Doors</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtain" ? 'active' : ''}`} href="/product/curtain">Curtains</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetwindows" ? 'active' : ''}`} href="/product/mosquitonetwindows">Mosquito Net Windows</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetdoors" ? 'active' : ''}`} href="/product/mosquitonetdoors">Mosquito Net Doors</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtains" ? 'active' : ''}`} href="/product/curtains">Curtains</a></li>
                                         <li><a className={`nav-link nav_home ${window.location.pathname === "/product/blinds" ? 'active' : ''}`} href="/product/blinds">Blinds</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/flooringmats" ? 'active' : ''}`} href="/product/flooringmats">Flooring Mat</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpaper" ? 'active' : ''}`} href="/product/wallpaper">WallPapers for Walls</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/vinylflooring" ? 'active' : ''}`} href="/product/vinylflooring">Vinyl Flooring</a></li>
+                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpapers" ? 'active' : ''}`} href="/product/wallpapers">WallPapers for Walls</a></li>
                                     </ul>
                                     : ''}
                             </li>
                             <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">Contact</a></li>
+                            <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/" onClick={downloadTxtFile}>Brochure</a></li>
                         </ul>
                         {/* <i className="bi bi-list mobile-nav-toggle"></i> */}
                         <i className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`} style={{ color: isMobileNavOpen ? 'white' : '' }}></i>

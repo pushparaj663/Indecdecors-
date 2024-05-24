@@ -2,12 +2,13 @@ import React from "react";
 import "./Products.css";
 import Header from "./Header";
 import Footer from "./Footer";
-import pcurtain from "../src/image/p-curtains.jpg";
-import pblinds from "../src/image/p-blinds.jpg";
-import pwallpapers from "../src/image/p-wallpapers.jpg";
-import pflooringmat from "../src/image/p-flooringmat.jpg";
-import pmwindow from "../src/image/p-m-window.jpg";
-import pmdoor from "../src/image/p-m-door.jpg";
+import productswindow from "../src/image/products-window.jpg";
+import productsdoor from "../src/image/products-door.jpg";
+import productscurtain from "../src/image/products-curtains.jpg";
+import productsblinds from "../src/image/products-blinds.jpg";
+import productsvinylflooring from "../src/image/products-vinylflooring.jpg";
+import productswallpapers from "../src/image/products-wallpapers.jpg";
+
 
 function Products(props) {
   return (
@@ -34,11 +35,11 @@ function Products(props) {
               className="col-lg-4 col-12 product-item filter-web mt-3"
               style={{ position: "relative" }}
             >
-              <img src={pmwindow} className="img-fluid" alt="" />
+              <img src={productswindow} className="img-fluid" alt="Mosquito Net Windows" />
               <div className="product-info">
                 <h4>Mosquito Net Windows</h4>
                 <a
-                  href="/product/netwindow"
+                  href="/product/mosquitonetwindows"
                   className="details-link"
                   title="More Details"
                 >
@@ -50,11 +51,11 @@ function Products(props) {
               className="col-lg-4 col-12 product-item filter-web mt-3"
               style={{ position: "relative" }}
             >
-              <img src={pmdoor} className="img-fluid" alt="" />
+              <img src={productsdoor} className="img-fluid" alt="Mosquito Net Doors" />
               <div className="product-info">
                 <h4>Mosquito Net Doors</h4>
                 <a
-                  href="/product/netdoors"
+                  href="/product/mosquitonetdoors"
                   className="details-link"
                   title="More Details"
                 >
@@ -66,11 +67,11 @@ function Products(props) {
               className="col-lg-4 col-12 product-item filter-web mt-3"
               style={{ position: "relative" }}
             >
-              <img src={pcurtain} className="img-fluid" alt="" />
+              <img src={productscurtain} className="img-fluid" alt="Curtains" />
               <div className="product-info">
                 <h4>Curtains</h4>
                 <a
-                  href="/product/curtain"
+                  href="/product/curtains"
                   className="details-link"
                   title="More Details"
                 >
@@ -84,7 +85,7 @@ function Products(props) {
               className="col-lg-4 col-12 product-item filter-web mt-3"
               style={{ position: "relative" }}
             >
-              <img src={pblinds} className="img-fluid" alt="" />
+              <img src={productsblinds} className="img-fluid" alt="Blinds" />
               <div className="product-info">
                 <h4>Blinds</h4>
                 <a
@@ -100,11 +101,11 @@ function Products(props) {
               className="col-lg-4 col-12 product-item filter-web mt-3"
               style={{ position: "relative" }}
             >
-              <img src={pflooringmat} className="img-fluid" alt="" />
+              <img src={productsvinylflooring} className="img-fluid" alt="Vinyl Flooring" />
               <div className="product-info">
                 <h4>Flooring Mat</h4>
                 <a
-                  href="/product/flooringmats"
+                  href="/product/vinylflooring"
                   className="details-link"
                   title="More Details"
                 >
@@ -115,11 +116,11 @@ function Products(props) {
 
             <div className="col-lg-4 col-12 product-item filter-web mt-3"
               style={{ position: "relative" }}>
-              <img src={pwallpapers} className="img-fluid" alt="" />
+              <img src={productswallpapers} className="img-fluid" alt="Wall Papers" />
               <div className="product-info">
                 <h4>Wallpapers for Walls</h4>
                 <a
-                  href="/product/wallpaper"
+                  href="/product/wallpapers"
                   className="details-link"
                   title="More Details"
                 >

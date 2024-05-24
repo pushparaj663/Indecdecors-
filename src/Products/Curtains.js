@@ -1,14 +1,12 @@
 import { React, useEffect } from 'react';
-import curtains_drape from '../../src/image/curtains-drapes.jpg'
-import curtains_sheer from '../../src/image/curtains-sheer.jpg' //pi-sheers
-import curtains_blockout from '../../src/image/curtains-blockout.jpg'
-import curtains_rods from '../../src/image/curtains-rods.jpg'
-import curtains_brackets from '../../src/image/curtains-brackets.jpg'
-import features from '../../src/image/features-2.png'
+import curtainsdrape from '../../src/image/curtains-drapes.jpg'
+import curtainssheer from '../../src/image/curtains-sheer.jpg'
+import curtainsblockout from '../../src/image/curtains-blockout.jpg'
 import Footer from '../Footer';
 import Header from '../Header';
 import AOS from 'aos';
 import "../../node_modules/aos/dist/aos.css"
+import CurtainRod from './CurtainRod';
 
 function Curtains(props) {
     useEffect(() => {
@@ -30,12 +28,6 @@ function Curtains(props) {
                                 Whether you prefer sheer elegance, bold prints, or classic solids, our curtains are crafted to elevate the ambiance of your space.</p>
                         </div>
 
-                        <div className='row'>
-                            <div className='col'>
-                                <h4>Our Curtain Collections</h4>
-                            </div>
-                        </div>
-
                         <ul className="nav nav-tabs row d-flex" role="tablist">
                             <li className="nav-item col" role="presentation">
                                 <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
@@ -55,110 +47,116 @@ function Curtains(props) {
                                     <h4 className="d-none d-lg-block">Blackout Curtains</h4>
                                 </a>
                             </li>
-                            <li className="nav-item col" role="presentation">
-                                <a className="nav-link" data-bs-toggle="tab" href="#tab-4" aria-selected="false" role="tab" tabindex="-1">
-                                    <i className="bi bi-house"></i>
-                                    <h4 className="d-none d-lg-block">Curtain Rods</h4>
-                                </a>
-                            </li>
-                            <li className="nav-item col" role="presentation">
-                                <a className="nav-link" data-bs-toggle="tab" href="#tab-5" aria-selected="false" role="tab" tabindex="-1">
-                                    <i className="bi bi-house"></i>
-                                    <h4 className="d-none d-lg-block">Curtain Brackets</h4>
-                                </a>
-                            </li>
                         </ul>
 
                         <div className="tab-content">
                             <div className="tab-pane active show" id="tab-1" role="tabpanel">
+                                <div className='row'>
+                                    <div className='col-lg'>
+                                        <p style={{ height: '100px' }}>
+                                            Our luxurious drape curtains are designed to add a touch of elegance and sophistication to any room. Made from the finest materials, these curtains offer rich textures and vibrant colors that enhance the aesthetic appeal of your interiors. Whether you’re looking to create a classic, modern, or eclectic look, our collection has something to suit every taste.
+                                        </p>
+                                    </div>
+                                </div>
                                 <div className="row">
                                     <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
                                         <ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>Immerse yourself in luxury with our opulent drape collection.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>From flowing fabrics to intricate patterns, our drapes are designed to add a touch of opulence to your living spaces.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Choose from a variety of colors, patterns, and textures to create a bespoke look that complements your interior design.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Living Rooms: </span>Create a focal point with rich, opulent drapes that complement your furniture and decor.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Bedrooms: </span>Add a touch of romance and luxury, ensuring a restful and serene environment.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Dining Rooms: </span>Impress your guests with elegant drapes that set the tone for formal dinners and gatherings.</li>
                                         </ul>
                                     </div>
                                     <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_drape} alt="" className="img-fluid" />
+                                        <img src={curtainsdrape} alt="Luxurious Drape" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>
                             <div className="tab-pane" id="tab-2" role="tabpanel">
+                                <div className='row'>
+                                    <div className='col-lg'>
+                                        <p style={{ height: '100px' }}>
+                                            Our versatile sheer curtains are perfect for creating a light and airy ambiance in any space. These curtains allow natural light to filter through while maintaining privacy, making them ideal for layering with other types of window treatments. The soft, flowing fabrics add a touch of grace and elegance to your windows.
+                                        </p>
+                                    </div>
+                                </div>
                                 <div className="row">
                                     <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
 
                                         <ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>Create an ethereal and light-filled ambiance with our versatile sheer curtains.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>These delicate fabrics gently filter light, adding a soft, romantic ambiance to your living spaces and elegant touch to your windows.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Their lightweight and transparent nature allow them to blend seamlessly with your decor, making rooms appear larger and more inviting.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Achieve the perfect balance between privacy and natural light.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Our sheer curtains provide a level of privacy while still allowing ample sunlight to enter your space, maintaining a bright and welcoming environment.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Living Rooms: </span>Soften the natural light entering the room, creating a warm and inviting atmosphere.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Bedrooms: </span>Maintain privacy while allowing morning light to gently wake you up.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Kitchens: </span>Enhance the brightness of your kitchen while ensuring privacy from the outside.</li>
                                         </ul>
                                     </div>
                                     <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_sheer} alt="" className="img-fluid" />
+                                        <img src={curtainssheer} alt="Versatile Sheers" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>
                             <div className="tab-pane" id="tab-3" role="tabpanel">
-                                <div className="row">
-                                    <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                        <ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>Experience the perfect blend of style and functionality with our blackout curtains.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>These curtains not only block out unwanted light but also provide enhanced privacy and insulation for a comfortable and serene environment.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>These curtains are designed to block out external light completely, providing you with a serene and darkened environment, perfect for quality sleep or home theater setups.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Whether it's in the bedroom, living room, or office, these curtains act as a reliable barrier, ensuring that your personal space remains private and shielded from prying eyes.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Enjoy a quieter and more peaceful environment with our blockout curtains.</li>
-                                        </ul>
-                                    </div>
-                                    <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_blockout} alt="" className="img-fluid" />
+                                <div className='row'>
+                                    <div className='col-lg'>
+                                        <p style={{ height: '100px' }}>
+                                            Our blockout curtains are the ultimate solution for those who require complete privacy and control over the amount of light entering a room. These curtains are perfect for creating a dark, peaceful environment, ideal for bedrooms, home theaters, and any space where light control is crucial.
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="tab-pane" id="tab-4" role="tabpanel">
                                 <div className="row">
                                     <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-
                                         <ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>Our curtain rods are crafted with a meticulous
-                                                attention to detail, featuring elegant designs and finishes that add a
-                                                touch of sophistication to any room.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Our curtain rods come with a variety of customization options,
-                                                allowing you to choose the perfect length, style, and finish for
-                                                your curtains.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>We prioritize quality in our materials, ensuring durability and longevity.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>From sturdy metals to elegant wood finishes, our curtain rods are built to withstand the test of time.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Bedrooms: </span>Ensure a good night's sleep by blocking out all external light sources.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Home Theaters: </span>Create the perfect movie-watching environment with complete darkness.</li>
+                                            <li><i className="bi bi-check-circle-fill"></i><span>Home Offices: </span>Reduce glare on screens and create a distraction-free workspace.</li>
                                         </ul>
                                     </div>
                                     <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_rods} alt="" className="img-fluid" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="tab-pane" id="tab-5" role="tabpanel">
-                                <div className="row">
-                                    <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-
-                                        <ul>
-                                            <li><i className="bi bi-check-circle-fill"></i>At indec, where we redefine the art of window dressing with our exquisite collection of curtain brackets.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Beyond mere support, our brackets are designed to be a visual delight, complementing your curtains and enhancing the overall aesthetics of your living spaces.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Our curtain brackets are more than just functional hardware; they are a statement piece for your windows.</li>
-                                            <li><i className="bi bi-check-circle-fill"></i>Crafted with an eye for design, each bracket adds a touch of elegance and style to your curtains.</li>
-                                        </ul>
-                                    </div>
-                                    <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                        <img src={curtains_brackets} alt="" className="img-fluid" />
+                                        <img src={curtainsblockout} alt="Blackout Curtains" className="img-fluid" />
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-                </section >
+                        <section id="Products" className="Products" style={{ paddingTop: "40px" }}>
+                            <div className="row gy-4">
+                                <div className="col-lg-6">
+                                    <div className="box" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
+                                        <h4 className="title">Privacy</h4>
+                                        <p className="description">
+                                            Curtains offer a sense of privacy by concealing the interiors of a room from outside view. They're essential for bedrooms, bathrooms, and any area where you want to limit visibility.</p>
+                                    </div>
+                                </div>
 
+                                <div className="col-lg-6">
+                                    <div className="box" data-aos="zoom-in" data-aos-duration="5000">
+                                        <h4 className="title">Light Control</h4>
+                                        <p className="description">Depending on the fabric and opacity, curtains can filter or block out sunlight, allowing you to control the amount of natural light entering a room. This is especially useful for rooms with TV screens or where glare can be a nuisance.</p>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-6">
+                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
+                                        <h4 className="title">Decoration</h4>
+                                        <p className="description">Curtains are a versatile decorative element that can add color, texture, and pattern to any space. They can tie together the design scheme of a room or serve as a focal point.</p>
+                                    </div>
+                                </div>
+
+                                <div className="col-lg-6">
+                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
+                                        <h4 className="title">Sound Absorption</h4>
+                                        <p className="description">Thick, heavy curtains can help reduce noise levels by absorbing sound waves, making them ideal for homes located in busy urban areas or near noisy streets.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <div className="Curtain">
+                            <CurtainRod />
+                        </div>
+
+                    </div >
+                </section >
                 <Footer />
             </div >
         </>
