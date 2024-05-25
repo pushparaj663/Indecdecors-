@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import '../src/Header.css'
+import indecbrouchure from '../src/Brochure/indec_brouchure.pdf';
 
 function Header(props) {
 
@@ -23,24 +24,6 @@ function Header(props) {
             setProductsDropdownOpen(!isProductsDropdownOpen);
         }
     };
-
-    const downloadTxtFile = () => {
-        // text content
-        const texts = ["line 1", "line 2", "line 3"]
-
-        // file object
-        const file = new Blob(texts, { type: 'text/plain' });
-
-        // anchor link
-        const element = document.createElement("a");
-        element.href = URL.createObjectURL(file);
-        element.download = "http://localhost:3000/Brochure/indec_brouchure.pdf";
-
-        // simulate link click
-        document.body.appendChild(element); // Required for this to work in FireFox
-        element.click();
-    }
-
 
     return (
         <>
@@ -86,7 +69,7 @@ function Header(props) {
                                     : ''}
                             </li>
                             <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">Contact</a></li>
-                            <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/" onClick={downloadTxtFile}>Brochure</a></li>
+                            <li><a className="nav-link nav_home" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a></li>
                         </ul>
                         {/* <i className="bi bi-list mobile-nav-toggle"></i> */}
                         <i className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`} style={{ color: isMobileNavOpen ? 'white' : '' }}></i>

@@ -5,6 +5,7 @@ import About from "./About";
 import Service from "./Service";
 import Products from "./Products";
 import ContactUs from "./ContactUs";
+import indecbrouchure from '../src/Brochure/indec_brouchure.pdf';
 
 const Layout = () => {
 
@@ -113,23 +114,6 @@ const Layout = () => {
         }
     };
 
-    const downloadTxtFile = () => {
-        // text content
-        const texts = ["line 1", "line 2", "line 3"]
-
-        // file object
-        const file = new Blob(texts, { type: 'text/plain' });
-
-        // anchor link
-        const element = document.createElement("a");
-        element.href = URL.createObjectURL(file);
-        element.download = "http://localhost:3000/Brochure/indec_brouchure.pdf";
-
-        // simulate link click
-        document.body.appendChild(element); // Required for this to work in FireFox
-        element.click();
-    }
-
     return (
         <div className="container-fluid p-0">
             <div className="sticky-top">
@@ -179,8 +163,7 @@ const Layout = () => {
                                     }
                                 </li>
                                 <li><a className={`nav-link nav_home ${activeSection === "contact" ? 'active' : ''}`} onClick={scrollToContact}>Contact</a></li>
-                                <li><a className={`nav-link nav_home ${activeSection === "contact" ? 'active' : ''}`} onClick={downloadTxtFile}>Brochure</a></li>
-                            </ul>
+                                <li><a className="nav-link nav_home" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a></li>                            </ul>
                             {/* <i className="bi bi-list mobile-nav-toggle"></i> */}
                             <i className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`} style={{ color: isMobileNavOpen ? 'white' : '' }}></i>
                         </nav>
