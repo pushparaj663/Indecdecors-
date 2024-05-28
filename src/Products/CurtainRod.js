@@ -1,5 +1,5 @@
 import { React } from 'react';
-import curtains_drape from '../../src/image/curtains-drapes.jpg'
+import curtain_rods_finials from '../../src/image/curtain_rods_finials.jpg'
 
 function CurtainRod(props) {
     return (
@@ -29,7 +29,7 @@ function CurtainRod(props) {
                                     </ul>
                                 </div>
                                 <div className="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-left">
-                                    <img src={curtains_drape} alt="Curtsain Rods And Brackets" className="img-fluid" />
+                                    <img src={curtain_rods_finials} alt="Curtsain Rods And Brackets" className="img-fluid" />
                                 </div>
                             </div>
                         </div>
