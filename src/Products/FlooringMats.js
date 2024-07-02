@@ -34,14 +34,14 @@ function FlooringMats(props) {
                             <ul className="nav nav-tabs row d-flex" role="tablist">
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Residential Vinyl Flooring</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Residential Vinyl Flooring</h4>
                                     </a>
                                 </li>
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Commercial Vinyl Flooring</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Commercial Vinyl Flooring</h4>
                                     </a>
                                 </li>
                             </ul>
@@ -50,7 +50,7 @@ function FlooringMats(props) {
                                 <div className="tab-pane active show" id="tab-1" role="tabpanel">
                                     <div className='row'>
                                         <div className='col-lg'>
-                                            <p style={{ height: '70px' }}>
+                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
                                                 Transform your living spaces into cozy retreats with our home flooring mat decorations.
                                                 Whether you're looking to add warmth to your bedroom or create a welcoming entryway, our mats provide the perfect blend of comfort and style.
                                             </p>
@@ -73,7 +73,7 @@ function FlooringMats(props) {
                                 <div className="tab-pane" id="tab-2" role="tabpanel">
                                     <div className='row'>
                                         <div className='col-lg'>
-                                            <p style={{ height: '70px' }}>
+                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
                                                 Set the stage for productivity and professionalism in your workplace with our office flooring mat decorations.
                                                 From ergonomic support to sleek aesthetics, our mats are designed to enhance the functionality and style of any office space.
                                             </p>

@@ -39,14 +39,14 @@ function WallPapers(props) {
                             <ul className="nav nav-tabs row d-flex" role="tablist">
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Residential Wallpapers</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Residential Wallpapers</h4>
                                     </a>
                                 </li>
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Commercial WallPapers</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Commercial WallPapers</h4>
                                     </a>
                                 </li>
                             </ul>
@@ -55,7 +55,7 @@ function WallPapers(props) {
                                 <div className="tab-pane active show" id="tab-1" role="tabpanel">
                                     <div className='row'>
                                         <div className='col-lg'>
-                                            <p style={{ height: '70px' }}>
+                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
                                                 Create a haven of comfort and style with our home wallpaper decorations.
                                                 Whether you're looking to add a pop of color to your living room or create a serene retreat in your bedroom, our wallpapers offer endless possibilities for transforming your space.
                                             </p>
@@ -80,7 +80,7 @@ function WallPapers(props) {
                                 <div className="tab-pane" id="tab-2" role="tabpanel">
                                     <div className='row'>
                                         <div className='col-lg'>
-                                            <p style={{ height: '70px' }}>
+                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
                                                 Inspire creativity and productivity in your workspace with our office wallpaper decorations.
                                                 From sleek and modern designs to timeless classics, our wallpapers can help set the tone for a
                                                 professional and inviting environment.

@@ -30,14 +30,14 @@ function MosquitoNetDoors(props) {
                             <ul className="nav nav-tabs row d-flex" role="tablist">
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Sliding/Pleated Mosquito Net Doors</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Sliding/Pleated Mosquito Net Doors</h4>
                                     </a>
                                 </li>
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Hinged Mosquito Net Doors</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Hinged Mosquito Net Doors</h4>
                                     </a>
                                 </li>
                             </ul>
@@ -46,7 +46,7 @@ function MosquitoNetDoors(props) {
                                 <div className="tab-pane active show" id="tab-1" role="tabpanel">
                                     <div className='row'>
                                         <div className='col-lg'>
-                                            <p style={{ height: '100px' }}>
+                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
                                                 Sliding/Pleated mosquito net doors are installed parallel to existing sliding doors or windows. They operate on a track system, allowing them to slide horizontally for easy opening and closing. Sliding mosquito net doors are convenient and space-saving, making them ideal for balconies, patios, and large doorways.
                                             </p>
                                         </div>
@@ -77,7 +77,7 @@ function MosquitoNetDoors(props) {
                                 <div className="tab-pane" id="tab-2" role="tabpanel">
                                     <div className="row">
                                         <div className="col-lg">
-                                            <p style={{ height: '100px' }}>
+                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
                                                 Hinged mosquito net doors operate similar to traditional doors, swinging open and closed on hinges. They are typically installed in door frames and can be customized to open inward or outward, depending on your space requirements. Hinged mosquito net doors offer a wider opening than sliding doors, making them suitable for main entrances and high-traffic areas.
                                             </p>
                                         </div>

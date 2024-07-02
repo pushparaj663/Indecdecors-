@@ -36,14 +36,14 @@ function MosquitoNetWindows(props) {
                             <ul className="nav nav-tabs row d-flex" role="tablist">
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Aluminium Mosquito Net Windows</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Mosquito Net Windows</h4>
                                     </a>
                                 </li>
                                 <li className="nav-item col" role="presentation">
                                     <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i className="bi bi-house"></i>
-                                        <h4 className="d-none d-lg-block">Aluminium Magnetic Mosquito Net Windows</h4>
+                                        <i className="bi bi-house d-none d-lg-block"></i>
+                                        <h4>Magnetic Mosquito Net Windows</h4>
                                     </a>
                                 </li>
                             </ul>

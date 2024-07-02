@@ -31,20 +31,20 @@ function Curtains(props) {
                         <ul className="nav nav-tabs row d-flex" role="tablist">
                             <li className="nav-item col" role="presentation">
                                 <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                    <i className="bi bi-house"></i>
-                                    <h4 className="d-none d-lg-block">Luxurious Drape</h4>
+                                    <i className="bi bi-house d-none d-lg-block"></i>
+                                    <h4>Luxurious Drape</h4>
                                 </a>
                             </li>
                             <li className="nav-item col" role="presentation">
                                 <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                    <i className="bi bi-house"></i>
-                                    <h4 className="d-none d-lg-block">Versatile Sheers</h4>
+                                    <i className="bi bi-house d-none d-lg-block"></i>
+                                    <h4>Versatile Sheers</h4>
                                 </a>
                             </li>
                             <li className="nav-item col" role="presentation">
                                 <a className="nav-link" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab" tabindex="-1">
-                                    <i className="bi bi-house"></i>
-                                    <h4 className="d-none d-lg-block">Blackout Curtains</h4>
+                                    <i className="bi bi-house d-none d-lg-block"></i>
+                                    <h4>Blackout Curtains</h4>
                                 </a>
                             </li>
                         </ul>
@@ -53,7 +53,7 @@ function Curtains(props) {
                             <div className="tab-pane active show" id="tab-1" role="tabpanel">
                                 <div className='row'>
                                     <div className='col-lg'>
-                                        <p style={{ height: '100px' }}>
+                                        <p style={{ height: 'auto', marginBottom: '14px' }}>
                                             Our luxurious drape curtains are designed to add a touch of elegance and sophistication to any room. Made from the finest materials, these curtains offer rich textures and vibrant colors that enhance the aesthetic appeal of your interiors. Whether you’re looking to create a classic, modern, or eclectic look, our collection has something to suit every taste.
                                         </p>
                                     </div>
@@ -74,7 +74,7 @@ function Curtains(props) {
                             <div className="tab-pane" id="tab-2" role="tabpanel">
                                 <div className='row'>
                                     <div className='col-lg'>
-                                        <p style={{ height: '100px' }}>
+                                        <p style={{ height: 'auto', marginBottom: '14px' }}>
                                             Our versatile sheer curtains are perfect for creating a light and airy ambiance in any space. These curtains allow natural light to filter through while maintaining privacy, making them ideal for layering with other types of window treatments. The soft, flowing fabrics add a touch of grace and elegance to your windows.
                                         </p>
                                     </div>
@@ -96,7 +96,7 @@ function Curtains(props) {
                             <div className="tab-pane" id="tab-3" role="tabpanel">
                                 <div className='row'>
                                     <div className='col-lg'>
-                                        <p style={{ height: '100px' }}>
+                                        <p style={{ height: 'auto', marginBottom: '14px' }}>
                                             Our blockout curtains are the ultimate solution for those who require complete privacy and control over the amount of light entering a room. These curtains are perfect for creating a dark, peaceful environment, ideal for bedrooms, home theaters, and any space where light control is crucial.
                                         </p>
                                     </div>

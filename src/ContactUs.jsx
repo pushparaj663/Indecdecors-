@@ -36,7 +36,7 @@ function ContactUs(props) {
                                 <div className="contact-phone">
                                     <i className="bi bi-phone"></i>
                                     <h3>Call Us</h3>
-                                    <p><a href="tel:+919788152096">+91-97881 52096 / </a><a href="tel:+919600339397">96003 39397 / </a><a href="tel:+919952880078">99528 80078</a>
+                                    <p><a href="tel:+919600339397">+91-96003 39397 / </a><a href="tel:+919952880078">+91-99528 80078</a>
                                     </p>
                                 </div>
                             </div>
