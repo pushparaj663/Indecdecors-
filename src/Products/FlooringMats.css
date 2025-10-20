@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+/* =========================
+   FLOORING SECTION BASE
+========================= */
+.flooring-container {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  padding-top: 80px;
+}
+
+.flooring-section {
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.flooring-section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.flooring-section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.flooring-section-title p {
+  font-size: 16px;
+  color: #000000;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* =========================
+   TABS STYLING
+========================= */
+.flooring-tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #eee;
+}
+
+.flooring-tab-item {
+  margin: 0 10px;
+}
+
+.flooring-tab-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.3s ease;
+}
+
+.flooring-tab-link:hover {
+  color: #ff6b00;
+}
+
+.flooring-tab-link.active {
+  color: #ff6b00;
+  border-bottom: 3px solid #ff6b00;
+}
+
+/* =========================
+   MAIN ROWS & IMAGES
+========================= */
+.flooring-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.flooring-col {
+  padding: 15px;
+}
+
+.flooring-image-wrapper {
+  text-align: center;
+}
+
+.flooring-image {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.flooring-image:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   FEATURES LIST
+========================= */
+.flooring-features {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.flooring-features li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #444;
+}
+
+.flooring-features li i {
+  color: #ff6b00;
+  margin-right: 8px;
+}
+
+.flooring-features li span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* =========================
+   2x2 BOX FEATURES GRID
+========================= */
+.flooring-feature-section {
+  margin-top: 60px;
+}
+
+.flooring-feature-box {
+  background: #f7f7f7;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flooring-feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(255, 122, 0, 0.2));
+}
+
+.flooring-feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.flooring-feature-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 992px) {
+  .flooring-col {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .flooring-section-title h2 {
+    font-size: 28px;
+  }
+  .flooring-tab-link h4 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .flooring-feature-section .flooring-feature-box {
+    margin-bottom: 15px;
+  }
+}

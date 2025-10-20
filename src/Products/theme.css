@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+/* =========================
+   BASE & CONTAINER
+========================= */
+.theme-container {
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  padding-top: 80px;
+}
+
+.theme-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.theme-section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.theme-section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.theme-section-title p {
+  font-size: 16px;
+  color: #000000;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* =========================
+   TABS
+========================= */
+.theme-tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #eee;
+  flex-wrap: wrap;
+}
+
+.theme-tab-link {
+  font-weight: 500;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 6px 6px 0 0;
+  margin: 0 10px 10px 0;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.theme-tab-link:hover {
+  color: #ff6b00;
+}
+
+.theme-tab-link.active {
+  color: #ff6b00;
+  border-bottom: 3px solid #ff6b00;
+}
+
+/* =========================
+   ROW & COLUMNS
+========================= */
+.theme-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.theme-col {
+  padding: 15px;
+}
+
+.theme-image-wrapper {
+  text-align: center;
+}
+
+.theme-image {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.theme-image:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   FEATURES LIST
+========================= */
+.theme-features {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.theme-features li {
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.theme-features li i {
+  color: #ff6b00;
+  margin-right: 8px;
+}
+
+.theme-features li span {
+  font-weight: 600;
+  color: #000000;
+}
+
+/* =========================
+   FEATURE BOXES
+========================= */
+.theme-feature-section {
+  margin-top: 60px;
+}
+
+.theme-feature-box {
+  background: #eeeeee;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.351), rgba(255, 123, 0, 0.252));
+  
+
+}
+
+.theme-feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.theme-feature-description {
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 992px) {
+  .theme-col {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .theme-section-title h2 {
+    font-size: 28px;
+  }
+  .theme-tab-link {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .theme-feature-section .theme-feature-box {
+    margin-bottom: 15px;
+  }
+  .theme-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  .theme-tab-link {
+    margin: 0 0 10px 0;
+  }
+}

@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+/* =========================
+   BASE & CONTAINER
+========================= */
+.mosquitodoors-container {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fa;
+  padding-top: 80px;
+  padding: 60px 20px;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.mosquitodoors-section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.mosquitodoors-section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.mosquitodoors-section-title p {
+  font-size: 16px;
+  color: #555;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* =========================
+   TABS
+========================= */
+.mosquitodoors-tabs {
+  display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+}
+
+.mosquitodoors-tab-link {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  padding: 10px 15px;
+ 
+  border-radius: 5px 5px 0 0;
+  transition: 0.3s ease;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.mosquitodoors-tab-link:hover {
+  color: #ff6b00;
+}
+
+.mosquitodoors-tab-link.active {
+  color: #ff6b00;
+  border-bottom: 3px solid #ff6b00;
+}
+
+/* =========================
+   TAB CONTENT
+========================= */
+.mosquitodoors-row {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.mosquitodoors-row.visible {
+ display: block;
+    opacity: 1;
+}
+
+.mosquitodoors-col {
+  padding: 15px;
+}
+
+
+
+/* =========================
+   FEATURES
+========================= */
+.mosquitodoors-features {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.mosquitodoors-features li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #444;
+}
+
+.mosquitodoors-features li i {
+  color: #ff6b00;
+  margin-right: 8px;
+}
+
+.mosquitodoors-features li span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* =========================
+   FEATURE GRID
+========================= */
+.mosquitodoors-feature-section {
+  margin-top: 30px;
+}
+
+.mosquitodoors-feature-box {
+  background: #f7f7f7;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mosquitodoors-feature-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.mosquitodoors-feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.mosquitodoors-feature-description {
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media (max-width: 576px) {
+  .mosquitodoors-feature-section .mosquitodoors-feature-box {
+    margin-bottom: 15px;
+  }
+
+  .mosquitodoors-tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mosquitodoors-tab-link {
+    margin-bottom: 10px;
+  }
+}

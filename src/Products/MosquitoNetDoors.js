@@ -1,156 +1,101 @@
-import { React, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from '../Header';
 import Footer from '../Footer';
-import AOS from 'aos';
-import "../../node_modules/aos/dist/aos.css"
-import doorhinged from '../../src/image/door-hinged.jpg'
-import doorsliding from '../../src/image/door-sliding.jpg'
 
-function MosquitoNetDoors(props) {
-    useEffect(() => {
-        AOS.init();
-    }, [])
+import doorSliding from '../../src/image/door-sliding.jpg';
+import doorHinged from '../../src/image/door-hinged.jpg';
 
-    return (
-        <>
-            <div className='container-fluid p-0'>
-                <div className='sticky-top'>
-                    <Header />
+import './theme.css';
+
+function MosquitoNetDoors() {
+  const [activeTab, setActiveTab] = useState('sliding');
+
+  useEffect(() => { AOS.init({ duration: 1000, once: true }); }, []);
+
+  const tabContent = {
+    sliding: [
+      { icon: 'bi-check-circle-fill', title: 'Smooth Operation', desc: 'Easy-glide tracks for effortless sliding.' },
+      { icon: 'bi-check-circle-fill', title: 'Lightweight Frame', desc: 'Aluminum frames for durability and corrosion resistance.' },
+      { icon: 'bi-check-circle-fill', title: 'Custom Fit', desc: 'Perfect for patios, balconies, and large openings.' }
+    ],
+    hinged: [
+      { icon: 'bi-check-circle-fill', title: 'Traditional Swing', desc: 'Hinged doors open fully like normal doors.' },
+      { icon: 'bi-check-circle-fill', title: 'Durable Mesh', desc: 'Fiberglass or stainless steel mesh for long-lasting protection.' },
+      { icon: 'bi-check-circle-fill', title: 'Elegant Design', desc: 'Available in multiple frame colors to match décor.' }
+    ]
+  };
+
+  const features = [
+    { title: 'Insect Protection', desc: 'Keeps mosquitoes and bugs out while maintaining airflow.' },
+    { title: 'Ease of Use', desc: 'Smooth sliding or hinge operation for convenience.' },
+    { title: 'Energy Efficient', desc: 'Promotes natural ventilation reducing energy usage.' },
+    { title: 'Custom Installation', desc: 'Professionally fitted to your opening dimensions.' }
+  ];
+
+  return (
+    <div className="container-fluid p-0 theme-container">
+      <div className="sticky-top"><Header /></div>
+
+      <section className="theme-section">
+        <div className="container" data-aos="fade-up">
+          <div className="theme-section-title text-center">
+            <h2>Mosquito Net Doors</h2>
+            <p>Safe, stylish, and functional mosquito net doors for your home.</p>
+          </div>
+
+          {/* Tabs */}
+          <div className="theme-tabs" data-aos="fade-up" data-aos-delay="100">
+            {['sliding', 'hinged'].map(tab => (
+              <div
+                key={tab}
+                className={`theme-tab-link ${activeTab === tab ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab === 'sliding' ? 'Sliding / Pleated' : 'Hinged'}
+              </div>
+            ))}
+          </div>
+
+          {/* Tab Content */}
+          <div className="theme-row" data-aos="fade-up">
+            <div className="col-lg-6 theme-col">
+              <ul className="theme-features">
+                {tabContent[activeTab].map((item, idx) => (
+                  <li key={idx}>
+                    <i className={`bi ${item.icon}`}></i>
+                    <span>{item.title}:</span> {item.desc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="col-lg-6 theme-col theme-image-wrapper" data-aos="zoom-in">
+              <img
+                src={activeTab === 'sliding' ? doorSliding : doorHinged}
+                alt="Mosquito Net Door"
+                className="theme-image"
+              />
+            </div>
+          </div>
+
+          {/* Feature Boxes */}
+          <div className="row theme-feature-section">
+            {features.map((feature, idx) => (
+              <div key={idx} className="col-lg-6 mb-4" data-aos="zoom-in">
+                <div className="theme-feature-box">
+                  <h4 className="theme-feature-title">{feature.title}</h4>
+                  <p className="theme-feature-description">{feature.desc}</p>
                 </div>
-                <section id="mosquitoNetDoors" className="product-items section-bg">
-                    <div className="container">
-                        <div className="section-title" data-aos="fade-up" data-aos-delay="200">
-                            <h2>Mosquito Net Doors</h2>
-                            <p>Create a safer and more comfortable living space with our innovative mosquito net doors.
-                                We bring you a range of high-quality and stylish solutions to keep pesky insects at bay while enhancing the beauty of your home.
-                            </p>
-                        </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                        <div className="row">
-                            <ul className="nav nav-tabs row d-flex" role="tablist">
-                                <li className="nav-item col" role="presentation">
-                                    <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i className="bi bi-house d-none d-lg-block"></i>
-                                        <h4>Sliding/Pleated Mosquito Net Doors</h4>
-                                    </a>
-                                </li>
-                                <li className="nav-item col" role="presentation">
-                                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i className="bi bi-house d-none d-lg-block"></i>
-                                        <h4>Hinged Mosquito Net Doors</h4>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div className="tab-content">
-                                <div className="tab-pane active show" id="tab-1" role="tabpanel">
-                                    <div className='row'>
-                                        <div className='col-lg'>
-                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
-                                                Sliding/Pleated mosquito net doors are installed parallel to existing sliding doors or windows. They operate on a track system, allowing them to slide horizontally for easy opening and closing. Sliding mosquito net doors are convenient and space-saving, making them ideal for balconies, patios, and large doorways.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Frame: </span>The door frame is usually made of lightweight and
-                                                    durable materials of aluminum. The frame is designed to hold the mesh securely in
-                                                    place and provide smooth sliding motion.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Mesh: </span>The mesh like fiberglass is used in sliding mosquito net doors is a fine,
-                                                    tightly-woven material that effectively blocks mosquitoes and other insects from entering while still allowing
-                                                    airflow and visibility.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Sliding Mechanism: </span>Sliding mosquito net doors
-                                                    feature a mechanism that allows them to slide open and closed along a track.
-                                                    Some doors may have a magnetic closure system to ensure that the door stays securely closed when not in use.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Installation: </span>Sliding mosquito net doors are typically installed on the
-                                                    exterior or interior of existing doors or openings. They can be custom-made to fit
-                                                    specific door sizes and configurations, and installation usually involves attaching the
-                                                    frame to the door frame or mounting surface.</li>
-                                            </ul>
-                                        </div>
-                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={doorsliding} alt="Sliding/Pleated Mosquito Net Doors" className="img-fluid" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="tab-pane" id="tab-2" role="tabpanel">
-                                    <div className="row">
-                                        <div className="col-lg">
-                                            <p style={{ height: 'auto', marginBottom: '14px' }}>
-                                                Hinged mosquito net doors operate similar to traditional doors, swinging open and closed on hinges. They are typically installed in door frames and can be customized to open inward or outward, depending on your space requirements. Hinged mosquito net doors offer a wider opening than sliding doors, making them suitable for main entrances and high-traffic areas.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="row">
-                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Fine Mesh Construction: </span>The main door is typically crafted from a
-                                                    stainless steel net. This mesh is tightly woven to create a barrier that effectively
-                                                    blocks insects from entering your home.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Various Designs: </span>Mosquito net main doors come in various designs to suit different
-                                                    architectural styles and preferences. They can be installed as standalone doors or integrated with existing entryways.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Installation: </span>Installation of a mosquito net main door
-                                                    is typically straightforward and can be done by our professional or engineer.
-                                                    The door frame is mounted onto the door frame or surrounding structure, and the stainless steel net
-                                                    is securely attached to the frame.</li>
-                                            </ul>
-                                        </div>
-                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={doorhinged} alt="Hinged Mosquito Net Doors" className="img-fluid" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <section id="Products" className="Products" style={{ paddingTop: '40px' }}>
-                            <div className="row gy-4">
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
-                                        <h4 className="title">Insect Protection</h4>
-                                        <p className="description">
-                                            The primary benefit of a mosquito net door is its ability to keep insects out,
-                                            including disease-carrying mosquitoes. This helps create a more comfortable and
-                                            healthier living environment for you and your family.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-duration="5000">
-                                        <h4 className="title">Natural Ventilation</h4>
-                                        <p className="description">Unlike solid doors, mosquito net doors allow fresh air to
-                                            circulate freely throughout your home. This natural ventilation helps regulate indoor temperatures,
-                                            reduce stuffiness, and improve indoor air quality.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
-                                        <h4 className="title">Energy Efficiency</h4>
-                                        <p className="description">By allowing natural light and airflow into your home,
-                                            mosquito net doors can help reduce the need for artificial lighting and air conditioning.
-                                            This can lead to energy savings and lower utility bills over time.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
-                                        <h4 className="title">Privacy</h4>
-                                        <p className="description">While providing ventilation and insect protection, mosquito net doors also offer a
-                                            degree of privacy by obscuring the view into your home from the outside.
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </section>
-                    </div>
-                </section >
-                <Footer />
-            </div >
-        </>
-    );
+      <Footer />
+    </div>
+  );
 }
 
 export default MosquitoNetDoors;

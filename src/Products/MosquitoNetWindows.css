@@ -1,0 +1,327 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+/* =========================
+   BASE CONTAINER
+========================= */
+.mosquitowindows-container {
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
+    padding-top: 80px;
+}
+
+.mosquitowindows-section {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.mosquitowindows-section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mosquitowindows-section-title h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.mosquitowindows-section-title p {
+    font-size: 16px;
+    color: #000000;
+    max-width: 750px;
+    margin: 0 auto 10px auto;
+}
+
+/* =========================
+   TABS
+========================= */
+.mosquitowindows-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    flex-wrap: wrap;
+}
+
+.mosquitowindows-tab-link {
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    padding: 12px 20px;
+
+    border-radius: 6px 6px 0 0;
+    background: rgba(255,255,255,0.7);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.mosquitowindows-tab-link:hover {
+    color: #ff6b00;
+}
+
+.mosquitowindows-tab-link.active {
+    color: #ff6b00;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 3px solid #ff6b00;
+}
+
+/* =========================
+   TAB CONTENT
+========================= */
+.mosquitowindows-tab-content .mosquitowindows-row {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.mosquitowindows-tab-content .mosquitowindows-row.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* =========================
+   FEATURES LIST
+========================= */
+.mosquitowindows-features {
+    
+    padding: 0;
+    margin-top: 20px;
+}
+
+.mosquitowindows-features li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #444;
+}
+
+.mosquitowindows-features li i {
+    color: #ff6b00;
+    margin-right: 8px;
+}
+
+.mosquitowindows-features li span {
+    font-weight: 600;
+    color: #333;
+}
+
+/* =========================
+   IMAGES
+========================= */
+.mosquitowindows-image {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.mosquitowindows-image:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   FEATURES GRID
+========================= */
+.mosquitowindows-feature-section {
+    margin-top: 50px;
+}
+
+.mosquitowindows-feature-box {
+    background: #f7f7f7;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mosquitowindows-feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.mosquitowindows-feature-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.mosquitowindows-feature-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+    .mosquitowindows-tab-link {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mosquitowindows-section-title h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mosquitowindows-feature-box {
+        margin-bottom: 15px;
+    }
+}
+
+.mosquito-section-title p {
+    font-size: 16px;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto 10px auto;
+}
+
+/* =========================
+   TABS
+========================= */
+.mosquito-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    flex-wrap: wrap;
+}
+
+.mosquito-tab-link {
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 6px 6px 0 0;
+    background: rgba(255,255,255,0.7);
+    transition: all 0.3s ease;
+}
+
+.mosquito-tab-link:hover {
+    color: #ff6b00;
+}
+
+.mosquito-tab-link.active {
+    color: #ff6b00;
+    background: rgba(255,255,255,0.95);
+    border-bottom: 3px solid #ff6b00;
+}
+
+/* =========================
+   TAB CONTENT
+========================= */
+.mosquito-tab-content .mosquito-row {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.mosquito-tab-content .mosquito-row.visible {
+    display: block;
+    opacity: 1;
+}
+
+.mosquito-features {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.mosquito-features li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #444;
+}
+
+.mosquito-features li i {
+    color: #ff6b00;
+    margin-right: 8px;
+}
+
+.mosquito-features li span {
+    font-weight: 600;
+    color: #333;
+}
+
+/* =========================
+   IMAGES
+========================= */
+.mosquito-image {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.mosquito-image:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   FEATURES GRID
+========================= */
+.mosquito-feature-section {
+    margin-top: 50px;
+}
+
+.mosquito-feature-box {
+    background: #f7f7f7;
+    padding: 25px 20px;
+    border-radius: 12px;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mosquito-feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.mosquito-feature-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.mosquito-feature-description {
+    font-size: 14px;
+    color: #555;
+   
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+    .mosquito-tab-link {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    .mosquito-tab-link h4 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mosquito-section-title h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .mosquito-feature-box {
+        margin-bottom: 15px;
+    }
+}

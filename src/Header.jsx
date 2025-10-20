@@ -1,84 +1,103 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import '../src/Header.css'
-import indecbrouchure from '../src/Brochure/indec_brouchure.pdf';
+import "../src/Header.css";
+import indecbrouchure from "../src/Brochure/indec_brouchure.pdf";
 
-function Header(props) {
+const Header = () => {
+  const location = useLocation();
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
-    const location = useLocation();
-    const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-    const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const menuItems = [
+    { label: "What we do", path: "/" },
+    { label: "Who we are", path: "/who-we-are" },
+    { label: "Services", path: "/service" },
+    { label: "Products", dropdown: true },
+    { label: "Contact", path: "/contact" },
+    { label: "Brochure", path: indecbrouchure, download: true }
+  ];
 
-    useEffect(() => {
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const navbar = document.getElementById('navbar');
+  const products = [
+    { label: "Mosquito Net Windows", path: "/product/mosquitonetwindows" },
+    { label: "Mosquito Net Doors", path: "/product/mosquitonetdoors" },
+    { label: "Curtains", path: "/product/curtains" },
+    { label: "Blinds", path: "/product/blinds" },
+    { label: "Vinyl Flooring", path: "/product/vinylflooring" },
+    { label: "WallPapers", path: "/product/wallpapers" }
+  ];
 
-        mobileNavToggle.addEventListener('click', () => {
-            setMobileNavOpen(!isMobileNavOpen);
-        });
-    }, [isMobileNavOpen]);
+  const toggleMobileNav = () => setMobileNavOpen(prev => !prev);
+  const toggleProductsDropdown = () => setProductsDropdownOpen(prev => !prev);
 
-    const handleProductsDropdownToggle = () => {
-        // Check if screen size is less than 768 pixels (adjust as needed)
-        if (window.innerWidth <= 768) {
-            setProductsDropdownOpen(!isProductsDropdownOpen);
-        }
-    };
+  const isActive = (path) =>
+    path === "/" ? location.pathname === "/" : location.pathname.startsWith(path);
 
-    return (
-        <>
-            <header id="header" className="d-flex align-items-center">
-                <div className="container d-flex justify-content-between">
+  return (
+    <header id="header" className="d-flex align-items-center">
+      <div className="container d-flex justify-content-between align-items-center">
+        {/* Logo */}
+        <div id="logo">
+          <h1>
+            <a href="/" className="logo-text">
+              Indec
+            </a>
+          </h1><h4>Interiors</h4>
+        </div>
 
-                    <div id="logo">
-                        <h1><a href="/">indec</a></h1>
-                    </div>
-                    <nav id="navbar" className={`navbar ${isMobileNavOpen ? 'navbar-mobile' : ''}`}>
-                        <ul>
-                            <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">What we do</a></li>
-                            <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">Who we are</a></li>
-                            <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">Services</a></li>
-                            <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
-                                <a className={`nav-link nav_home ${window.location.pathname.includes("/product") ? 'active' : ''}`} >
-                                    <span>Products</span>
-                                    {/* <i className="bi bi-chevron-down" onClick={handleProductsDropdownToggle}></i> */}
-                                    {isMobileNavOpen ?
-                                        <i className={`bi ${isProductsDropdownOpen ? 'bi-chevron-up' : 'bi-chevron-down'}`} onClick={handleProductsDropdownToggle}></i> :
-                                        <i className="bi bi-chevron-down"></i>
-                                    }
-                                </a>
-                                {isProductsDropdownOpen && isMobileNavOpen ?
-                                    <ul>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetwindows" ? 'active' : ''}`} href="/product/mosquitonetwindows">Mosquito Net Windows</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetdoors" ? 'active' : ''}`} href="/product/mosquitonetdoors">Mosquito Net Doors</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtains" ? 'active' : ''}`} href="/product/curtains">Curtains</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/blinds" ? 'active' : ''}`} href="/product/blinds">Blinds</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/vinylflooring" ? 'active' : ''}`} href="/product/vinylflooring">Vinyl Flooring</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpapers" ? 'active' : ''}`} href="/product/wallpapers">WallPapers for Walls</a></li>
-                                    </ul>
-                                    : ''}
-                                {!isProductsDropdownOpen && !isMobileNavOpen ?
-                                    <ul>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetwindows" ? 'active' : ''}`} href="/product/mosquitonetwindows">Mosquito Net Windows</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetdoors" ? 'active' : ''}`} href="/product/mosquitonetdoors">Mosquito Net Doors</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtains" ? 'active' : ''}`} href="/product/curtains">Curtains</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/blinds" ? 'active' : ''}`} href="/product/blinds">Blinds</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/vinylflooring" ? 'active' : ''}`} href="/product/vinylflooring">Vinyl Flooring</a></li>
-                                        <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpapers" ? 'active' : ''}`} href="/product/wallpapers">WallPapers for Walls</a></li>
-                                    </ul>
-                                    : ''}
-                            </li>
-                            <li><a className={`nav-link nav_home ${window.location.pathname === "/" ? 'active' : ''}`} href="/">Contact</a></li>
-                            <li><a className="nav-link nav_home" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a></li>
-                        </ul>
-                        {/* <i className="bi bi-list mobile-nav-toggle"></i> */}
-                        <i className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`} style={{ color: isMobileNavOpen ? 'white' : '' }}></i>
-                    </nav>
+        {/* Navbar */}
+        <nav className={`navbar ${isMobileNavOpen ? "navbar-mobile" : ""}`}>
+          <ul>
+            {menuItems.map((item, idx) => (
+              <li key={idx} className={item.dropdown ? "dropdown" : ""}>
+                {item.dropdown ? (
+                  <>
+                    <button
+                      className="nav-link dropdown-toggle-btn"
+                      onClick={toggleProductsDropdown}
+                    >
+                      {item.label}{" "}
+                      <i
+                        className={`bi ${
+                          isProductsDropdownOpen ? "bi-chevron-up" : "bi-chevron-down"
+                        }`}
+                      ></i>
+                    </button>
+                    {(isProductsDropdownOpen || !isMobileNavOpen) && (
+                      <ul className="dropdown-menu">
+                        {products.map((prod, index) => (
+                          <li key={index}>
+                            <a
+                              href={prod.path}
+                              className={isActive(prod.path) ? "active" : ""}
+                            >
+                              {prod.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : item.download ? (
+                  <a href={item.path} download>
+                    {item.label}
+                  </a>
+                ) : (
+                  <a href={item.path} className={isActive(item.path) ? "active" : ""}>
+                    {item.label}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
 
-                </div>
-            </header>
-        </>
-    )
-}
+          <i
+            className={`bi ${isMobileNavOpen ? "bi-x" : "bi-list"} mobile-nav-toggle`}
+            onClick={toggleMobileNav}
+          ></i>
+        </nav>
+      </div>
+    </header>
+  );
+};
 
 export default Header;

@@ -1,80 +1,135 @@
-#about {
-    padding: 85px 0 30px 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+
+
+/* Glass card for About section */
+#about-card {
+    
+   background-color: transparent;
+    border-radius: 25px;
+    padding: 30px 40px;
+    
+    margin: 30px auto;
+    max-width: 1400px;
+  font-family: "Poppins", sans-serif;
 }
 
-#about .about-img {
+/* Full width heading and paragraph */
+.full-width-text h2 {
+    font-size: 36px;
+    color: #000247;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.full-width-text .heading-line {
+    width: 80px;
+    height: 3px;
+    background:  #ff7a00;
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.full-width-text p {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+/* Two-column row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* Left content list */
+#about-card .content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#about-card .content ul li {
+    padding: 12px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#about-card .content ul li i {
+    color: #50d8af;
+    font-size: 20px;
+    margin-right: 12px;
+  
+}
+
+#about-card .content ul li:hover {
+    transform: translateX(5px);
+    color: #0c2e8a;
+}
+
+/* Right image */
+#about-card .about-img-wrapper {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#about-card .about-img-card {
+    position: relative;
+    border-radius: 1px;
     overflow: hidden;
+
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
 }
 
-#about .about-img img {
-    margin-left: 0px;
-    max-width: 100%;
+#about-card .about-img-card:hover {
+    transform: translateY(-5px);
+}
+
+#about-card .about-img-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .full-width-text h2 {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 768px) {
-    #about .about-img {
-        height: auto;
+    #about-card {
+        padding: 15px 20px;
+        margin: 20px auto;
     }
-
-    #about .about-img img {
-        margin-left: 0;
-        padding-bottom: 30px;
+    #about-card .about-img-card {
+        max-width: 400px;
     }
-}
-
-#about .content h2 {
-    color: #0c2e8a;
-    font-weight: 700;
-    font-size: 36px;
-    font-family: "Raleway", sans-serif;
-}
-
-#about .content h3 {
-    color: #555;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 26px;
-    font-style: italic;
-}
-
-#about .content p {
-    line-height: 26px;
-}
-
-#about .content p:last-child {
-    margin-bottom: 0;
-}
-
-#about .content i {
-    font-size: 20px;
-    padding-right: 4px;
-    color: #50d8af;
-}
-
-#about .content ul {
-    list-style: none;
-    padding: 0;
-}
-
-#about .content ul li {
-    padding-bottom: 10px;
-}
-
-.col h2 {
-    font-size: 32px;
-    color: #000247;
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 20px;
-}
-
-.col h2::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #000247;
-    bottom: 0;
-    left: 0;
+    .full-width-text h2 {
+        font-size: 24px;
+    }
+    .full-width-text .heading-line {
+        width: 60px;
+    }
+    .full-width-text p {
+        font-size: 15px;
+    }
+    #about-card .content ul li {
+        font-size: 15px;
+    }
 }

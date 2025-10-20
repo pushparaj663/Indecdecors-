@@ -1,92 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css");
+
+/* =========================
+   FOOTER BASE
+========================= */
 #footer {
-    background: #f2f5f8;
-    padding: 20px 0px;
-    font-size: 14px;
-    text-align: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fdfcfb, #f7f7f7);
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #e5e5e5;
 }
 
+.footer-bg {
+  position: relative;
+  padding: 50px 0 30px;
+  z-index: 1;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+/* =========================
+   LOGO SECTION
+========================= */
+.footer-logo-section {
+  text-align: center;
+}
+
+.footer-logo-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.logo-main {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+.logo-decor {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+   color: rgb(255, 98, 0);
+}
+
+.footer-tagline {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  color: #000000;
+}
+
+/* =========================
+   LINKS
+========================= */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+   color: rgb(255, 98, 0);
+}
+
+/* =========================
+   CONTACT
+========================= */
+.footer-contact p {
+  margin: 6px 0;
+  color: #000000;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+.footer-social .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: #000000;
+  background: #f2f2f2;
+  font-size: 1.2rem;
+  transition: all 0.4s ease;
+  border: 1px solid #ddd;
+}
+
+.footer-social a:hover {
+  transform: translateY(-6px) scale(1.05);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Original brand hover colors */
+.footer-social a.twitter:hover {
+  background: #1da1f2;
+}
+.footer-social a.facebook:hover {
+  background: #1877f2;
+}
+.footer-social a.instagram:hover {
+  background: linear-gradient(45deg, #fd1d1d, #fcb045, #833ab4);
+}
+.footer-social a.linkedin:hover {
+  background: #0077b5;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 0.9rem;
+  color: #000000;
+  border-top: 1px solid #eaeaea;
+}
+
+/* =========================
+   BACK TO TOP BUTTON
+========================= */
 .back-to-top {
-    position: fixed;
-    visibility: hidden;
-    opacity: 0;
-    right: 15px;
-    bottom: 15px;
-    z-index: 996;
-    background: #000247;
-    width: 40px;
-    height: 40px;
-    transition: all 0.4s;
-}
-
-.back-to-top i {
-    font-size: 28px;
-    color: #fff;
-    line-height: 0;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+ background: rgb(255, 98, 0);
+  color: #000000;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .back-to-top:hover {
-    background: #166ab5;
-    color: #fff;
+  background: #ffb61a;
+  transform: translateY(-4px);
 }
 
-.back-to-top.active {
-    visibility: visible;
-    opacity: 1;
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    font-size: 0.95rem;
+    height: 75vh;
+  }
+
+  .footer-social .social-icons {
+    justify-content: flex-start;
+  }
 }
 
-/*--------------------------------------------------------------
-  # Footer Bar
-  --------------------------------------------------------------*/
-#footerbar {
-    background: #e5e5ec;
-    border-bottom: 1px solid #eee;
-    font-size: 14px;
-    padding: 0;
-    height: 100px;
-}
+@media (max-width: 576px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-#footerbar a {
-    text-decoration: none;
-}
+  .footer-social .social-icons {
+    justify-content: center;
+  }
 
-
-#footerbar a h1 {
-    color: #000247;
-    text-decoration: none;
-}
-
-#footerbar .contact-info i {
-    font-style: normal;
-    color: #50d8af;
-}
-
-#footerbar .contact-info i a,
-#footerbar .contact-info i span {
-    padding-left: 5px;
-    color: #444;
-}
-
-#footerbar .contact-info i a {
-    line-height: 0;
-    transition: 0.3s;
-}
-
-#footerbar .contact-info i a:hover {
-    color: #50d8af;
-}
-
-#footerbar .social-links a {
-    color: #555;
-    padding: 0 15px;
-    display: inline-block;
-    line-height: 1px;
-    border-left: 1px solid #e9e9e9;
-}
-
-#footerbar .social-links a:hover {
-    color: #50d8af;
-}
-
-#footerbar .social-links a:first-child {
-    border-left: 0;
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
+  }
 }

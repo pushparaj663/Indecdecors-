@@ -8,190 +8,114 @@ import ContactUs from "./ContactUs";
 import indecbrouchure from '../src/Brochure/indec_brouchure.pdf';
 
 const Layout = () => {
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+  const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
-    const [isMobileNavOpen, setMobileNavOpen] = useState(false);
-    const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
-    const aboutRef = useRef(null);
-    const serviceRef = useRef(null);
-    const contactRef = useRef(null);
-    const productRef = useRef(null);
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const serviceRef = useRef(null);
+  const productRef = useRef(null);
+  const contactRef = useRef(null);
 
+  const [activeSection, setActiveSection] = useState("/");
 
-    const [activeSection, setActiveSection] = useState("/");
+  const products = [
+    { label: "Mosquito Net Windows", path: "/product/mosquitonetwindows" },
+    { label: "Mosquito Net Doors", path: "/product/mosquitonetdoors" },
+    { label: "Curtains", path: "/product/curtains" },
+    { label: "Blinds", path: "/product/blinds" },
+    { label: "Vinyl Flooring", path: "/product/vinylflooring" },
+    { label: "Wall Papers", path: "/product/wallpapers" }
+  ];
 
+  const scrollTo = (ref, sectionName) => {
+    if(ref) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionName);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setActiveSection("/");
+    }
+    if (isMobileNavOpen) setMobileNavOpen(false);
+    if (isProductsDropdownOpen) setProductsDropdownOpen(false);
+  };
 
-    useEffect(() => {
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const navbar = document.getElementById('navbar');
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const offset = 100;
 
-        mobileNavToggle.addEventListener('click', () => {
-            setMobileNavOpen(!isMobileNavOpen);
-        });
-
-
-    }, [isMobileNavOpen]);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const aboutOffset = aboutRef.current.offsetTop;
-            const serviceOffset = serviceRef.current.offsetTop;
-            const productOffset = productRef.current.offsetTop;
-            const contactOffset = contactRef.current.offsetTop;
-            const scrollPosition = window.scrollY;
-            const exactSectionPosition = 100;
-
-
-            if (scrollPosition < aboutOffset - exactSectionPosition) {
-                setActiveSection("/");
-            } else if (scrollPosition < serviceOffset - exactSectionPosition) {
-                setActiveSection("who-we-are");
-            } else if (scrollPosition < productOffset - exactSectionPosition) {
-                setActiveSection("service");
-            } else if (scrollPosition < contactOffset - exactSectionPosition) {
-                setActiveSection("ourProducts");
-            } else {
-                setActiveSection("contact");
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const scrollToProducts = () => {
-        productRef.current.scrollIntoView({
-            behavior: "smooth",
-            top: 1000
-        });
-        setActiveSection("ourProducts");
-        if (isMobileNavOpen) {
-            setMobileNavOpen(!isMobileNavOpen);
-        }
-
+      if (scrollY < aboutRef.current.offsetTop - offset) setActiveSection("/");
+      else if (scrollY < serviceRef.current.offsetTop - offset) setActiveSection("who-we-are");
+      else if (scrollY < productRef.current.offsetTop - offset) setActiveSection("ourProducts");
+      else if (scrollY < contactRef.current.offsetTop - offset) setActiveSection("contact");
+      else setActiveSection("contact");
     };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    const scrollToAbout = () => {
-        aboutRef.current.scrollIntoView({
-            behavior: "smooth",
-            top: 1000
-        });
-        setActiveSection("who-we-are");
-        if (isMobileNavOpen) {
-            setMobileNavOpen(!isMobileNavOpen);
-        }
-    };
+  const toggleProductsDropdown = () => {
+    if(window.innerWidth <= 768) setProductsDropdownOpen(prev => !prev);
+  }
 
-    const scrollToService = () => {
-        serviceRef.current.scrollIntoView({
-            behavior: "smooth",
-            top: 1000
-        });
-        setActiveSection("service");
-        if (isMobileNavOpen) {
-            setMobileNavOpen(!isMobileNavOpen);
-        }
-    };
-
-    const scrollToContact = () => {
-        contactRef.current.scrollIntoView({
-            behavior: "smooth",
-            top: 2000
-        });
-        setActiveSection("contact");
-        if (isMobileNavOpen) {
-            setMobileNavOpen(!isMobileNavOpen);
-        }
-    };
-
-    const handleProductsDropdownToggle = () => {
-        // Check if screen size is less than 768 pixels (adjust as needed)
-        console.log('open mobile');
-        if (window.innerWidth <= 768) {
-            setProductsDropdownOpen(!isProductsDropdownOpen);
-        }
-    };
-
-    return (
-        <div className="container-fluid p-0">
-            <div className="sticky-top">
-                <header id="header" className="d-flex align-items-center">
-                    <div className="container d-flex justify-content-between">
-
-                        <div id="logo">
-                            <h1><a href="#">indec</a></h1>
-                        </div>
-
-                        <nav id="navbar" className={`navbar ${isMobileNavOpen ? 'navbar-mobile' : ''}`}>
-                            <ul>
-                                <li><a className={`nav-link nav_home ${activeSection === "/" ? 'active' : ''}`} href="/" >What we do</a></li>
-
-                                <li><a className={`nav-link nav_home ${activeSection === "who-we-are" ? 'active' : ''}`} onClick={scrollToAbout} >Who we are</a></li>
-
-                                <li><a className={`nav-link nav_home ${activeSection === "service" ? 'active' : ''}`} onClick={scrollToService}>Services</a></li>
-                                <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
-                                    <a className={`nav-link nav_home ${window.location.pathname.includes("/product") ? 'active' : ''}`} >
-                                        <span onClick={scrollToProducts}>Products</span>
-                                        {isMobileNavOpen ?
-                                            <i className={`bi ${isProductsDropdownOpen ? 'bi-chevron-up' : 'bi-chevron-down'}`} onClick={handleProductsDropdownToggle}></i> :
-                                            <i className="bi bi-chevron-down"></i>
-                                        }
-                                    </a>
-                                    {isProductsDropdownOpen && isMobileNavOpen ?
-                                        <ul>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetwindows" ? 'active' : ''}`} href="/product/mosquitonetwindows">Mosquito Net Windows</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetdoors" ? 'active' : ''}`} href="/product/mosquitonetdoors">Mosquito Net Doors</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtains" ? 'active' : ''}`} href="/product/curtains">Curtains</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/blinds" ? 'active' : ''}`} href="/product/blinds">Blinds</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/vinylflooring" ? 'active' : ''}`} href="/product/vinylflooring">Vinyl Flooring</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpapers" ? 'active' : ''}`} href="/product/wallpapers">Wall Papers for Walls</a></li>
-                                        </ul>
-                                        :
-                                        ''
-                                    }
-                                    {!isProductsDropdownOpen && !isMobileNavOpen ?
-                                        <ul>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetwindows" ? 'active' : ''}`} href="/product/mosquitonetwindows">Mosquito Net Windows</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/mosquitonetdoors" ? 'active' : ''}`} href="/product/mosquitonetdoors">Mosquito Net Doors</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/curtains" ? 'active' : ''}`} href="/product/curtains">Curtains</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/blinds" ? 'active' : ''}`} href="/product/blinds">Blinds</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/floor" ? 'active' : ''}`} href="/product/vinylflooring">Vinyl Flooring</a></li>
-                                            <li><a className={`nav-link nav_home ${window.location.pathname === "/product/wallpaper" ? 'active' : ''}`} href="/product/wallpapers">Wall Papers for Walls</a></li>
-                                        </ul> : ''
-                                    }
-                                </li>
-                                <li><a className={`nav-link nav_home ${activeSection === "contact" ? 'active' : ''}`} onClick={scrollToContact}>Contact</a></li>
-                                <li><a className="nav-link nav_home" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a></li>                            </ul>
-                            {/* <i className="bi bi-list mobile-nav-toggle"></i> */}
-                            <i className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`} style={{ color: isMobileNavOpen ? 'white' : '' }}></i>
-                        </nav>
-
-                    </div>
-                </header>
+  return (
+    <div className="container-fluid p-0">
+      <div className="sticky-top">
+        <header id="header" className="d-flex align-items-center">
+          <div className="container d-flex justify-content-between">
+            {/* LOGO */}
+            <div id="logo">
+              <h1>
+                <a href="#" className="logo-text">
+                  Indec
+                </a>
+              </h1><h4>Interiors</h4>
             </div>
 
+            {/* NAVBAR */}
+            <nav id="navbar" className={`navbar ${isMobileNavOpen ? 'navbar-mobile' : ''}`}>
+              <ul>
+                <li><a className={`nav-link ${activeSection === "/" ? "active" : ""}`} onClick={() => scrollTo(homeRef, "/")}>What we do</a></li>
+                <li><a className={`nav-link ${activeSection === "who-we-are" ? "active" : ""}`} onClick={() => scrollTo(aboutRef, "who-we-are")}>Who we are</a></li>
+                <li><a className={`nav-link ${activeSection === "service" ? "active" : ""}`} onClick={() => scrollTo(serviceRef, "service")}>Services</a></li>
 
+                <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
+                  <button className="nav-link dropdown-toggle-btn" onClick={toggleProductsDropdown}>
+                    Products <i className={`bi ${isProductsDropdownOpen ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
+                  </button>
+                  {(isProductsDropdownOpen || !isMobileNavOpen) && (
+                    <ul>
+                      {products.map((prod, idx) => (
+                        <li key={idx}><a href={prod.path}>{prod.label}</a></li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
 
-            <Home />
+                <li><a className={`nav-link ${activeSection === "contact" ? "active" : ""}`} onClick={() => scrollTo(contactRef, "contact")}>Contact</a></li>
+                <li><a className="nav-link" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a></li>
+              </ul>
 
-            <div ref={aboutRef}>
-                <About />
-            </div>
-            <div ref={serviceRef}>
-                <Service />
-            </div>
-            <div ref={productRef}>
-                <Products />
-            </div>
-            <div ref={contactRef}>
-                <ContactUs />
-            </div>
-            <div className="foot">
-                <Footer />
-            </div>
-        </div>
-    )
-}
+              <i
+                className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`}
+                onClick={() => setMobileNavOpen(!isMobileNavOpen)}
+              ></i>
+            </nav>
+          </div>
+        </header>
+      </div>
+
+      {/* SECTIONS */}
+      <div ref={homeRef}><Home /></div>
+      <div ref={aboutRef}><About /></div>
+      <div ref={serviceRef}><Service /></div>
+      <div ref={productRef}><Products /></div>
+      <div ref={contactRef}><ContactUs /></div>
+
+      <Footer />
+    </div>
+  );
+};
+
 export default Layout;

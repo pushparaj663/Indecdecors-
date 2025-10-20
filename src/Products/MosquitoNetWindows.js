@@ -1,144 +1,106 @@
-import { React, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from '../Header';
 import Footer from '../Footer';
-import AOS from 'aos';
-import "../../node_modules/aos/dist/aos.css"
-import windowscrew from '../../src/image/window-screw.jpg'
-import windowmagnetic from '../../src/image/window-screw.jpg'
 
-function MosquitoNetWindows(props) {
-    useEffect(() => {
-        AOS.init();
-    }, [])
+import windowScrew from '../image/window-screw.jpg';
+import windowMagnetic from '../image/window-screw.jpg';
 
-    return (
-        <>
-            <div className='container-fluid p-0'>
-                <div className='sticky-top'>
-                    <Header />
+import './theme.css';
+
+function MosquitoNetWindows() {
+  const [activeTab, setActiveTab] = useState('screw');
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  const tabContent = {
+    screw: [
+      { icon: 'bi-gear', title: 'Strong Frame', desc: 'Durable aluminum construction for long-term use.' },
+      { icon: 'bi-shield-lock', title: 'Secure Installation', desc: 'Screw-based fitting ensures complete protection.' },
+      { icon: 'bi-house-door', title: 'Permanent Solution', desc: 'Ideal for fixed window systems needing high security.' },
+    ],
+    magnetic: [
+      { icon: 'bi-magnet', title: 'Magnetic Closure', desc: 'Quick attach and detach with flexible magnetic strips.' },
+      { icon: 'bi-brush', title: 'Easy Maintenance', desc: 'Remove and clean with ease, perfect for daily use.' },
+      { icon: 'bi-lightning-charge', title: 'Modern Look', desc: 'Sleek and minimal design for elegant interiors.' },
+    ],
+  };
+
+  const features = [
+    { title: 'Premium Quality', desc: 'Provides an effective barrier against insects while allowing airflow.' },
+    { title: 'Customized Fit', desc: 'Tailored to any window size and color scheme.' },
+    { title: 'Enhanced Ventilation', desc: 'Fresh air circulation without pests entering your home.' },
+    { title: 'Long Durability', desc: 'Rust-proof aluminum ensures lasting protection.' },
+  ];
+
+  return (
+    <div className="container-fluid p-0 theme-container">
+      <div className="sticky-top"><Header /></div>
+
+      <section className="theme-section">
+        <div className="container" data-aos="fade-up">
+          <div className="theme-section-title text-center">
+            <h2>Mosquito Net Windows</h2>
+            <p>
+              Keep your home insect-free with our range of mosquito net windows designed for both security and comfort.
+            </p>
+          </div>
+
+          {/* === Tabs === */}
+          <div className="theme-tabs" data-aos="fade-up" data-aos-delay="100">
+            {['screw', 'magnetic'].map((tab) => (
+              <div
+                key={tab}
+                className={`theme-tab-link ${activeTab === tab ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab === 'screw' ? 'Screw Type' : 'Magnetic Type'}
+              </div>
+            ))}
+          </div>
+
+          {/* === Tab Content === */}
+          <div className="theme-row" data-aos="fade-up">
+            <div className="col-lg-6 theme-col">
+              <ul className="theme-features">
+                {tabContent[activeTab].map((item, index) => (
+                  <li key={index}>
+                    <i className={`bi ${item.icon}`}></i>
+                    <span>{item.title}:</span> {item.desc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="col-lg-6 theme-col theme-image-wrapper" data-aos="zoom-in">
+              <img
+                src={activeTab === 'screw' ? windowScrew : windowMagnetic}
+                alt="Mosquito Net Window"
+                className="theme-image"
+              />
+            </div>
+          </div>
+
+          {/* === Feature Boxes === */}
+          <div className="row theme-feature-section">
+            {features.map((feature, idx) => (
+              <div key={idx} className="col-lg-6 mb-4" data-aos="zoom-in">
+                <div className="theme-feature-box">
+                  <h4 className="theme-feature-title">{feature.title}</h4>
+                  <p className="theme-feature-description">{feature.desc}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <section id="mosquitonet" className="product-items section-bg">
-                    <div className="container">
-                        <div className="section-title" data-aos="fade-up" data-aos-delay="200">
-                            <h2>Mosquito Net Windows</h2>
-                            <p>Mosquito net windows are essential for keeping insects like mosquitoes, flies, and other pests out of your windows while allowing fresh air and natural light to flow in.
-                                Create a bug-free haven in your home with our range of high-quality aluminum mosquito net windows.
-                            </p>
-                            <p>
-                                At indec, we understand the importance of a comfortable and insect-free living space,
-                                and our aluminum mosquito net windows are designed to offer just that.
-                            </p>
-                        </div>
-
-                        <div className="row">
-
-                            <ul className="nav nav-tabs row d-flex" role="tablist">
-                                <li className="nav-item col" role="presentation">
-                                    <a className="nav-link show active" data-bs-toggle="tab" href="#tab-1" aria-selected="true" role="tab">
-                                        <i className="bi bi-house d-none d-lg-block"></i>
-                                        <h4>Mosquito Net Windows</h4>
-                                    </a>
-                                </li>
-                                <li className="nav-item col" role="presentation">
-                                    <a className="nav-link" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab" tabindex="-1">
-                                        <i className="bi bi-house d-none d-lg-block"></i>
-                                        <h4>Magnetic Mosquito Net Windows</h4>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div className="tab-content">
-                                <div className="tab-pane active show" id="tab-1" role="tabpanel">
-                                    <div className='row'>
-                                        <div className='col-lg'>
-                                            <p style={{ height: '100px' }}>
-                                                Screw mosquito net windows might refer to a more permanent installation method. Instead of relying on magnets, these screens are secured to the window frame using screws or other fasteners.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="row">
-                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Strong Aluminum Construction: </span>Our frames are crafted from high-quality aluminum, ensuring exceptional strength and resistance to corrosion. They are built to withstand the test of time, providing you with reliable insect protection for years to come.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Secure Screw Installation: </span>For those seeking added security and stability, our mosquito net windows feature screw installation. This method ensures a secure fit to your window frame, preventing any gaps that insects could exploit.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Enhanced Security: </span>Screw installation provides added security, giving you peace of mind knowing that your windows are securely protected.</li>
-                                            </ul>
-                                        </div>
-                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={windowscrew} alt="Aluminium Mosquito Net Windows" className="img-fluid" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="tab-pane" id="tab-2" role="tabpanel">
-
-                                    <div className='row'>
-                                        <div className='col-lg'>
-                                            <p style={{ height: '100px' }}>
-                                                A magnetic mosquito net likely refers to a type of window screen that uses magnetic strips to seal the edges firmly against the window frame. These screens are convenient because they can easily be removed for cleaning or storage and then reattached magnetically when needed.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="row">
-                                        <div className="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                                            <ul>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Durable Aluminum Frame: </span>Our windows are crafted with high-quality aluminum frames, ensuring longevity and sturdiness. The frames are resistant to rust and corrosion, making them ideal for long-term use.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Magnetic Closure: </span>Say goodbye to heavy installations! Our innovative magnetic closure system allows for easy installation and removal of the mosquito net screens. Simply attach the magnetic strips to your window frame, and the screen will securely snap into place.</li>
-                                                <li><i className="bi bi-check-circle-fill"></i><span>Customizable Options: </span>We understand that every window is unique. That's why we offer customizable options to ensure a perfect fit for your windows. Whether you have standard-sized windows or custom shapes, we can tailor our magnetic mosquito net screens to meet your specific requirements.</li>
-                                            </ul>
-                                        </div>
-                                        <div className="col-lg-6 order-1 order-lg-2 text-center">
-                                            <img src={windowmagnetic} alt="Aluminium Magnetic Mosquito Net Windows" className="img-fluid" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <section id="Products" className="Products" style={{ paddingTop: "40px" }}>
-                            <div className="row gy-4">
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-easing="ease-out-cubic" data-aos-duration="5000">
-                                        <h4 className="title">Premium Quality</h4>
-                                        <p className="description">
-                                            Our mosquito net windows provide an effective barrier against mosquitoes and other insects, allowing you to enjoy fresh air without the nuisance of bites. Crafted from premium materials, our windows offer reliable protection for your home.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-duration="5000">
-                                        <h4 className="title">Customized Solutions</h4>
-                                        <p className="description">We believe in providing solutions that cater to your unique needs. Choose from a variety of window sizes, mesh options, and frame colors to customize your mosquito net windows and seamlessly integrate them into your home's design.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
-                                        <h4 className="title">Enhanced Ventilation</h4>
-                                        <p className="description">Experience improved airflow and ventilation with our mosquito net windows. Say goodbye to stuffy rooms while keeping unwanted insects outside. Our windows are designed to enhance the comfort of your living spaces.</p>
-                                    </div>
-                                </div>
-
-                                <div className="col-lg-6">
-                                    <div className="box" data-aos="zoom-in" data-aos-duration="3000">
-                                        <h4 className="title">Durability and Longevity</h4>
-                                        <p className="description">
-                                            With robust aluminum frames and secure screw or with magnet installation, our mosquito net windows are built to last, offering reliable insect protection for years to come.
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </section>
-
-                    </div>
-                </section>
-
-                <Footer />
-            </div >
-        </>
-    );
+      <Footer />
+    </div>
+  );
 }
 
 export default MosquitoNetWindows;
