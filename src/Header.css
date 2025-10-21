@@ -43,7 +43,7 @@
 
 @media (max-width: 768px) {
     #header {
-        height: 60px;
+        height: 80px;
     }
 
     #header #logo h1 {
@@ -209,7 +209,7 @@
 }
 
 .mobile-nav-toggle {
-    color: #0c2e8a;
+    color: #000000;
     font-size: 28px;
     cursor: pointer;
     display: none;
@@ -219,6 +219,9 @@
 
 .mobile-nav-toggle.bi-x {
     color: #000000;
+    font-size: 40px;
+     transition: 0.5s ease;
+     
 }
 
 .navbar-mobile {
@@ -228,10 +231,14 @@
     right: 0;
     left: 130px;
     bottom: 0;
-    background: #dddddd;
-    
-    transition: all 0.3s;
-    z-index: 999;
+
+    /* Enhanced light background */
+    background: rgba(255, 255, 255, 0.95); /* soft white with transparency */
+    backdrop-filter: blur(2px); /* subtle glassy effect */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* soft shadow */
+
+    transition: transform 0.5s ease, opacity 0.5s ease, background 0.5s ease;
+     z-index: 999;
 }
 
 .navbar-mobile .mobile-nav-toggle {
@@ -250,7 +257,7 @@
     padding: 20px 0;
     background-color: #000000;
     overflow-y: auto;
-    transition: 0.3s;
+    transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.4s ease, margin 0.4s ease;
 }
 
 .navbar-mobile a,
@@ -279,6 +286,7 @@
     z-index: 99;
     opacity: 1;
     visibility: visible;
+    transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.4s ease, margin 0.4s ease;
 
    }
 

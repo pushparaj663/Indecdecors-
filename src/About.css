@@ -6,10 +6,10 @@
 /* Glass card for About section */
 #about-card {
     
-   background-color: transparent;
+  
     border-radius: 25px;
     padding: 30px 40px;
-    
+    overflow-x: hidden;
     margin: 30px auto;
     max-width: 1400px;
   font-family: "Poppins", sans-serif;

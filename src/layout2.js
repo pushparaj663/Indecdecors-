@@ -97,17 +97,17 @@ const Layout = () => {
                   >Services</a>
                 </li>
 
-                <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
+                <li className={`dropdown ${isProductsDropdownOpen ? "active" : ""}`}>
                   <button className="nav-link dropdown-toggle-btn" onClick={toggleProductsDropdown}>
                     Products <i className={`bi ${isProductsDropdownOpen ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
                   </button>
-                  {(isProductsDropdownOpen || !isMobileNavOpen) && (
-                    <ul>
-                      {products.map((prod, idx) => (
-                        <li key={idx}><a href={prod.path}>{prod.label}</a></li>
-                      ))}
-                    </ul>
-                  )}
+                  <ul className={`dropdown-menu ${isProductsDropdownOpen ? "dropdown-active" : ""}`}>
+                    {products.map((prod, idx) => (
+                      <li key={idx}>
+                        <a href={prod.path}>{prod.label}</a>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
 
                 <li>

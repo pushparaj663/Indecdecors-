@@ -34,7 +34,7 @@ function About() {
                 <section id="about-card" data-aos="fade-up">
                     {/* Full width heading and paragraph */}
                     <div className="full-width-text" data-aos="fade-down">
-                        <h2>Who We Are</h2>
+                        <h2>Who we are</h2>
                         <div className="heading-line"></div>
                         <p>
                             Welcome to Indec, where creativity meets functionality,

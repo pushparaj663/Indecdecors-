@@ -5,7 +5,7 @@ import About from "./About";
 import Service from "./Service";
 import Products from "./Products";
 import ContactUs from "./ContactUs";
-import indecbrouchure from "../src/Brochure/indec_brouchure.pdf";
+import indecbrouchure from '../src/Brochure/indec_brouchure.pdf';
 
 const Layout = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -25,22 +25,21 @@ const Layout = () => {
     { label: "Curtains", path: "/product/curtains" },
     { label: "Blinds", path: "/product/blinds" },
     { label: "Vinyl Flooring", path: "/product/vinylflooring" },
-    { label: "Wall Papers", path: "/product/wallpapers" },
+    { label: "Wall Papers", path: "/product/wallpapers" }
   ];
 
   const scrollTo = (ref, sectionName) => {
-    if (ref) {
+    if(ref) {
       ref.current.scrollIntoView({ behavior: "smooth" });
       setActiveSection(sectionName);
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       setActiveSection("/");
     }
-    setMobileNavOpen(false);
-    setProductsDropdownOpen(false);
+    if (isMobileNavOpen) setMobileNavOpen(false);
+    if (isProductsDropdownOpen) setProductsDropdownOpen(false);
   };
 
-  // Track scroll for active section
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -48,54 +47,38 @@ const Layout = () => {
 
       if (scrollY < aboutRef.current.offsetTop - offset) setActiveSection("/");
       else if (scrollY < serviceRef.current.offsetTop - offset) setActiveSection("who-we-are");
-      else if (scrollY < productRef.current.offsetTop - offset) setActiveSection("service");
-      else if (scrollY < contactRef.current.offsetTop - offset) setActiveSection("ourProducts");
+      else if (scrollY < productRef.current.offsetTop - offset) setActiveSection("ourProducts");
+      else if (scrollY < contactRef.current.offsetTop - offset) setActiveSection("contact");
       else setActiveSection("contact");
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleProductsDropdown = () => {
-    if (window.innerWidth <= 768) setProductsDropdownOpen(prev => !prev);
-  };
+    if(window.innerWidth <= 768) setProductsDropdownOpen(prev => !prev);
+  }
 
   return (
     <div className="container-fluid p-0">
-      {/* HEADER */}
       <div className="sticky-top">
         <header id="header" className="d-flex align-items-center">
-          <div className="container d-flex justify-content-between align-items-center">
+          <div className="container d-flex justify-content-between">
             {/* LOGO */}
             <div id="logo">
               <h1>
-                <a href="#" className="logo-text">Indec</a>
-              </h1>
-              <h4>Interiors</h4>
+                <a href="#" className="logo-text">
+                  Indec
+                </a>
+              </h1><h4>Interiors</h4>
             </div>
 
             {/* NAVBAR */}
-            <nav className={`navbar ${isMobileNavOpen ? "navbar-mobile active" : ""}`}>
+            <nav id="navbar" className={`navbar ${isMobileNavOpen ? 'navbar-mobile' : ''}`}>
               <ul>
-                <li>
-                  <a
-                    className={`nav-link ${activeSection === "/" ? "active" : ""}`}
-                    onClick={() => scrollTo(homeRef, "/")}
-                  >What we do</a>
-                </li>
-                <li>
-                  <a
-                    className={`nav-link ${activeSection === "who-we-are" ? "active" : ""}`}
-                    onClick={() => scrollTo(aboutRef, "who-we-are")}
-                  >Who we are</a>
-                </li>
-                <li>
-                  <a
-                    className={`nav-link ${activeSection === "service" ? "active" : ""}`}
-                    onClick={() => scrollTo(serviceRef, "service")}
-                  >Services</a>
-                </li>
+                <li><a className={`nav-link ${activeSection === "/" ? "active" : ""}`} onClick={() => scrollTo(homeRef, "/")}>What we do</a></li>
+                <li><a className={`nav-link ${activeSection === "who-we-are" ? "active" : ""}`} onClick={() => scrollTo(aboutRef, "who-we-are")}>Who we are</a></li>
+                <li><a className={`nav-link ${activeSection === "service" ? "active" : ""}`} onClick={() => scrollTo(serviceRef, "service")}>Services</a></li>
 
                 <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
                   <button className="nav-link dropdown-toggle-btn" onClick={toggleProductsDropdown}>
@@ -110,20 +93,12 @@ const Layout = () => {
                   )}
                 </li>
 
-                <li>
-                  <a
-                    className={`nav-link ${activeSection === "contact" ? "active" : ""}`}
-                    onClick={() => scrollTo(contactRef, "contact")}
-                  >Contact</a>
-                </li>
-                <li>
-                  <a className="nav-link" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a>
-                </li>
+                <li><a className={`nav-link ${activeSection === "contact" ? "active" : ""}`} onClick={() => scrollTo(contactRef, "contact")}>Contact</a></li>
+                <li><a className="nav-link" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a></li>
               </ul>
 
-              {/* MOBILE NAV TOGGLE */}
               <i
-                className={`bi ${isMobileNavOpen ? "bi-x" : "bi-list"} mobile-nav-toggle`}
+                className={`bi ${isMobileNavOpen ? 'bi-x' : 'bi-list'} mobile-nav-toggle`}
                 onClick={() => setMobileNavOpen(!isMobileNavOpen)}
               ></i>
             </nav>

@@ -93,8 +93,9 @@
   display: flex;
   gap: 30px;
   min-width: max-content;
-  padding: 20px 0;
+  padding: 60px 0;
   transition: transform 0.3s ease;
+  background: #f3f3f3;
 }
 /* Swipe hint text */
 .swipe-hint {
@@ -155,14 +156,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+    transition: transform 0.5s ease;
 }
+
+.products-card-info:hover{
+  background-color: #ff852e;
+   transform: scale(1);
+   
+}
+
 
 .products-card-title {
   color: #fff;
   font-weight: 600;
   font-size: 16px;
+    transition: transform 0.3s ease, color 0.3s ease;
   margin: 0;
 }
+
 
 .products-card-link {
   color: #fff;
@@ -171,8 +182,8 @@
 }
 
 .products-card-link:hover {
-  color: #ff6b00;
-  transform: scale(1.2);
+  color: #000000;
+  transform: scale(1.5);
 }
 
 /* =========================
