@@ -14,25 +14,37 @@ import FlooringMats from './Products/FlooringMats';
 import WallPapers from './Products/WallPapers';
 import Layout from './Layout';
 import React from 'react';
+import ContactPopup from "./ContactPopup";
+import { HelmetProvider } from "react-helmet-async";
+import Gallery from './gallery';
+
 
 function App() {
   return (
+      <HelmetProvider>
     <Router>
       <Routes>
-        <Route path='/' element={<Layout />} />
-        <Route path='whatwedo' element={<Home />} />
-        <Route path='who-we-are' element={<About />} />
-        <Route path='service' element={<Service />} />
-        <Route path='products' element={<Products />} />
-        <Route path='contact' element={<ContactUs />} />
-        <Route path='/product/mosquitonetwindows' element={<MosquitoNetWindows />} />
-        <Route path='/product/mosquitonetdoors' element={<MosquitoNetDoors />} />
-        <Route path='/product/curtains' element={<Curtains />} />
-        <Route path='/product/blinds' element={<Blinds />} />
-        <Route path='/product/vinylflooring' element={<FlooringMats />} />
-        <Route path='/product/wallpapers' element={<WallPapers />} />
-      </Routes>
+      
+  <Route path='/' element={<Layout />} />
+  <Route path='whatwedo' element={<Home />} />
+  <Route path='who-we-are' element={<About />} />
+  <Route path='service' element={<Service />} />
+  <Route path='products' element={<Products />} />      {/* main products page */}
+  <Route path='contact' element={<ContactUs />} />
+  <Route path="/gallery" element={<Gallery />} />
+  {/* individual product pages */}
+  <Route path='products/mosquitonetwindows' element={<MosquitoNetWindows />} />
+  <Route path='products/mosquitonetdoors' element={<MosquitoNetDoors />} />
+  <Route path='products/curtains' element={<Curtains />} />
+  <Route path='products/blinds' element={<Blinds />} />
+  <Route path='products/vinylflooring' element={<FlooringMats />} />
+  <Route path='products/wallpapers' element={<WallPapers />} />
+</Routes>
+
+    
+      <ContactPopup />
     </Router>
+    </HelmetProvider>
   );
 }
 

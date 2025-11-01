@@ -1,0 +1,228 @@
+/* =========================
+   Floating Contact Widget
+========================= */
+.contact-popup {
+  position: fixed;
+  right: 15px;
+  bottom: 90px;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  transition: all 0.5s ease-in-out;
+  animation: fadeIn 0.6s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   Toggle Button
+========================= */
+.contact-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff6b00, #ffb347);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.45);
+  transition: all 0.3s ease;
+  animation: pulse 2.5s infinite;
+}
+
+.contact-toggle:hover {
+  transform: scale(1.1) rotate(8deg);
+  background: linear-gradient(135deg, #ff7a00, #ffd280);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(255, 107, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 107, 0, 0); }
+}
+
+/* =========================
+   Popup Card
+========================= */
+.contact-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 25px 20px 30px;
+  margin-right: 18px;
+  width: 310px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  color: #333;
+  animation: slideIn 0.5s cubic-bezier(0.25, 1.25, 0.5, 1) forwards;
+  transform-origin: bottom right;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(120%) scale(0.95); opacity: 0; }
+  to { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Header & Info
+========================= */
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-header i {
+  font-size: 28px;
+  color: #ff6b00;
+}
+
+.contact-header h4 {
+  font-size: 18px;
+  color: #ff6b00;
+  font-weight: 600;
+}
+
+.contact-content p {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #333;
+  transition: all 0.25s ease;
+}
+
+.contact-content i {
+  margin-right: 10px;
+  color: #ff6b00;
+  font-size: 18px;
+}
+
+.contact-content p:hover {
+  color: #ff6b00;
+  transform: translateX(6px);
+}
+
+.contact-content hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 16px 0;
+}
+
+/* =========================
+   Footer Buttons
+========================= */
+.popup-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.popup-btn {
+  background: linear-gradient(135deg, #ff6b00, #ffb347);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14.5px;
+  transition: all 0.3s ease;
+}
+
+.popup-btn.alt {
+  background: linear-gradient(135deg, #222, #444);
+}
+
+.popup-btn.whatsapp {
+  background: linear-gradient(135deg, #25d366, #61ff91);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.popup-btn.whatsapp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* =========================
+   Floating WhatsApp Shortcut
+========================= */
+.whatsapp-float {
+  position: absolute;
+  
+  bottom: 90px;
+  background: #25d366;
+  color: white;
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  animation: pulseWhatsApp 2.5s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) rotate(8deg);
+}
+
+@keyframes pulseWhatsApp {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* =========================
+   Responsive
+========================= */
+
+
+/* Small screens (mobiles) */
+@media (max-width: 768px) {
+  .contact-popup {
+    bottom: 70px;
+    right: 15px;
+  }
+
+  .contact-toggle {
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+        right: 10px;
+  }
+
+  .contact-content {
+    width: auto;
+    height: auto;
+    padding: 10px 10px;
+    margin-right: 10px;
+  }
+
+  .popup-btn {
+    font-size: 13.5px;
+  }
+
+  .whatsapp-float {
+     width: 55px;
+    height: 55px;
+    font-size: 24px;
+        right: -1px;
+        bottom: 70px;
+  }
+}
+
+

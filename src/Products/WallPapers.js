@@ -3,10 +3,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from '../Header';
 import Footer from '../Footer';
-
+import Breadcrumbs from './Breadcrumbs'; 
 import wallpaperResidential from '../../src/image/wallpaper-residential.jpg';
 import wallpaperCommercial from '../../src/image/wallpaper-commercial.jpg';
-
+import { Helmet } from "react-helmet-async";
 import './theme.css';
 
 function WallPapers() {
@@ -41,11 +41,18 @@ function WallPapers() {
   ];
 
   return (
+    <>
+    <Helmet>
+  <title>Wallpapers | Indec Interiors</title>
+  <meta name="description" content="Designer wallpapers that bring texture, color, and style to your walls. Discover the perfect pattern for your home." />
+  <meta name="keywords" content="wallpapers, wall design, home wallpapers, textured wallpapers" />
+</Helmet>
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div>
-
+<Breadcrumbs />
       <section className="theme-section">
         <div className="container" data-aos="fade-up">
+        
           {/* Section Title */}
           <div className="theme-section-title text-center">
             <h2>Wallpapers for Walls</h2>
@@ -103,7 +110,7 @@ function WallPapers() {
       </section>
 
       <Footer />
-    </div>
+    </div></>
   );
 }
 

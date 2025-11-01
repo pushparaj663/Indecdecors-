@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import Header from "./Header";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
+
 
 function ContactUs() {
   useEffect(() => {
@@ -11,6 +13,12 @@ function ContactUs() {
   }, []);
 
   return (
+    <>
+    <Helmet>
+  <title>Contact Us | Indec Interiors</title>
+  <meta name="description" content="Get in touch with Indec Interiors for design consultations, product inquiries, and custom interior design services." />
+  <meta name="keywords" content="contact Indec Interiors, interior designers contact, design consultation" />
+</Helmet>
     <div className="container-fluid p-0">
       <div className="sticky-top">
         {window.location.pathname === "/" ? "" : <Header />}
@@ -77,6 +85,7 @@ function ContactUs() {
 
       {window.location.pathname === "/" ? "" : <Footer />}
     </div>
+    </>
   );
 }
 

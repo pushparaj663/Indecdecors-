@@ -5,6 +5,8 @@ import Footer from './Footer';
 import Header from './Header';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import { Helmet } from "react-helmet-async";
+
 
 function About() {
     useEffect(() => {
@@ -28,10 +30,16 @@ function About() {
 
     return (
         <>
+        <Helmet>
+  <title>About Us | Indec Interiors</title>
+  <meta name="description" content="Learn about Indec Interiors — a leading interior design firm offering innovative design solutions for homes and offices." />
+  <meta name="keywords" content="About Indec Interiors, interior design company, home design experts" />
+</Helmet>
             <div className='container-fluid p-0'>
                 {!isHome && <div className='sticky-top'><Header /></div>}
 
                 <section id="about-card" data-aos="fade-up">
+                  
                     {/* Full width heading and paragraph */}
                     <div className="full-width-text" data-aos="fade-down">
                         <h2>Who we are</h2>

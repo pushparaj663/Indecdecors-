@@ -4,9 +4,11 @@ import 'aos/dist/aos.css';
 import Header from '../Header';
 import Footer from '../Footer';
 import './theme.css'; // unified styling for flooring
-
+import { Helmet } from "react-helmet-async";
 import flooringResidential from '../../src/image/flooring-residential.jpg';
 import flooringCommercial from '../../src/image/flooring-commercial.jpg';
+import Breadcrumbs from './Breadcrumbs'; 
+
 
 function FlooringMats() {
   const [activeTab, setActiveTab] = useState('residential');
@@ -27,11 +29,19 @@ function FlooringMats() {
   };
 
   return (
+    <>
+    <Helmet>
+  <title>Vinyl Flooring | Indec Interiors</title>
+  <meta name="description" content="Premium vinyl flooring options that offer elegance, durability, and easy maintenance for your space." />
+  <meta name="keywords" content="vinyl flooring, wooden flooring, flooring mats, modern flooring" />
+</Helmet>
+
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div>
-
+<Breadcrumbs />
       <section className="theme-section">
         <div className="container" data-aos="fade-up">
+         
           <div className="theme-section-title text-center">
             <h2>Vinyl Flooring</h2>
             <p>Premium vinyl flooring mats blending style, strength, and comfort.</p>
@@ -92,7 +102,7 @@ function FlooringMats() {
       </section>
 
       <Footer />
-    </div>
+    </div></>
   );
 }
 

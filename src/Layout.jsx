@@ -6,6 +6,7 @@ import Service from "./Service";
 import Products from "./Products";
 import ContactUs from "./ContactUs";
 import indecbrouchure from "../src/Brochure/indec_brouchure.pdf";
+import Gallery from "./gallery";
 
 const Layout = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -20,12 +21,12 @@ const Layout = () => {
   const [activeSection, setActiveSection] = useState("/");
 
   const products = [
-    { label: "Mosquito Net Windows", path: "/product/mosquitonetwindows" },
-    { label: "Mosquito Net Doors", path: "/product/mosquitonetdoors" },
-    { label: "Curtains", path: "/product/curtains" },
-    { label: "Blinds", path: "/product/blinds" },
-    { label: "Vinyl Flooring", path: "/product/vinylflooring" },
-    { label: "Wall Papers", path: "/product/wallpapers" },
+    { label: "Mosquito Net Windows", path: "/products/mosquitonetwindows" },
+    { label: "Mosquito Net Doors", path: "/products/mosquitonetdoors" },
+    { label: "Curtains", path: "/products/curtains" },
+    { label: "Blinds", path: "/products/blinds" },
+    { label: "Vinyl Flooring", path: "/products/vinylflooring" },
+    { label: "Wall Papers", path: "/products/wallpapers" },
   ];
 
   const scrollTo = (ref, sectionName) => {
@@ -40,17 +41,28 @@ const Layout = () => {
     setProductsDropdownOpen(false);
   };
 
-  // Track scroll for active section
+  // ✅ Scroll tracking + Dynamic title update
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const offset = 100;
 
-      if (scrollY < aboutRef.current.offsetTop - offset) setActiveSection("/");
-      else if (scrollY < serviceRef.current.offsetTop - offset) setActiveSection("who-we-are");
-      else if (scrollY < productRef.current.offsetTop - offset) setActiveSection("service");
-      else if (scrollY < contactRef.current.offsetTop - offset) setActiveSection("ourProducts");
-      else setActiveSection("contact");
+      if (scrollY < aboutRef.current.offsetTop - offset) {
+        setActiveSection("/");
+        document.title = "Indec Interiors | Home";
+      } else if (scrollY < serviceRef.current.offsetTop - offset) {
+        setActiveSection("who-we-are");
+        document.title = "Indec Interiors | About Us";
+      } else if (scrollY < productRef.current.offsetTop - offset) {
+        setActiveSection("service");
+        document.title = "Indec Interiors | Services";
+      } else if (scrollY < contactRef.current.offsetTop - offset) {
+        setActiveSection("ourProducts");
+        document.title = "Indec Interiors | Products";
+      } else {
+        setActiveSection("contact");
+        document.title = "Indec Interiors | Contact Us";
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -97,7 +109,8 @@ const Layout = () => {
                   >Services</a>
                 </li>
 
-                <li className={`dropdown ${isProductsDropdownOpen ? 'active' : ''}`}>
+
+                <li className={`dropdown ${isProductsDropdownOpen ? "active" : ""}`}>
                   <button className="nav-link dropdown-toggle-btn" onClick={toggleProductsDropdown}>
                     Products <i className={`bi ${isProductsDropdownOpen ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
                   </button>
@@ -116,9 +129,11 @@ const Layout = () => {
                     onClick={() => scrollTo(contactRef, "contact")}
                   >Contact</a>
                 </li>
+
                 <li>
                   <a className="nav-link" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a>
                 </li>
+                <a href="/gallery">Gallery</a>
               </ul>
 
               {/* MOBILE NAV TOGGLE */}

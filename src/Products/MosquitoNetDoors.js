@@ -3,10 +3,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from '../Header';
 import Footer from '../Footer';
-
+import Breadcrumbs from './Breadcrumbs'; 
 import doorSliding from '../../src/image/door-sliding.jpg';
 import doorHinged from '../../src/image/door-hinged.jpg';
-
+import { Helmet } from "react-helmet-async";
 import './theme.css';
 
 function MosquitoNetDoors() {
@@ -35,11 +35,20 @@ function MosquitoNetDoors() {
   ];
 
   return (
+    <>
+   <Helmet>
+  <title>Mosquito Net Doors | Indec Interiors</title>
+  <meta name="description" content="Elegant mosquito net doors that combine functionality with modern design for homes and offices." />
+  <meta name="keywords" content="mosquito net doors, sliding doors, insect protection" />
+</Helmet>
+
+
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div>
-
+<Breadcrumbs />
       <section className="theme-section">
         <div className="container" data-aos="fade-up">
+          
           <div className="theme-section-title text-center">
             <h2>Mosquito Net Doors</h2>
             <p>Safe, stylish, and functional mosquito net doors for your home.</p>
@@ -94,7 +103,7 @@ function MosquitoNetDoors() {
       </section>
 
       <Footer />
-    </div>
+    </div></>
   );
 }
 

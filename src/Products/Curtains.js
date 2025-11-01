@@ -3,11 +3,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from '../Header';
 import Footer from '../Footer';
-
+import Breadcrumbs from './Breadcrumbs'; 
 import curtainsSheer from '../../src/image/curtains-sheer.jpg';
 import curtainsBlackout from '../../src/image/curtains-blockout.jpg';
-
+import { Helmet } from "react-helmet-async";
 import './theme.css';
+import './CurtainRod';
+import CurtainRod from './CurtainRod';
 
 function Curtains() {
   const [activeTab, setActiveTab] = useState('blackout');
@@ -37,11 +39,18 @@ function Curtains() {
   ];
 
   return (
+    <><Helmet>
+  <title>Curtains | Indec Interiors</title>
+  <meta name="description" content="Beautiful curtains that elevate your space with premium fabric, design, and customization options." />
+  <meta name="keywords" content="curtains, window curtains, home curtains, designer drapes" />
+</Helmet>
+
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div>
-
+<Breadcrumbs />
       <section className="theme-section">
         <div className="container" data-aos="fade-up">
+         
           <div className="theme-section-title text-center">
             <h2>Curtains</h2>
             <p>Premium curtains combining style, functionality, and comfort for your interiors.</p>
@@ -92,11 +101,12 @@ function Curtains() {
               </div>
             ))}
           </div>
+          <CurtainRod/>
         </div>
       </section>
 
       <Footer />
-    </div>
+    </div></>
   );
 }
 

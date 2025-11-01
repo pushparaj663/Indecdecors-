@@ -6,6 +6,10 @@ import Footer from '../Footer';
 import blindsBlackout from '../../src/image/blinds-blackout.jpg';
 import blindsZebra from '../../src/image/blinds-zebra.jpg';
 import './theme.css';
+import { Helmet } from "react-helmet-async";
+import Breadcrumbs from './Breadcrumbs'; // adjust path if needed
+
+
 
 function Blinds() {
   const [activeTab, setActiveTab] = useState('blackout');
@@ -26,11 +30,19 @@ function Blinds() {
   };
 
   return (
+    <>
+    <Helmet>
+  <title>Blinds | Indec Interiors</title>
+  <meta name="description" content="Stylish blinds for modern homes and offices, available in roller, vertical, and Venetian designs." />
+  <meta name="keywords" content="blinds, roller blinds, window blinds, vertical blinds" />
+</Helmet>
+
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div>
-
+<Breadcrumbs />
       <section className="theme-section">
         <div className="container" data-aos="fade-up">
+      
           <div className="theme-section-title text-center">
             <h2>Window Blinds</h2>
             <p>Elegant blinds designed for modern style, light control, and privacy.</p>
@@ -87,7 +99,7 @@ function Blinds() {
       </section>
 
       <Footer />
-    </div>
+    </div></>
   );
 }
 

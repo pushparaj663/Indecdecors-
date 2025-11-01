@@ -23,13 +23,13 @@
     text-decoration: none;
 }
 #header #logo h4  {
-    font-size: 17px;
+    font-size: 16px;
     margin-top: -9px;
     letter-spacing: 7px;
     font-family: "poppins", sans-serif;
     color: rgb(255, 98, 0);
     font-weight: 200;
-    margin-left: 2px;}
+    margin-left: 3px;}
     
 
 #header #logo h1 a span {
@@ -130,10 +130,11 @@
     padding: 10px 0;
     z-index: 99;
     opacity: 0;
+    border-radius: 10px;
     visibility: hidden;
     background: #fff;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .navbar .dropdown ul li {
@@ -142,11 +143,11 @@
 
 .navbar .dropdown ul a {
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .navbar .dropdown ul a i {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .navbar .dropdown ul a:hover,
@@ -210,7 +211,7 @@
 
 .mobile-nav-toggle {
     color: #000000;
-    font-size: 28px;
+    font-size: 38px;
     cursor: pointer;
     display: none;
     line-height: 0;

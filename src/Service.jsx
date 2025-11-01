@@ -4,6 +4,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
+
 
 function Service() {
   useEffect(() => {
@@ -12,6 +14,11 @@ function Service() {
 
   return (
     <>
+    <Helmet>
+  <title>Services | Indec Interiors</title>
+  <meta name="description" content="Explore Indec Interiors’ wide range of services including space planning, design consultation, home renovation, and more." />
+  <meta name="keywords" content="Interior design services, space planning, home renovation, custom furniture" />
+</Helmet>
       <div className="service-page-container">
         {/* Sticky Header */}
         <div className="service-header-fixed">

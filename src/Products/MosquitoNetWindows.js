@@ -3,10 +3,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from '../Header';
 import Footer from '../Footer';
-
+import Breadcrumbs from './Breadcrumbs'; 
 import windowScrew from '../image/window-screw.jpg';
 import windowMagnetic from '../image/window-screw.jpg';
-
+import { Helmet } from "react-helmet-async";
 import './theme.css';
 
 function MosquitoNetWindows() {
@@ -37,11 +37,21 @@ function MosquitoNetWindows() {
   ];
 
   return (
+    <>
+    <Helmet>
+  <title>Mosquito Net Doors | Indec Interiors</title>
+  <meta name="description" content="Elegant mosquito net doors that combine functionality with modern design for homes and offices." />
+  <meta name="keywords" content="mosquito net doors, sliding doors, insect protection" />
+</Helmet>
+
     <div className="container-fluid p-0 theme-container">
-      <div className="sticky-top"><Header /></div>
+      <div className="sticky-top"><Header /></div> 
+      < Breadcrumbs />
 
       <section className="theme-section">
+        
         <div className="container" data-aos="fade-up">
+         
           <div className="theme-section-title text-center">
             <h2>Mosquito Net Windows</h2>
             <p>
@@ -99,7 +109,7 @@ function MosquitoNetWindows() {
       </section>
 
       <Footer />
-    </div>
+    </div></>
   );
 }
 

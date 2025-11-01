@@ -1,0 +1,115 @@
+/* ===============================
+   Breadcrumb Wrapper
+================================= */
+.indec-breadcrumb-wrapper {
+  width: 100%;
+ position: relative;
+padding-left: 40px;
+padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===============================
+   Breadcrumb Links
+================================= */
+.indec-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+ 
+  line-height: 1;
+}
+
+.indec-breadcrumb-link,
+.indec-breadcrumb-last {
+  position: relative;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 400;
+  font-size: 17px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Arrow for links */
+.indec-breadcrumb-link::after {
+  content: ">";
+position: relative;
+top: 2px;
+  margin-left: 5px;
+  color: #000000;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.indec-breadcrumb-link:hover {
+  color: #ff6b00;
+}
+.indec-breadcrumb-link:hover::after {
+  color: #ff6b00;
+}
+
+/* Active trail (all previous steps + current) */
+.indec-breadcrumb-link.active,
+.indec-breadcrumb-link.active ~ .indec-breadcrumb-link {
+  color: #ff6b00;
+}
+.indec-breadcrumb-link.active::after,
+.indec-breadcrumb-link.active ~ .indec-breadcrumb-link::after {
+  color: #ff6b00;
+}
+
+/* Current page */
+.indec-breadcrumb-last.active {
+  color: #ff6b00; /* text orange */
+}
+.indec-breadcrumb-last.active::after {
+  content: none; /* no arrow for current page */
+}
+
+/* Optional fade-in animation */
+.indec-breadcrumb-link,
+.indec-breadcrumb-last {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.indec-breadcrumb-link:nth-child(1) { animation-delay: 0s; }
+.indec-breadcrumb-link:nth-child(2) { animation-delay: 0.05s; }
+.indec-breadcrumb-link:nth-child(3) { animation-delay: 0.1s; }
+.indec-breadcrumb-last { animation-delay: 0.15s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   Responsive
+================================= */
+@media (max-width: 768px) {
+  .indec-breadcrumb {
+    flex-wrap: wrap;
+    gap: 1px;
+
+
+
+position: relative;
+left: -10px;
+   
+  }
+
+  .indec-breadcrumb-link,
+  .indec-breadcrumb-last {
+    padding: 3px 5px;
+    font-size: 15px;
+font-weight: 500px;
+
+    
+  }
+
+  .indec-breadcrumb-link::after {
+    margin-left: 1px;
+  }
+}

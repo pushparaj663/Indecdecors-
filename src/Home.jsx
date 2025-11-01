@@ -1,98 +1,107 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation, Parallax } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.css";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-const slides = [
-  {
-    id: 1,
-    image: require("../src/image/banner-1.jpg"),
-    title: "Your Vision, Our Expertise",
-    subtitle: "Transforming dreams into reality with elegant interior design.",
-    buttonText: "Start Your Project",
-    buttonLink: "#contact",
-  },
-  {
-    id: 2,
-    image: require("../src/image/banner-2.jpg"),
-    title: "Elevating Spaces, Elevating Lives",
-    subtitle: "Creating environments that inspire and enhance your daily living.",
-  },
-  {
-    id: 3,
-    image: require("../src/image/banner-3.jpg"),
-    title: "Designing Your Story, One Detail at a Time",
-    subtitle: "Attention to every detail to craft spaces that tell your story.",
-  },
-  {
-    id: 4,
-    image: require("../src/image/banner-4.jpg"),
-    title: "Crafting Beautiful Interiors, One Room at a Time",
-    subtitle: "Personalized designs that reflect your unique style and personality.",
-  },
-];
-
-
   useEffect(() => {
-    AOS.init({ duration: 300, once: true });
+    AOS.init({ duration: 800, once: true });
   }, []);
 
-  const handleSlideChange = (index) => setActiveIndex(index);
+  const slides = [
+    {
+      id: 1,
+      image: require("../src/image/banner-1.jpg"),
+      title: "Your Vision, Our Expertise",
+      subtitle:
+        "Transforming dreams into reality with elegant interior design.",
+      buttonText: "Start Your Project",
+      buttonLink: "#contact",
+    },
+    {
+      id: 2,
+      image: require("../src/image/banner-2.jpg"),
+      title: "Elevating Spaces, Elevating Lives",
+      subtitle:
+        "Creating environments that inspire and enhance your daily living.",
+    },
+    {
+      id: 3,
+      image: require("../src/image/banner-3.jpg"),
+      title: "Designing Your Story, One Detail at a Time",
+      subtitle:
+        "Attention to every detail to craft spaces that tell your story.",
+    },
+    {
+      id: 4,
+      image: require("../src/image/banner-4.jpg"),
+      title: "Crafting Beautiful Interiors, One Room at a Time",
+      subtitle:
+        "Personalized designs that reflect your unique style and personality.",
+    },
+  ];
 
   return (
-    <section className="hero-section">
-      <div
-        id="heroCarousel"
-        className="carousel slide carousel-fade"
-        data-bs-ride="carousel"
-      >
-        {/* Indicators */}
-        <div className="carousel-indicators">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              data-bs-target="#heroCarousel"
-              data-bs-slide-to={i}
-              className={i === activeIndex ? "active" : ""}
-              onClick={() => handleSlideChange(i)}
-              aria-label={`Slide ${i + 1}`}
-            ></button>
-          ))}
-        </div>
+    <>
+      <Helmet>
+        <title>Indec Interiors | Home</title>
+        <meta
+          name="description"
+          content="Indec Interiors transforms your spaces with modern and elegant interior designs. Explore custom solutions for homes and offices."
+        />
+        <meta
+          name="keywords"
+          content="Indec Interiors, home interiors, luxury design, modern home decor, interior designers India"
+        />
+      </Helmet>
 
-        {/* Slides */}
-        <div className="carousel-inner">
+      <section className="hero-section">
+        <Swiper
+          speed={1400}
+          parallax={true}
+          centeredSlides={true}
+          autoplay={{
+            delay: 5500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          loop={true}
+          modules={[Autoplay, Pagination, Navigation, Parallax]}
+          className="heroSwiper"
+        >
           {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`carousel-item ${index === activeIndex ? "active" : ""}`}
-            >
-              <div className="hero-image-wrapper">
-                <img
-                  src={slide.image}
-                  className="d-block w-100 hero-image"
-                  alt={slide.title}
-                />
-                <div className="hero-overlay"></div>
-              </div>
+            <SwiperSlide key={slide.id}>
+              <div
+                className="slide-bg kenburns"
+                style={{ backgroundImage: `url(${slide.image})` }}
+                data-swiper-parallax="-20%"
+              ></div>
 
-              <div className="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
+              <div className="hero-overlay"></div>
+
+              <div className="hero-content">
                 <h1
                   className="hero-title"
+                  data-swiper-parallax="-300"
                   data-aos="fade-up"
-                  data-aos-delay="200"
                 >
                   {slide.title}
                 </h1>
                 <p
                   className="hero-subtitle"
+                  data-swiper-parallax="-100"
                   data-aos="fade-up"
-                  data-aos-delay="400"
+                  data-aos-delay="200"
                 >
                   {slide.subtitle}
                 </p>
@@ -101,38 +110,19 @@ const slides = [
                   <a
                     href={slide.buttonLink}
                     className="btn btn-hero mt-3"
-                    data-aos="zoom-in"
-                    data-aos-delay="600"
+                    data-swiper-parallax="-150"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
                   >
                     {slide.buttonText}
                   </a>
                 )}
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
-
-        {/* Controls */}
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#heroCarousel"
-          data-bs-slide="prev"
-        >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#heroCarousel"
-          data-bs-slide="next"
-        >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
+        </Swiper>
+      </section>
+    </>
   );
 }
 
