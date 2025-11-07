@@ -26,9 +26,12 @@ const Breadcrumbs = () => {
           {displayName}
         </span>
       ) : (
-        <Link key={routeTo} to={routeTo} className="indec-breadcrumb-link">
-          {displayName}
-        </Link>
+        <>
+          <span className="indec-breadcrumb-separator"> &gt; </span>
+          <Link key={routeTo} to={routeTo} className="indec-breadcrumb-link">
+            {displayName}
+          </Link>
+        </>
       )
     );
   });

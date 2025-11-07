@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* ============= BASE ============= */
+/* ===========================================
+   BASE
+=========================================== */
 .galleryPage-container {
   font-family: "Poppins", sans-serif;
   background: #ffffff;
   overflow-x: hidden;
 }
 
-/* ============= SECTION ============= */
+/* ===========================================
+   SECTION
+=========================================== */
 .galleryPage-section {
   padding: 100px 20px;
   background: #ffffff;
@@ -20,14 +24,16 @@
   margin: 0 auto;
 }
 
-/* ============= HEADER ============= */
+/* ===========================================
+   HEADER
+=========================================== */
 .galleryPage-header h2 {
   font-size: 38px;
   font-weight: 700;
-  text-transform: uppercase;
+
   margin-bottom: 15px;
   position: relative;
-  color: #1a1a1a;
+  color: #000247;
 }
 
 .galleryPage-header h2::after {
@@ -42,13 +48,15 @@
 
 .galleryPage-header p {
   font-size: 16px;
-  color: #555;
+  color: #000000;
   max-width: 750px;
   margin: 0 auto 50px;
   line-height: 1.6;
 }
 
-/* ============= GRID ============= */
+/* ===========================================
+   GRID
+=========================================== */
 .galleryPage-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -57,23 +65,28 @@
   align-items: center;
 }
 
-/* ============= IMAGE BOX ============= */
+/* ===========================================
+   IMAGE CARD
+=========================================== */
 .galleryPage-item {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  background: #f9f9f9;
+  background: #f4f4f4;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   width: 100%;
-  aspect-ratio: 4 / 3; /* fixed ratio for all images */
+  aspect-ratio: 5 / 4; /* same size layout */
   transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .galleryPage-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* ensures consistent layout */
+  object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -85,7 +98,7 @@
 }
 
 .galleryPage-item:hover img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 /* Caption Overlay */
@@ -99,7 +112,11 @@
   font-size: 15px;
   font-weight: 500;
   color: #fff;
-  background: linear-gradient(135deg, rgba(255, 107, 0, 0.9), rgba(255, 160, 70, 0.85));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 0, 0.9),
+    rgba(255, 160, 70, 0.85)
+  );
   transform: translateY(100%);
   opacity: 0;
   transition: all 0.35s ease;
@@ -110,14 +127,16 @@
   transform: translateY(0);
 }
 
-/* ============= LIGHTBOX ============= */
+/* ===========================================
+   LIGHTBOX
+=========================================== */
 .galleryPage-lightboxOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,32 +146,44 @@
 
 .galleryPage-lightboxContent {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 92vw;
+  max-height: 92vh;
+    aspect-ratio: 6 / 4 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.3s ease;
+}
+
+/* ✅ FIX IMAGE FIT — FULL & NO CROP */
+.galleryPage-lightboxImg {
+    width: 100%;
+  height: 100%;
+  object-fit: contain;
+ 
+  border-radius: 12px;
+  display: block;
+}
+
+/* CAPTION */
+.galleryPage-caption {
+  color: #fff;
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 500;
   text-align: center;
 }
 
-.galleryPage-lightboxImg {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
-}
-
-.galleryPage-caption {
-  color: #fff;
-  margin-top: 12px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-/* Buttons */
+/* ===========================================
+   CONTROLS
+=========================================== */
 .galleryPage-prevBtn,
 .galleryPage-nextBtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   color: #fff;
   font-size: 40px;
@@ -164,7 +195,7 @@
 
 .galleryPage-prevBtn:hover,
 .galleryPage-nextBtn:hover {
-  background: rgba(255, 107, 0, 0.8);
+  background: rgba(255, 107, 0, 0.85);
 }
 
 .galleryPage-prevBtn {
@@ -175,6 +206,7 @@
   right: -60px;
 }
 
+/* Close Button */
 .galleryPage-closeBtn {
   position: absolute;
   top: -40px;
@@ -189,24 +221,61 @@
   color: #ff6b00;
 }
 
-/* Animation */
+/* ===========================================
+   ANIMATIONS
+=========================================== */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* ============= RESPONSIVE ============= */
-@media (max-width: 768px) {
-  .galleryPage-section { padding: 80px 15px; }
-  .galleryPage-item { aspect-ratio: 1 / 1; }
-  .galleryPage-prevBtn,
-  .galleryPage-nextBtn { font-size: 28px; left: 10px; right: 10px; }
-  .galleryPage-closeBtn { font-size: 30px; top: -30px; }
+@keyframes scaleIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
-@media (max-width: 576px) {
-  .galleryPage-header h2 { font-size: 28px; }
-  .galleryPage-header p { font-size: 14px; }
-  .galleryPage-prevBtn,
-  .galleryPage-nextBtn { display: none; }
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+/* ===========================================
+   MOBILE RESPONSIVE
+=========================================== */
+@media (max-width: 768px) {
+.galleryPage-item{
+ max-width: 300px;
 }
+  .galleryPage-lightboxContent {
+    width: 94vw;
+    aspect-ratio: unset;         /* ✅ allow free height */
+    max-height: 80vh;            /* ✅ fit screen */
+  }
+
+  .galleryPage-lightboxImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .galleryPage-prevBtn {
+    left: 8px; 
+    font-size: 15px;     /* ✅ left button */
+    right: auto;
+    background-color: #f4f4f49d;
+    color: #1a1a1a;
+  }
+
+  .galleryPage-nextBtn {
+    right: 8px; 
+    font-size: 15px;    /* ✅ right button */
+    left: auto;
+       background-color: #f4f4f49d;
+    color: #1a1a1a;
+  }
+
+  .galleryPage-closeBtn {
+    top: -32px;
+    font-size: 30px;
+  }
+}
+
+

@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 import "./gallerycard.css";
 
 // ✅ Import images
-import img1 from "./image/banner-1.jpg";
+import img1 from "./image/banner-5.jpg";
 import img2 from "./image/banner-2.jpg";
 import img3 from "./image/banner-3.jpg";
 import img4 from "./image/banner-4.jpg";
@@ -52,19 +52,34 @@ const Gallery = () => {
 
   return (
     <>
-      {/* ✅ SEO Meta */}
-      <Helmet>
-        <title>Gallery | Indec Interiors</title>
-        <meta
-          name="description"
-          content="Explore the gallery of Indec Interiors showcasing our elegant designs, premium products, and completed interior transformations."
-        />
-        <meta
-          name="keywords"
-          content="Indec Interiors gallery, interior design, home decor, blinds, curtains, wallpapers"
-        />
-      </Helmet>
+        
+        <Helmet>
+          <title>Gallery | Indec Interiors</title>
+          <meta
+            name="description"
+            content="Explore the gallery of Indec Interiors showcasing elegant designs, premium products, and completed interior transformations."
+          />
+          <meta
+            name="keywords"
+            content="Indec Interiors gallery, interior design, home decor, blinds, curtains, wallpapers"
+          />
 
+          {/* Canonical */}
+          <link rel="canonical" href="https://indecdecors.com/gallery" />
+
+          {/* Open Graph */}
+          <meta property="og:title" content="Gallery | Indec Interiors" />
+          <meta
+            property="og:description"
+            content="Explore elegant interior projects completed by Indec Interiors."
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://indecdecors.com/gallery" />
+          <meta
+            property="og:image"
+            content="https://indecdecors.com/image/banner-3.jpg"
+          />
+        </Helmet>
       <div className="galleryPage-container">
         {/* ✅ Header */}
         <div className="sticky-top">

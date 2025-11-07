@@ -43,10 +43,35 @@ function WallPapers() {
   return (
     <>
     <Helmet>
-  <title>Wallpapers | Indec Interiors</title>
-  <meta name="description" content="Designer wallpapers that bring texture, color, and style to your walls. Discover the perfect pattern for your home." />
-  <meta name="keywords" content="wallpapers, wall design, home wallpapers, textured wallpapers" />
-</Helmet>
+        <title>Wallpapers | Indec Interiors</title>
+        <meta
+          name="description"
+          content="Premium designer wallpapers for residential and commercial spaces. Discover textured, modern, and customized wallpaper solutions."
+        />
+        <meta
+          name="keywords"
+          content="wallpapers, home wallpapers, designer wallpapers, textured wallpapers, custom wallpapers"
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://indecdecors.com/products/wallpapers" />
+
+        {/* ✅ OpenGraph */}
+        <meta property="og:title" content="Wallpapers | Indec Interiors" />
+        <meta
+          property="og:description"
+          content="Transform interiors with premium wallpapers designed for homes and commercial spaces."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://indecdecors.com/image/wallpaper-residential.jpg" />
+
+        {/* ✅ Twitter */}
+        <meta name="twitter:title" content="Wallpapers | Indec Interiors" />
+        <meta
+          name="twitter:description"
+          content="Explore modern and designer wallpapers for homes and commercial spaces."
+        />
+      </Helmet>
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div>
 <Breadcrumbs />

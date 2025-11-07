@@ -20,36 +20,33 @@ function Home() {
       id: 1,
       image: require("../src/image/banner-1.jpg"),
       title: "Your Vision, Our Expertise",
-      subtitle:
-        "Transforming dreams into reality with elegant interior design.",
+      subtitle: "Transforming dreams into reality with elegant interior design.",
       buttonText: "Start Your Project",
-      buttonLink: "#contact",
+      buttonLink: "/contact",
     },
     {
       id: 2,
       image: require("../src/image/banner-2.jpg"),
       title: "Elevating Spaces, Elevating Lives",
-      subtitle:
-        "Creating environments that inspire and enhance your daily living.",
+      subtitle: "Creating environments that inspire and enhance your daily living.",
     },
     {
       id: 3,
       image: require("../src/image/banner-3.jpg"),
       title: "Designing Your Story, One Detail at a Time",
-      subtitle:
-        "Attention to every detail to craft spaces that tell your story.",
+      subtitle: "Attention to every detail to craft spaces that tell your story.",
     },
     {
       id: 4,
       image: require("../src/image/banner-4.jpg"),
       title: "Crafting Beautiful Interiors, One Room at a Time",
-      subtitle:
-        "Personalized designs that reflect your unique style and personality.",
+      subtitle: "Personalized designs that reflect your unique style and personality.",
     },
   ];
 
   return (
     <>
+      {/* SEO */}
       <Helmet>
         <title>Indec Interiors | Home</title>
         <meta
@@ -60,8 +57,23 @@ function Home() {
           name="keywords"
           content="Indec Interiors, home interiors, luxury design, modern home decor, interior designers India"
         />
+        <link rel="canonical" href="https://indecdecors.com/whatwedo" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Indec Interiors | Home" />
+        <meta
+          property="og:description"
+          content="Indec Interiors transforms your spaces with modern and elegant interior designs. Explore custom solutions for homes and offices."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://indecdecors.com/" />
+        <meta property="og:image" content="https://indecdecors.com/image/banner-3.jpg" />
+        
+
+
       </Helmet>
 
+      {/* Hero Section */}
       <section className="hero-section">
         <Swiper
           speed={1400}
@@ -71,9 +83,7 @@ function Home() {
             delay: 5500,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
+          pagination={{ clickable: true }}
           navigation={true}
           loop={true}
           modules={[Autoplay, Pagination, Navigation, Parallax]}
@@ -106,7 +116,7 @@ function Home() {
                   {slide.subtitle}
                 </p>
 
-                {index === 0 && (
+                {index === 0 && slide.buttonText && (
                   <a
                     href={slide.buttonLink}
                     className="btn btn-hero mt-3"

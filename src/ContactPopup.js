@@ -4,11 +4,11 @@ import "./ContactPopup.css";
 
 const ContactPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const popupRef = useRef();
+  const popupRef = useRef(null);
 
-  const togglePopup = () => setIsOpen(!isOpen);
+  const togglePopup = () => setIsOpen((prev) => !prev);
 
-  // Close popup when clicking outside
+  // ✅ Close popup on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (popupRef.current && !popupRef.current.contains(e.target)) {
@@ -20,17 +20,28 @@ const ContactPopup = () => {
   }, []);
 
   return (
-    <div className={`contact-popup ${isOpen ? "active" : ""}`} ref={popupRef}>
-      <div className="contact-toggle" onClick={togglePopup}>
+    <div
+      className={`contact-popup ${isOpen ? "active" : ""}`}
+      ref={popupRef}
+      aria-expanded={isOpen}
+      aria-label="Contact popup"
+    >
+      {/* Toggle Button */}
+      <button
+        className="contact-toggle"
+        onClick={togglePopup}
+        aria-label={isOpen ? "Close contact panel" : "Open contact panel"}
+      >
         {isOpen ? (
           <i className="bi bi-x-lg"></i>
         ) : (
           <i className="bi bi-chat-dots-fill"></i>
         )}
-      </div>
+      </button>
 
+      {/* Popup Content */}
       {isOpen && (
-        <div className="contact-content">
+        <div className="contact-content" role="dialog" aria-modal="true">
           <div className="contact-header">
             <i className="bi bi-headset"></i>
             <h4>We're here to help!</h4>
@@ -38,35 +49,40 @@ const ContactPopup = () => {
 
           <p>
             <i className="bi bi-telephone"></i>
-            <span>+91 99528 80078</span>
+            <a href="tel:+919952880078">+91 99528 80078</a>
           </p>
+
           <p>
             <i className="bi bi-telephone"></i>
-            <span>+91 96003 39397</span>
+            <a href="tel:+919600339397">+91 96003 39397</a>
           </p>
 
           <hr />
 
           <p>
             <i className="bi bi-envelope"></i>
-            <span>admin@indectech.in</span>
+            <a href="mailto:admin@indectech.in">admin@indectech.in</a>
           </p>
 
           <div className="popup-footer">
             <a href="mailto:admin@indectech.in" className="popup-btn">
               <i className="bi bi-send"></i> Send Email
             </a>
-            <a href="tel:+91 96003 39397" className="popup-btn alt">
+
+            <a href="tel:+919600339397" className="popup-btn alt">
               <i className="bi bi-telephone-outbound"></i> Call Now
             </a>
           </div>
         </div>
       )}
-          <a
+
+      {/* WhatsApp Floating Button */}
+      <a
         href="https://wa.me/919952880078"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
+        aria-label="Chat on WhatsApp"
       >
         <i className="bi bi-whatsapp"></i>
       </a>

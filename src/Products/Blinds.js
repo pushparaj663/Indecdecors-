@@ -33,9 +33,25 @@ function Blinds() {
     <>
     <Helmet>
   <title>Blinds | Indec Interiors</title>
-  <meta name="description" content="Stylish blinds for modern homes and offices, available in roller, vertical, and Venetian designs." />
-  <meta name="keywords" content="blinds, roller blinds, window blinds, vertical blinds" />
+  <meta
+    name="description"
+    content="Stylish blinds for modern homes and offices, available in roller, vertical, and Venetian designs."
+  />
+  <meta
+    name="keywords"
+    content="blinds, roller blinds, window blinds, vertical blinds"
+  />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://indecdecors.com/products/blinds" />
+
+  {/* Open Graph (Optional, helps social preview) */}
+  <meta property="og:title" content="Blinds | Indec Interiors" />
+  <meta property="og:description" content="Stylish blinds for modern homes and offices." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://indecdecors.com/products/blinds-zebra.jpg" />
 </Helmet>
+
 
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div>

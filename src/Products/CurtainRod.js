@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import curtain_rods_finials from "../../src/image/curtain_rods_finials.jpg";
 import "./theme.css";
+import { Helmet } from "react-helmet-async";
 
 function CurtainRod() {
   const [activeTab, setActiveTab] = useState("designer");
@@ -33,7 +34,29 @@ function CurtainRod() {
   ];
 
   return (
+    
     <section className="theme-section" id="curtain-rods">
+       <Helmet>
+        <title>Curtain Rods & Brackets | Indec Interiors</title>
+        <meta
+          name="description"
+          content="Premium curtain rods and brackets from Indec Interiors, featuring designer and custom styles with durable finishes to enhance your living space."
+        />
+        <meta
+          name="keywords"
+          content="curtain rods, curtain brackets, interior rods, designer curtain rods, premium curtain hardware"
+        />
+
+        <link rel="canonical" href="https://indecdecors.com/products/curtainrod" />
+
+        {/* OpenGraph */}
+        <meta property="og:title" content="Curtain Rods & Brackets | Indec Interiors" />
+        <meta
+          property="og:description"
+          content="Premium designer curtain rods and brackets available in modern, classic, and custom styles."
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <div className="container theme-container" data-aos="fade-up">
         
         {/* Section Title */}

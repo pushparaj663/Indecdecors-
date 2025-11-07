@@ -6,7 +6,6 @@ import Service from "./Service";
 import Products from "./Products";
 import ContactUs from "./ContactUs";
 import indecbrouchure from "../src/Brochure/indec_brouchure.pdf";
-import Gallery from "./gallery";
 
 const Layout = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
@@ -18,7 +17,7 @@ const Layout = () => {
   const productRef = useRef(null);
   const contactRef = useRef(null);
 
-  const [activeSection, setActiveSection] = useState("/");
+  const [activeSection, setActiveSection] = useState("home");
 
   const products = [
     { label: "Mosquito Net Windows", path: "/products/mosquitonetwindows" },
@@ -29,129 +28,173 @@ const Layout = () => {
     { label: "Wall Papers", path: "/products/wallpapers" },
   ];
 
-  const scrollTo = (ref, sectionName) => {
-    if (ref) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(sectionName);
+  // Helper: smooth scroll with header offset
+  const scrollIntoViewWithOffset = (element, offset = 80) => {
+    if (!element) return;
+    const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  // Scroll to specific section (used by nav clicks)
+  const scrollTo = (ref, sectionName, title) => {
+    if (ref && ref.current) {
+      scrollIntoViewWithOffset(ref.current, 80);
+      setActiveSection(sectionName || "home");
+      if (title) document.title = `Indec Interiors | ${title}`;
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
-      setActiveSection("/");
+      setActiveSection("home");
+      document.title = "Indec Interiors | Home";
     }
     setMobileNavOpen(false);
     setProductsDropdownOpen(false);
   };
 
-  // ✅ Scroll tracking + Dynamic title update
+  // Explicit helper called by logo click
+  const scrollToHome = () => {
+    if (homeRef.current) {
+      scrollIntoViewWithOffset(homeRef.current, 80);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setActiveSection("home");
+    document.title = "Indec Interiors | Home";
+  };
+
+  // ON MOUNT: ONLY if the navigation was a REFRESH, force to home.
+  useEffect(() => {
+    let navType;
+    try {
+      const navEntries = performance.getEntriesByType && performance.getEntriesByType("navigation");
+      if (navEntries && navEntries.length) {
+        navType = navEntries[0].type;
+      } else if (performance.navigation) {
+        navType = performance.navigation.type === 1 ? "reload" : "navigate";
+      }
+    } catch (e) {
+      navType = undefined;
+    }
+
+    if (navType === "reload") {
+      window.history.replaceState(null, "", "/");
+      window.scrollTo({ top: 0, behavior: "instant" });
+      setActiveSection("home");
+      document.title = "Indec Interiors | Home";
+      return;
+    }
+
+    const initialHash = window.location.hash;
+    if (initialHash) {
+      setTimeout(() => {
+        if (initialHash === "#who-we-are" && aboutRef.current) scrollIntoViewWithOffset(aboutRef.current, 80);
+        else if (initialHash === "#service" && serviceRef.current) scrollIntoViewWithOffset(serviceRef.current, 80);
+        else if (initialHash === "#ourProducts" && productRef.current) scrollIntoViewWithOffset(productRef.current, 80);
+        else if (initialHash === "#contact" && contactRef.current) scrollIntoViewWithOffset(contactRef.current, 80);
+        else if (initialHash === "#home" && homeRef.current) scrollIntoViewWithOffset(homeRef.current, 80);
+      }, 250);
+    }
+  }, []);
+
+  // Track scroll and set activeSection / title
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const offset = 100;
+      const offset = 140;
+      const y = window.scrollY;
 
-      if (scrollY < aboutRef.current.offsetTop - offset) {
-        setActiveSection("/");
-        document.title = "Indec Interiors | Home";
-      } else if (scrollY < serviceRef.current.offsetTop - offset) {
-        setActiveSection("who-we-are");
-        document.title = "Indec Interiors | About Us";
-      } else if (scrollY < productRef.current.offsetTop - offset) {
-        setActiveSection("service");
-        document.title = "Indec Interiors | Services";
-      } else if (scrollY < contactRef.current.offsetTop - offset) {
-        setActiveSection("ourProducts");
-        document.title = "Indec Interiors | Products";
-      } else {
-        setActiveSection("contact");
-        document.title = "Indec Interiors | Contact Us";
+      const sections = [
+        { name: "home", ref: homeRef },
+        { name: "who-we-are", ref: aboutRef },
+        { name: "service", ref: serviceRef },
+        { name: "ourProducts", ref: productRef },
+        { name: "contact", ref: contactRef },
+      ];
+
+      for (let i = 0; i < sections.length; i++) {
+        const cur = sections[i].ref.current;
+        const next = sections[i + 1]?.ref?.current;
+        if (cur) {
+          const curTop = cur.offsetTop - offset;
+          const nextTop = next ? next.offsetTop - offset : Infinity;
+          if (y >= curTop && y < nextTop) {
+            if (activeSection !== sections[i].name) {
+              setActiveSection(sections[i].name);
+              const mapping = {
+                home: "Home",
+                "who-we-are": "About Us",
+                service: "Services",
+                ourProducts: "Products",
+                contact: "Contact Us",
+              };
+              document.title = `Indec Interiors | ${mapping[sections[i].name]}`;
+            }
+            break;
+          }
+        }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    setTimeout(handleScroll, 300);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]);
 
-  const toggleProductsDropdown = () => {
+  const toggleProducts = () => {
     if (window.innerWidth <= 768) setProductsDropdownOpen(prev => !prev);
   };
 
   return (
     <div className="container-fluid p-0">
-      {/* HEADER */}
       <div className="sticky-top">
         <header id="header" className="d-flex align-items-center">
           <div className="container d-flex justify-content-between align-items-center">
             {/* LOGO */}
-            <div id="logo">
-              <h1>
-                <a href="#" className="logo-text">Indec</a>
-              </h1>
+            <div id="logo" style={{ cursor: "pointer" }} onClick={scrollToHome}>
+              <h1><span className="logo-text">Indec</span></h1>
               <h4>Interiors</h4>
             </div>
 
-            {/* NAVBAR */}
+            {/* NAV */}
             <nav className={`navbar ${isMobileNavOpen ? "navbar-mobile active" : ""}`}>
               <ul>
                 <li>
-                  <a
-                    className={`nav-link ${activeSection === "/" ? "active" : ""}`}
-                    onClick={() => scrollTo(homeRef, "/")}
-                  >What we do</a>
+                  <a className={`nav-link ${activeSection === "home" ? "active" : ""}`} onClick={() => scrollTo(homeRef, "home", "Home")}>What we do</a>
                 </li>
                 <li>
-                  <a
-                    className={`nav-link ${activeSection === "who-we-are" ? "active" : ""}`}
-                    onClick={() => scrollTo(aboutRef, "who-we-are")}
-                  >Who we are</a>
+                  <a className={`nav-link ${activeSection === "who-we-are" ? "active" : ""}`} onClick={() => scrollTo(aboutRef, "who-we-are", "About Us")}>Who we are</a>
                 </li>
                 <li>
-                  <a
-                    className={`nav-link ${activeSection === "service" ? "active" : ""}`}
-                    onClick={() => scrollTo(serviceRef, "service")}
-                  >Services</a>
+                  <a className={`nav-link ${activeSection === "service" ? "active" : ""}`} onClick={() => scrollTo(serviceRef, "service", "Services")}>Services</a>
                 </li>
-
 
                 <li className={`dropdown ${isProductsDropdownOpen ? "active" : ""}`}>
-                  <button className="nav-link dropdown-toggle-btn" onClick={toggleProductsDropdown}>
-                    Products <i className={`bi ${isProductsDropdownOpen ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
-                  </button>
+                  <button className="nav-link dropdown-toggle-btn" onClick={toggleProducts}>Products <i className={`bi ${isProductsDropdownOpen ? "bi-chevron-up" : "bi-chevron-down"}`}></i></button>
                   {(isProductsDropdownOpen || !isMobileNavOpen) && (
                     <ul>
-                      {products.map((prod, idx) => (
-                        <li key={idx}><a href={prod.path}>{prod.label}</a></li>
-                      ))}
+                      {products.map((p, i) => <li key={i}><a href={p.path}>{p.label}</a></li>)}
                     </ul>
                   )}
                 </li>
 
                 <li>
-                  <a
-                    className={`nav-link ${activeSection === "contact" ? "active" : ""}`}
-                    onClick={() => scrollTo(contactRef, "contact")}
-                  >Contact</a>
+                  <a className={`nav-link ${activeSection === "contact" ? "active" : ""}`} onClick={() => scrollTo(contactRef, "contact", "Contact Us")}>Contact</a>
                 </li>
 
-                <li>
-                  <a className="nav-link" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a>
-                </li>
-                <a href="/gallery">Gallery</a>
+                <li><a className="nav-link" href={indecbrouchure} download="indec_brouchure.pdf">Brochure</a></li>
+                <li><a className="nav-link" href="/gallery">Gallery</a></li>
               </ul>
 
-              {/* MOBILE NAV TOGGLE */}
-              <i
-                className={`bi ${isMobileNavOpen ? "bi-x" : "bi-list"} mobile-nav-toggle`}
-                onClick={() => setMobileNavOpen(!isMobileNavOpen)}
-              ></i>
+              <i className={`bi ${isMobileNavOpen ? "bi-x" : "bi-list"} mobile-nav-toggle`} onClick={() => setMobileNavOpen(prev => !prev)} />
             </nav>
           </div>
         </header>
       </div>
 
-      {/* SECTIONS */}
-      <div ref={homeRef}><Home /></div>
-      <div ref={aboutRef}><About /></div>
-      <div ref={serviceRef}><Service /></div>
-      <div ref={productRef}><Products /></div>
-      <div ref={contactRef}><ContactUs /></div>
+      {/* Sections */}
+      <div ref={homeRef} id="home"><Home /></div>
+      <div ref={aboutRef} id="who-we-are"><About /></div>
+      <div ref={serviceRef} id="service"><Service /></div>
+      <div ref={productRef} id="ourProducts"><Products /></div>
+      <div ref={contactRef} id="contact"><ContactUs /></div>
 
       <Footer />
     </div>

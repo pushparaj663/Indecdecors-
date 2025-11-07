@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./Productscard.css";
+import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Header from "./Header";
 import Footer from "./Footer";
+import Breadcrumbs from "./Products/Breadcrumbs";
+import "./Productscard.css";
 
 import productswindow from "../src/image/products-window.jpg";
 import productsdoor from "../src/image/products-door.jpg";
@@ -9,55 +12,69 @@ import productscurtain from "../src/image/products-curtains.jpg";
 import productsblinds from "../src/image/products-blinds.jpg";
 import productsvinylflooring from "../src/image/products-vinylflooring.jpg";
 import productswallpapers from "../src/image/products-wallpapers.jpg";
-import { Helmet } from "react-helmet-async";
-import Breadcrumbs from "./Products/Breadcrumbs";
-import { useLocation } from "react-router-dom";
 
-function Products() {
+const Products = () => {
   const [products, setProducts] = useState([]);
   const trackRef = useRef(null);
   const location = useLocation();
+  const isStandalonePage = location.pathname === "/products";
 
   useEffect(() => {
     const list = [
-    { img: productswindow, title: "Mosquito Net Windows", link: "/products/mosquitonetwindows" },
-  { img: productsdoor, title: "Mosquito Net Doors", link: "/products/mosquitonetdoors" },
-  { img: productscurtain, title: "Curtains", link: "/products/curtains" },
-  { img: productsblinds, title: "Blinds", link: "/products/blinds" },
-  { img: productsvinylflooring, title: "Flooring Mat", link: "/products/vinylflooring" },
-  { img: productswallpapers, title: "Wallpapers for Walls", link: "/products/wallpapers" },
+      { img: productswindow, title: "Mosquito Net Windows", link: "/products/mosquitonetwindows" },
+      { img: productsdoor, title: "Mosquito Net Doors", link: "/products/mosquitonetdoors" },
+      { img: productscurtain, title: "Curtains", link: "/products/curtains" },
+      { img: productsblinds, title: "Blinds", link: "/products/blinds" },
+      { img: productsvinylflooring, title: "Flooring Mat", link: "/products/vinylflooring" },
+      { img: productswallpapers, title: "Wallpapers for Walls", link: "/products/wallpapers" },
     ];
-    setProducts([...list, ...list]); // duplicate for infinite scroll
+    setProducts([...list, ...list]); // Duplicate for smooth scrolling
   }, []);
 
   return (
     <>
-    <Helmet>
-  <title>Products | Indec Interiors</title>
-  <meta name="description" content="Discover premium home décor products from Indec Interiors including blinds, curtains, wallpapers, flooring, and mosquito nets." />
-  <meta name="keywords" content="curtains, blinds, wallpapers, flooring, mosquito nets, home décor" />
-</Helmet>
-      
- 
-      {window.location.pathname !== "/" && <Header />}  {/* ✅ Hide Breadcrumb on Home */}
-          {location.pathname !== "/" && <Breadcrumbs />}
+      {/* Helmet only on standalone Products page */}
+      {isStandalonePage && (
+        <Helmet>
+          <title>Products | Indec Interiors</title>
+          <meta
+            name="description"
+            content="Discover premium home décor products from Indec Interiors including blinds, curtains, wallpapers, flooring, and mosquito nets."
+          />
+          <meta
+            name="keywords"
+            content="curtains, blinds, wallpapers, flooring, mosquito nets, home décor"
+          />
+          <link rel="canonical" href="https://indecdecors.com/products" />
 
+          {/* Open Graph */}
+          <meta property="og:title" content="Products | Indec Interiors" />
+          <meta
+            property="og:description"
+            content="Discover premium home décor products from Indec Interiors including blinds, curtains, wallpapers, flooring, and mosquito nets."
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.indecdecors.com/products" />
+          <meta property="og:image" content="https://www.indecdecors.com/image/products-door.jpg" />
+
+              </Helmet>
+      )}
+
+      {/* Header and Breadcrumbs */}
+      {isStandalonePage && <Header />}
+      {isStandalonePage && <Breadcrumbs />}
+
+      {/* Products Section */}
       <section className="products-section-wrapper">
-      
         <div className="products-title-section">
-            
           <h2 className="products-main-heading">Our Products</h2>
           <p className="products-description">
             We bring you a comprehensive range of high-quality solutions to enhance your living spaces.
           </p>
-          
         </div>
 
         <div className="products-carousel-container">
-          <div
-            className="products-carousel-track"
-            ref={trackRef}
-          >
+          <div className="products-carousel-track" ref={trackRef}>
             <div className="products-carousel-track-inner">
               {products.map((p, i) => (
                 <div className="products-card" key={i}>
@@ -70,7 +87,6 @@ function Products() {
                   </div>
                 </div>
               ))}
-              
             </div>
           </div>
           <div className="swipe-hint">
@@ -78,9 +94,11 @@ function Products() {
           </div>
         </div>
       </section>
-      {window.location.pathname !== "/" && <Footer />}
+
+      {/* Footer */}
+      {isStandalonePage && <Footer />}
     </>
   );
-}
+};
 
 export default Products;

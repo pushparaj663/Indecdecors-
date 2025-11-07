@@ -38,11 +38,29 @@ function MosquitoNetWindows() {
 
   return (
     <>
-    <Helmet>
-  <title>Mosquito Net Doors | Indec Interiors</title>
-  <meta name="description" content="Elegant mosquito net doors that combine functionality with modern design for homes and offices." />
-  <meta name="keywords" content="mosquito net doors, sliding doors, insect protection" />
-</Helmet>
+        <Helmet>
+        <title>Mosquito Net Windows | Indec Interiors</title>
+        <meta
+          name="description"
+          content="Durable mosquito net windows with screw and magnetic options for complete insect protection while allowing natural airflow."
+        />
+        <meta
+          name="keywords"
+          content="mosquito net windows, magnetic window net, screw type mosquito net, insect protection windows"
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://indecdecors.com/products/mosquitonetwindows" />
+
+        {/* OpenGraph */}
+        <meta property="og:title" content="Mosquito Net Windows | Indec Interiors" />
+        <meta
+          property="og:description"
+          content="Secure and stylish mosquito net windows that keep insects out while allowing airflow."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://indecdecors.com/image/window-screw.jpg" />
+      </Helmet>
 
     <div className="container-fluid p-0 theme-container">
       <div className="sticky-top"><Header /></div> 
